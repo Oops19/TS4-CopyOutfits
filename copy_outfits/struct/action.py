@@ -1,0 +1,6 @@
+class O19COAction:
+    COPY = 1  # DEFAULT, ALL, PICKER, XPICKER
+    PASTE = 2  # DEFAULT, ALL, PICKER, XPICKER
+    CLONE = 4  # ALL, ..., SIM
+    CLEAR = 8  # DEFAULT
+    PRINT = 16  # DEFAULT
