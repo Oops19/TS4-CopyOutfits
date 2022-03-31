@@ -1,4 +1,9 @@
-from sims.sim_info_types import Age
+#
+# LICENSE https://creativecommons.org/licenses/by/4.0/ https://creativecommons.org/licenses/by/4.0/legalcode
+# © 2022 https://github.com/Oops19
+#
+
+
 from sims4communitylib.utils.sims.common_age_utils import CommonAgeUtils
 from sims4communitylib.utils.sims.common_species_utils import CommonSpeciesUtils
 

@@ -1,3 +1,8 @@
+#
+# LICENSE https://creativecommons.org/licenses/by/4.0/ https://creativecommons.org/licenses/by/4.0/legalcode
+# © 2022 https://github.com/Oops19
+#
+
 
 from typing import Tuple
 from objects.script_object import ScriptObject

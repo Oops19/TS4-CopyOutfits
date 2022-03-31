@@ -1,3 +1,9 @@
+#
+# LICENSE https://creativecommons.org/licenses/by/4.0/ https://creativecommons.org/licenses/by/4.0/legalcode
+# © 2022 https://github.com/Oops19
+#
+
+
 from typing import Any, Tuple, Union
 
 from copy_outfits.struct.action import O19COAction
