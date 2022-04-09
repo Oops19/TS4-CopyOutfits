@@ -22,4 +22,9 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '0.6'
+        return '0.6.1'
+
+'''
+v0.6.1 Don't register the interaction for objects
+
+'''

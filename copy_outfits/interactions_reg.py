@@ -7,6 +7,7 @@
 from typing import Tuple
 from objects.script_object import ScriptObject
 from sims4communitylib.services.interactions.interaction_registration_service import CommonInteractionRegistry, CommonInteractionType, CommonScriptObjectInteractionHandler
+from sims4communitylib.utils.common_type_utils import CommonTypeUtils
 
 
 @CommonInteractionRegistry.register_interaction_handler(CommonInteractionType.ON_SCRIPT_OBJECT_LOAD)
@@ -80,7 +81,6 @@ class _RegisterOutfitTools_Copy_Outfits_0(CommonScriptObjectInteractionHandler):
         return interactions
 
     def should_add(self, script_object: ScriptObject, *args, **kwargs) -> bool:
+        if not CommonTypeUtils.is_sim_instance(script_object):
+            return False # If the object is not a Sim, return False.
         return True
-        # if not CommonTypeUtils.is_sim_instance(script_object):
-        #     return False # If the object is not a Sim, return False.
-        # return True
