@@ -1,6 +1,7 @@
 #  Copy Outfits
 `Copy Outfits` allows to copy outfits and more. It is basically the same as [Outfit Tools - Copy Any Outfit v4](https://modthesims.info/d/541770/outfit-tools-copy-any-outfit-v4.html) 
 by scumbumbo while the code has been written from scratch and menu interactions have been added to replace the cheat console input.
+With the current update the sims appearance can be cloned completely.
 
 This mod requires S4CL which can be downloaded from https://github.com/ColonolNutty/Sims4CommunityLibrary/releases/latest
 
@@ -43,8 +44,11 @@ It allows to select individual special outfits. These include:
 * 'Head Piercings' includes brow, lip and nose piercings.
 * 'occult_scars' includes all occult scars and also the non-occult forearm scar.
 * 'Pet' includes the fur body, ears and tail (not tested).
-* 'All' pastes everything (see above) to the selected sim. Sliders are not transferred but the sims will look very similar.
-
+* 'Complete Outfit' pastes everything (see above) to the selected sim. Sliders are not transferred but the sims will look very similar. (previously All)
+* 'All' copies all outfits, age, gender, sliders, voice, genetics, ...*
+* 'Genetics' is genetic data.
+* 'Physics & Genetics' include genetics, physic, sliders, voice, skin and if available also pelt and/or '?base_traits?'.
+* 'Age & Gender' include age, gender, '?extended_species?', body frame and clothing preferences.
 * Sliders are not supported. They are not copied so they can not be pasted. Like traits and buffs they have nothing to do with the outfit.
        
 ### Menu More

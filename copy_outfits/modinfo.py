@@ -22,9 +22,9 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '0.6.1'
+        return '0.6.2'
 
 '''
+v0.6.2 New paste options for age, gender, physics and genetics
 v0.6.1 Don't register the interaction for objects
-
 '''

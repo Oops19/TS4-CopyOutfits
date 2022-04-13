@@ -12,16 +12,21 @@ from copy_outfits.struct.age import O19COAge
 from copy_outfits.struct.internal_stbl import InternalSTBL
 from copy_outfits.modinfo import ModInfo
 from copy_outfits.struct.outfit_store import O19COOutfitStore
+from copy_outfits.struct.sim_store import O19COSimStore
 
 from event_testing.results import TestResult
 from interactions.context import InteractionContext
 from sims.outfits.outfit_enums import OutfitCategory
 from sims.sim import Sim
+from sims.sim_info_base_wrapper import SimInfoBaseWrapper
 from sims.sim_info import SimInfo
 from sims4.tuning.tunable import Tunable
 from sims4communitylib.enums.common_occult_type import CommonOccultType
+from sims4communitylib.enums.traits_enum import CommonTraitId
 from sims4communitylib.utils.sims.common_sim_occult_type_utils import CommonSimOccultTypeUtils
+from sims4communitylib.utils.sims.common_sim_pregnancy_utils import CommonSimPregnancyUtils
 from sims4communitylib.utils.sims.common_species_utils import CommonSpeciesUtils
+from sims4communitylib.utils.sims.common_trait_utils import CommonTraitUtils
 from ui.ui_dialog_notification import UiDialogNotification
 
 from sims4communitylib.classes.interactions.common_terrain_interaction import CommonTerrainInteraction
@@ -107,7 +112,7 @@ class OutfitTools(CommonTerrainInteraction):
             message = ''
             if age_data:
                 message = f"Sources for age {age}:\n"
-                for i in range(0, 5):
+                for i in range(0):
                     try:
                         message = f"{message}{i}: {age_data.get(i).get('source')}\n"
                     except:
@@ -118,7 +123,7 @@ class OutfitTools(CommonTerrainInteraction):
 
         elif action == O19COAction.CLEAR:
             # Clear
-            if action_id == O19COActionId.ALL:
+            if action_id == O19COActionId.COMPLETE_OUTFIT:
                 del O19COOutfitStore.outfits
                 O19COOutfitStore.outfits = dict()
                 self.show_notification(f"Removed all outfits from clipboard")
@@ -136,14 +141,54 @@ class OutfitTools(CommonTerrainInteraction):
             if not new_parts:
                 self.show_notification(f"No outfit found in clipboard [{clipboard_index}].")
                 return False
-            if action_id == O19COActionId.ALL:
-                sim_outfit_io = CommonSimOutfitIO(sim_info, outfit_category_and_index=(outfit_category, outfit_index), initial_outfit_parts=new_parts, mod_identity=ModInfo.get_identity())
-                sim_outfit_io.apply(apply_to_outfit_category_and_index=(outfit_category, outfit_index))
-            else:
+            src_sim_info = CommonSimUtils.get_sim_info(O19COSimStore.sims.get(age, None))
+            if not src_sim_info:
+                self.show_notification(f"No sim_info found in cache.")
+                return False
+            if action_id > O19COActionId.COMPLETE_OUTFIT and action_id < O19COActionId.ALL:
                 valid_parts_ids = O19COOutfitStore.parts[action_id]
                 merged_parts = self.merge_parts(sim_info, new_parts, valid_parts_ids)
                 sim_outfit_io = CommonSimOutfitIO(sim_info, outfit_category_and_index=(outfit_category, outfit_index), initial_outfit_parts=merged_parts, mod_identity=ModInfo.get_identity())
                 sim_outfit_io.apply(apply_to_outfit_category_and_index=(outfit_category, outfit_index))
+            else:
+                if action_id == O19COActionId.COMPLETE_OUTFIT or action_id == O19COActionId.ALL:
+                    sim_outfit_io = CommonSimOutfitIO(sim_info, outfit_category_and_index=(outfit_category, outfit_index), initial_outfit_parts=new_parts, mod_identity=ModInfo.get_identity())
+                    sim_outfit_io.apply(apply_to_outfit_category_and_index=(outfit_category, outfit_index))
+
+                if action_id == O19COActionId.AGE_GENDER or action_id == O19COActionId.ALL:
+                    SimInfoBaseWrapper.copy_base_attributes(sim_info, src_sim_info)  # Order: dest, src
+                    if CommonTraitUtils.has_trait(src_sim_info, CommonTraitId.GENDER_OPTIONS_FRAME_MASCULINE):
+                        CommonTraitUtils.add_trait(sim_info, CommonTraitId.GENDER_OPTIONS_FRAME_MASCULINE)
+                    else:
+                        CommonTraitUtils.remove_trait(sim_info, CommonTraitId.GENDER_OPTIONS_FRAME_MASCULINE)
+                    if CommonTraitUtils.has_trait(src_sim_info, CommonTraitId.GENDER_OPTIONS_FRAME_FEMININE):
+                        CommonTraitUtils.add_trait(sim_info, CommonTraitId.GENDER_OPTIONS_FRAME_FEMININE)
+                    else:
+                        CommonTraitUtils.remove_trait(sim_info, CommonTraitId.GENDER_OPTIONS_FRAME_FEMININE)
+                    if CommonTraitUtils.has_trait(src_sim_info, CommonTraitId.GENDER_OPTIONS_CLOTHING_MENS_WEAR):
+                        CommonTraitUtils.add_trait(sim_info, CommonTraitId.GENDER_OPTIONS_CLOTHING_MENS_WEAR)
+                    else:
+                        CommonTraitUtils.remove_trait(sim_info, CommonTraitId.GENDER_OPTIONS_CLOTHING_MENS_WEAR)
+                    if CommonTraitUtils.has_trait(src_sim_info, CommonTraitId.GENDER_OPTIONS_CLOTHING_WOMENS_WEAR):
+                        CommonTraitUtils.add_trait(sim_info, CommonTraitId.GENDER_OPTIONS_CLOTHING_WOMENS_WEAR)
+                    else:
+                        CommonTraitUtils.remove_trait(sim_info, CommonTraitId.GENDER_OPTIONS_CLOTHING_WOMENS_WEAR)
+                    if CommonSimPregnancyUtils.can_impregnate(src_sim_info):
+                        pass
+                    else:
+                        pass
+                    if CommonSimPregnancyUtils.can_impregnate(src_sim_info):
+                        pass
+                    else:
+                        pass
+
+                if action_id == O19COActionId.PHYSICS_GENETICS or action_id == O19COActionId.ALL:
+                    SimInfoBaseWrapper.copy_physical_attributes(sim_info, src_sim_info)
+                    SimInfoBaseWrapper.resend_physical_attributes(sim_info)
+
+                if action_id == O19COActionId.GENETICS:
+                    SimInfoBaseWrapper.copy_genetic_data(sim_info, src_sim_info)
+
 
         elif action == O19COAction.PASTE:
             log.debug('Paste')
@@ -168,10 +213,10 @@ class OutfitTools(CommonTerrainInteraction):
                         (OutfitCategory.BATUU, 1), (OutfitCategory.BATUU, 2), (OutfitCategory.BATUU, 3), (OutfitCategory.BATUU, 4),
                     ), (OutfitCategory.CURRENT_OUTFIT,)
                 )
-            elif action_id == O19COActionId.ALL:
+            elif action_id == O19COActionId.COMPLETE_OUTFIT:
                 i = 0
                 log.debug(f"Pasting all outfits to '{outfit_name}'")
-                for outfit_index in range(0, 5):
+                for outfit_index in range(5):
                     new_parts = self.get_parts(age, outfit_index)
                     if new_parts:
                         merged_parts = self.merge_parts(sim_info, new_parts, valid_parts_ids)
@@ -220,6 +265,7 @@ class OutfitTools(CommonTerrainInteraction):
 
         elif action == O19COAction.COPY:
             # Copy
+            O19COSimStore.sims.update({age: sim_info.sim_id})
             if action_id == O19COActionId.PICKER:
                 self.open_outfit_picker(sim_info, action, None, None)
             elif action_id == O19COActionId.XPICKER:
@@ -239,11 +285,11 @@ class OutfitTools(CommonTerrainInteraction):
                         (OutfitCategory.BATUU, 1), (OutfitCategory.BATUU, 2), (OutfitCategory.BATUU, 3), (OutfitCategory.BATUU, 4),
                     ), (OutfitCategory.CURRENT_OUTFIT,)
                 )
-            elif action_id == O19COActionId.ALL:
+            elif action_id == O19COActionId.COMPLETE_OUTFIT:
                 i = 0
                 log.debug(f"Copying all outfits for '{outfit_name}'")
                 age_data = self.get_parts(age)
-                for outfit_index in range(0, 5):
+                for outfit_index in range(5):
                     parts = CommonOutfitUtils.get_outfit_parts(sim_info, (outfit_category, outfit_index))
                     if parts:
                         age_data.update({outfit_index: {'source': f'{sim_info} {outfit_category}[{outfit_index}]', 'parts': parts}})
@@ -264,7 +310,7 @@ class OutfitTools(CommonTerrainInteraction):
             sim_info.set_outfit_dirty(outfit_category)
             sim_info.set_current_outfit((outfit_category, outfit_index))
         if O19OTDD.installed:
-            for body_type in O19COOutfitStore.parts[O19COActionId.ALL]:
+            for body_type in O19COOutfitStore.parts[O19COActionId.COMPLETE_OUTFIT]:
                 DDNuditySystemUtils().set_equipment_part_to_layer_by_body_location(sim_info, body_type, DDPartLayer.OUTERWEAR)
         return True
 
@@ -324,7 +370,7 @@ class OutfitTools(CommonTerrainInteraction):
                 sim_info.set_current_outfit((outfit_category, outfit_index))
                 if O19OTDD.installed:
                     # remove all appearance modifiers
-                    for body_type in O19COOutfitStore.parts[O19COActionId.ALL]:
+                    for body_type in O19COOutfitStore.parts[O19COActionId.COMPLETE_OUTFIT]:
                         DDNuditySystemUtils().set_equipment_part_to_layer_by_body_location(sim_info, body_type, DDPartLayer.OUTERWEAR)
 
         elif action == O19COAction.COPY:
