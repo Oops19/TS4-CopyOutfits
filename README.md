@@ -44,13 +44,18 @@ It allows to select individual special outfits. These include:
 * 'Head Piercings' includes brow, lip and nose piercings.
 * 'occult_scars' includes all occult scars and also the non-occult forearm scar.
 * 'Pet' includes the fur body, ears and tail (not tested).
-* 'Complete Outfit' pastes everything (see above) to the selected sim. Sliders are not transferred but the sims will look very similar. (previously All)
-* 'All' copies all outfits, age, gender, sliders, voice, genetics, ...*
-* 'Genetics' is genetic data.
-* 'Physics & Genetics' include genetics, physic, sliders, voice, skin and if available also pelt and/or '?base_traits?'.
-* 'Age & Gender' include age, gender, '?extended_species?', body frame and clothing preferences.
-* Sliders are not supported. They are not copied so they can not be pasted. Like traits and buffs they have nothing to do with the outfit.
-       
+* 'Complete Outfit' (previously All) pastes everything (see above) to the selected sim. Sliders are not transferred but the sims will look very similar.
+
+### Menu X-Transfer
+This is the sub menu which does not really has something to do with 'Copy Outfits'.
+* 'Age & Gender' includes age, gender, '¿extended_species?', walk styles, body frame, clothing preferences and whether the sim can give/receive pregnancy. Existing pregnancies will neither be canceled or transferred.
+* 'Genetics' is only '¿genetics?', whatever it is.
+* 'Physics & Genetics' includes '?genetics?', physic, sliders, voice, skin and if available also pelt and/or '¿base_traits?', whatever this is.
+* 'Traits' includes all traits.
+* 'All' includes 'Complete Outfit' and everything from above.
+* '~~Sliders~~' - not implemented as a standalone interaction, use 'All' or 'Physics & Genetics'
+* '~~Walkstyles~~' - not implemented as a standalone interaction, use 'All' or 'Age & Gender'
+
 ### Menu More
 * 'Print Clipboard' prints the copied outfits including the source sim. Outfit IDs are logged to the log file where you can copy them and will not flood the notification area.
 * 'Clear All' removes all outfits from the cache.
