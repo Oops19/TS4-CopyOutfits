@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.0.2'
+        return '1.0.3'
 
 
 '''
@@ -41,6 +41,8 @@ TODO New Features
     Implement support for filters
      Split FACE and BODY modifiers/sliders
     Implement support to append a new (or replace 5th) outfit
+v1.0.3
+    Updated README for new TS4 version
 v1.0.2
     Update links in documentations (MTS)
 v1.0.1
