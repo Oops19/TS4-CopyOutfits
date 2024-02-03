@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.0.3'
+        return '1.0.4'
 
 
 '''
@@ -36,11 +36,16 @@ TODO Far Future
     Add Pie Menu to paste with filter
         Show a picker to select the outfit groups and then the BodyParts to delete one after the other
         Show a picker to define what to filter - replace the cheat command
+        
 TODO New Features
     Clone relationships
     Implement support for filters
-     Split FACE and BODY modifiers/sliders
+    Split FACE and BODY modifiers/sliders
     Implement support to append a new (or replace 5th) outfit
+
+V1.0.4
+    Added INFANT
+    Added PET and BABY (likely never needed)
 v1.0.3
     Updated README for new TS4 version
 v1.0.2

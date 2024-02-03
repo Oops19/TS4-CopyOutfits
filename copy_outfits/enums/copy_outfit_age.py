@@ -10,11 +10,13 @@ from ts4lib.common_enums.enum_types.common_enum import CommonEnum
 
 
 class CopyOutfitsAge(CommonEnum):
-    UNKNOWN = 2 ** 0  # Cat, Dog, Baby, ...
+    UNKNOWN = 2 ** 0  # Cat, Dog
     TYAE = 2 ** 1  # Teen, Young Adult, Adult, Elder
     CHILD = 2 ** 2
     TODDLER = 2 ** 3
     INFANT = 2 ** 4
+    BABY = 2 ** 5
+    PET = 2 ** 6
 
     @staticmethod
     def get_co_age(sim_info) -> int:
@@ -29,4 +31,8 @@ class CopyOutfitsAge(CommonEnum):
                 age = CopyOutfitsAge.TODDLER
             elif CommonAgeUtils.is_infant(sim_info):
                 age = CopyOutfitsAge.INFANT
+            elif CommonAgeUtils.is_baby(sim_info):
+                age = CopyOutfitsAge.BABY
+        elif CommonSpeciesUtils.is_pet(sim_info):
+            age = CopyOutfitsAge.PET
         return age
