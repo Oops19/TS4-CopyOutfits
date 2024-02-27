@@ -100,6 +100,7 @@ It is expected to be compatible with many upcoming releases of TS4, S4CL and TS4
 
 ## Dependencies
 * [The Sims 4](https://www.ea.com/games/the-sims/the-sims-4)
+* [Download for this mod](./releases/latest)
 * [TS4-Library](https://github.com/Oops19/TS4-Library/releases/latest)
 * [S4CL](https://github.com/ColonolNutty/Sims4CommunityLibrary/releases/latest)
 
