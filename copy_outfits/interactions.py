@@ -6,18 +6,18 @@
 
 from typing import Any, Tuple, Union, Dict
 
-import ts4lib
 from copy_outfits.enums.copy_outfit_age import CopyOutfitsAge
 from copy_outfits.enums.pie_menu_action_ids import PieMenuActionIds
 from copy_outfits.utils.outfit_modifiers import OutfitModifiers
 from copy_outfits.persist.outfit_store import OutfitStore
 from copy_outfits.persist.sim_store import SimStore
 from copy_outfits.struct.action import O19COAction
-
 from copy_outfits.struct.internal_stbl import InternalSTBL
 from copy_outfits.modinfo import ModInfo
 from copy_outfits.enums.outfit_groups import OutfitGroups
 
+from ts4lib.utils.outfit_utilities import OutfitUtilities
+from ui.ui_dialog_notification import UiDialogNotification
 
 from event_testing.results import TestResult
 from interactions.context import InteractionContext
@@ -27,15 +27,13 @@ from sims.sim import Sim
 from sims.sim_info_base_wrapper import SimInfoBaseWrapper
 from sims.sim_info import SimInfo
 from sims4.tuning.tunable import Tunable
+
 from sims4communitylib.enums.common_occult_type import CommonOccultType
 from sims4communitylib.enums.traits_enum import CommonTraitId
 from sims4communitylib.utils.sims.common_sim_gender_option_utils import CommonSimGenderOptionUtils
 from sims4communitylib.utils.sims.common_sim_occult_type_utils import CommonSimOccultTypeUtils
 from sims4communitylib.utils.sims.common_species_utils import CommonSpeciesUtils
 from sims4communitylib.utils.sims.common_trait_utils import CommonTraitUtils
-from ts4lib.utils.outfit_utilities import OutfitUtilities
-from ui.ui_dialog_notification import UiDialogNotification
-
 from sims4communitylib.classes.interactions.common_terrain_interaction import CommonTerrainInteraction
 from sims4communitylib.dialogs.common_choice_outcome import CommonChoiceOutcome
 from sims4communitylib.dialogs.common_choose_outfit_dialog import CommonChooseOutfitDialog
@@ -128,7 +126,6 @@ class OutfitTools(CommonTerrainInteraction):
             else:
                 # InternalSTBL.O19_TARGET = 'Target'
                 description_tokens = (CommonLocalizationUtils.create_localized_string(InternalSTBL.O19_TARGET, text_color=CommonLocalizedStringColor.RED),)
-            from sims4communitylib.utils.common_icon_utils import CommonIconUtils
             dialog = CommonChooseOutfitDialog(
                 ModInfo.get_identity(),
                 InternalSTBL.TS4_STRING,  # '{0.String}'

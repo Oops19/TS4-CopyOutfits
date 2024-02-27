@@ -95,7 +95,7 @@ This mod has been inspired by 'Copy Any Outfit'. All code has been written from 
 # Addendum
 
 ## Game compatibility
-This mod has been tested with `The Sims 4` 1.104.58, S4CL 3.0 (2023-12), TS4Lib 0.1.8 (2023-09).
+This mod has been tested with `The Sims 4` GAME_VERSION, S4CL S4CL_VERSION, TS4Lib 0.1.8 (2023-09).
 It is expected to be compatible with many upcoming releases of TS4, S4CL and TS4Lib.
 
 ## Dependencies
@@ -124,7 +124,7 @@ This mod does not send any data to tracking servers. The code is open source, no
 Some log entries in the log file ('mod_logs' folder) may contain the local username, especially if files are not found (WARN, ERROR).
 
 ## External Links
-[Sources](https://v/Oops19/)
+[Sources](https://github.com/Oops19/)
 [Support](https://discord.gg/d8X9aQ3jbm)
 [Donations](https://www.patreon.com/o19)
 

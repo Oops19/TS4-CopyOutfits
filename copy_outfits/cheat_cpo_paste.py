@@ -4,19 +4,12 @@
 #
 
 
-import re
-
-from copy_outfits.enums.outfit_groups import OutfitGroups
-from copy_outfits.enums.physic_filters import PhysicFilters
-from copy_outfits.enums.various_filters import VariousFilters
-from copy_outfits.persist.filter import Filter
 from copy_outfits.persist.paste_mode import PasteMode
 from copy_outfits.modinfo import ModInfo
+
 from sims4communitylib.services.commands.common_console_command import CommonConsoleCommand, CommonConsoleCommandArgument
 from sims4communitylib.services.commands.common_console_command_output import CommonConsoleCommandOutput
 from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegistry
-from ts4lib.common_enums.body_part import BodyPart
-
 
 log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity().name, ModInfo.get_identity().name)
 log.enable()

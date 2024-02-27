@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.0.4'
+        return '1.0.5'
 
 
 '''
@@ -43,6 +43,8 @@ TODO New Features
     Split FACE and BODY modifiers/sliders
     Implement support to append a new (or replace 5th) outfit
 
+V1.0.5
+    Imports cleaned up
 V1.0.4
     Added INFANT
     Added PET and BABY (likely never needed)

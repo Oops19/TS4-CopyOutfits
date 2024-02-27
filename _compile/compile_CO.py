@@ -1,4 +1,4 @@
-# compile.sh version 2.0.14
+# compile.sh version 2.0.16
 
 # This file searches from the parent directory for 'modinfo.py' in it or in any sub directory.
 # Make sure to have only one 'modinfo.py' in your project directory. The first found 'modinfo.py' is used and loaded.
@@ -28,6 +28,7 @@ exclude_folders: Tuple = ()
 add_readme = True
 file_appendix = ''
 auto_beta = True
+exclude_dependencies = ()
 try:
     with open('compile.ini', 'rt') as fp:
         cfg: Dict[str, Any] = ast.literal_eval(fp.read())
@@ -37,6 +38,7 @@ try:
         add_readme = cfg.get('add_readme', add_readme)
         file_appendix = cfg.get('file_appendix', file_appendix)
         auto_beta = cfg.get('auto_beta', auto_beta)
+        exclude_dependencies = cfg.get('exclude_dependencies', exclude_dependencies)
 except:
     pass
 
@@ -72,6 +74,18 @@ mod_name = mi._name
 mod_directory = mi._base_namespace
 version = mi._version  # All versions 0., x.1, x.3, x.5, x.7, x.9 (also x.1.y, x.1.y.z) will be considered beta and the 'beta_appendix' gets appended.
 
+try:
+    # S4CL_VERSION
+    s4cl_modinfo_py = os.path.join('..', '..', 'Libraries', 'sims4communitylib', 'modinfo.py')
+    with open(s4cl_modinfo_py, 'rt') as fp:
+        s4cl_version = fp.read()
+        s4cl_version = s4cl_version.replace('\r', ' ').replace('\n', ' ').replace('\t', ' ')
+        s4cl_version = re.sub(r' {2,}', ' ', s4cl_version)
+        s4cl_version = re.sub(r".*def _version.*return '(...)'.*", r'\g<1>', s4cl_version)
+except Exception as e:
+    print(f"Error reading S4CL ({e}).")
+    exit(1)
+
 if add_readme:
     file_game_version = 'c:' + os.sep + os.path.join(os.environ['HOMEPATH'], 'Documents', 'Electronic Arts',
                                                      'The Sims 4', 'GameVersion.txt')
@@ -91,7 +105,11 @@ if add_readme:
                 for file_r in [file_readme, file_footer]:
                     with open(file_r, 'rb') as fp_r:
                         _data = fp_r.read()
-                        data = re.sub(r'1.103.315 .2023-12.', game_version, _data.decode('UTF-8'))
+                        data = re.sub(r'GAME_VERSION', game_version, _data.decode('UTF-8'))
+                        data = re.sub(r'S4CL_VERSION', s4cl_version, data)
+                        if exclude_dependencies:
+                            for e in exclude_dependencies:
+                                data = re.sub(f'. .{e}..[^)]*.\r\n', '', data)
                         fp_w.write(data.encode('UTF-8'))
         with open(gitignore, 'rt') as fp:
             if ".private" not in fp.read():
@@ -104,6 +122,12 @@ if add_readme:
 
 release_directory = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(os.getcwd()))), 'Release')
 mod_base_directory = os.path.join(release_directory, mod_name)
+mod_base_directory_backup = os.path.join(release_directory, f"{mod_name}.bak")
+if os.path.exists(mod_base_directory_backup):
+    shutil.rmtree(mod_base_directory_backup)
+if os.path.exists(mod_base_directory):
+    os.rename(mod_base_directory, mod_base_directory_backup)
+
 ts4_directory = os.path.join(mod_base_directory, 'Mods', f"_{author}_")
 
 src_folder = os.path.join(os.path.dirname(os.path.abspath(os.getcwd())), '_TS4')
@@ -161,6 +185,12 @@ shutil.make_archive(os.path.join(release_directory, f"{zip_file_name}"), 'zip', 
 print(f'Created {os.path.join(release_directory, f"{zip_file_name}.zip")}')
 
 '''
+v2.0.16
+    Added exclude_dependencies to config.ini to be able to remove these.
+    Updated FOOTER.md with 'GAME_VERSION'
+    ../Libraries/sims4communitylib/modinfo.py
+v2.0.15
+    Make a backup of the existing directory and create a full/new build
 v2.0.14
     read game-version from game_version.txt
 v2.0.13
