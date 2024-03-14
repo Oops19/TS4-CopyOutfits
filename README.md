@@ -54,7 +54,8 @@ This is the sub menu which does not really has something to do with 'Copy Outfit
 * ~~'Relationships'~~ - not implemented
 * ~~'Only Face Sliders'~~ - not implemented
 * ~~'Only Body Sliders'~~ - not implemented
-* 
+* ~~'Skintones'~~ - not implemented
+
 ### Menu More
 * 'Print Clipboard' prints the copied outfits including the source sim. Outfit IDs are logged to the log file where you can copy them and will not flood the notification area.
 * 'Clear All' removes all outfits from the cache.
@@ -73,12 +74,13 @@ These should work as every other sim
 Not tested. It is possible that they do not support special outfits and may throw an exception.
 
 ## Technical Details
-There are five groups to store outfits:
-* A: Teen, Young Adult, Adult and Elder
-* B: Children
-* C: Toddler
-* D: Infants
-* E: Unknown (non-sims, could be pets - not tested)
+There are six groups to store outfits:
+* Teen, Young Adult, Adult and Elder
+* Children
+* Toddler
+* Infants
+* Babies
+* Unknown (non-sims, could be pets - not tested)
 
 There are five clipboards [0..4] for the outfits. Each sim can have up to five outfits [0..4] for each normal category and 1 to 5 for special categories.
 
@@ -95,11 +97,12 @@ This mod has been inspired by 'Copy Any Outfit'. All code has been written from 
 # Addendum
 
 ## Game compatibility
-This mod has been tested with `The Sims 4` GAME_VERSION, S4CL S4CL_VERSION, TS4Lib 0.1.8 (2023-09).
+This mod has been tested with `The Sims 4` 1.105.332, S4CL 3.0, TS4Lib 0.2.0 (2024-02).
 It is expected to be compatible with many upcoming releases of TS4, S4CL and TS4Lib.
 
 ## Dependencies
 * [The Sims 4](https://www.ea.com/games/the-sims/the-sims-4)
+* [This Mod](./releases/latest)
 * [TS4-Library](https://github.com/Oops19/TS4-Library/releases/latest)
 * [S4CL](https://github.com/ColonolNutty/Sims4CommunityLibrary/releases/latest)
 
