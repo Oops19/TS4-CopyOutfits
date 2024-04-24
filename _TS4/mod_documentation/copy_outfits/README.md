@@ -74,12 +74,13 @@ These should work as every other sim
 Not tested. It is possible that they do not support special outfits and may throw an exception.
 
 ## Technical Details
-There are five groups to store outfits:
-* A: Teen, Young Adult, Adult and Elder
-* B: Children
-* C: Toddler
-* D: Infants
-* E: Unknown (non-sims, could be pets - not tested)
+There are six groups to store outfits:
+* Teen, Young Adult, Adult and Elder
+* Children
+* Toddler
+* Infants
+* Babies
+* Unknown (non-sims, could be pets - not tested)
 
 There are five clipboards [0..4] for the outfits. Each sim can have up to five outfits [0..4] for each normal category and 1 to 5 for special categories.
 
@@ -96,14 +97,15 @@ This mod has been inspired by 'Copy Any Outfit'. All code has been written from 
 # Addendum
 
 ## Game compatibility
-This mod has been tested with `The Sims 4` 1.105.332, S4CL 3.0, TS4Lib 0.2.0 (2024-02).
+This mod has been tested with `The Sims 4` 1.106.148, S4CL 3.3, TS4Lib 0.2.0 (2024-02).
 It is expected to be compatible with many upcoming releases of TS4, S4CL and TS4Lib.
 
 ## Dependencies
-* [The Sims 4](https://www.ea.com/games/the-sims/the-sims-4)
-* [This Mod](./releases/latest)
+Download the ZIP file, not the sources.
+* [This Mod](../../releases/latest)
 * [TS4-Library](https://github.com/Oops19/TS4-Library/releases/latest)
 * [S4CL](https://github.com/ColonolNutty/Sims4CommunityLibrary/releases/latest)
+* [The Sims 4](https://www.ea.com/games/the-sims/the-sims-4)
 
 If not installed download and install TS4 and these mods.
 All are available for free.
