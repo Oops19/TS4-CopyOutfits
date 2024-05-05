@@ -84,20 +84,23 @@ There are six groups to store outfits:
 
 There are five clipboards [0..4] for the outfits. Each sim can have up to five outfits [0..4] for each normal category and 1 to 5 for special categories.
 
-### History:
-This mod has been inspired by 'Copy Any Outfit'. All code has been written from scratch.
+### History
+This mod has been inspired by 'Copy Any Outfit' by scumbumbo. All code has been written from scratch.
 
-### Update 2023-06
-1.0.2 Conversion / update of links
-1.0.1 Fix LE caused by non-functional code
-1.0.0 Supports infants.
-
-
+## Images
+![Menu 1](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_1.png)
+![Menu 2](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_2.png)
+![Menu 3](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_3.png)
+![Menu 4](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_4.png)
+![Transfer 1](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_1.png)
+![Transfer 2](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_1.png)
+![Transfer 3](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_1.png)
+![Transfer 4](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_1.png)
 
 # Addendum
 
 ## Game compatibility
-This mod has been tested with `The Sims 4` 1.106.148, S4CL 3.3, TS4Lib 0.2.0 (2024-02).
+This mod has been tested with `The Sims 4` 1.106.148, S4CL 3.3, TS4Lib 0.3.14 (2024-04).
 It is expected to be compatible with many upcoming releases of TS4, S4CL and TS4Lib.
 
 ## Dependencies
