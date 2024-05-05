@@ -88,14 +88,14 @@ There are five clipboards [0..4] for the outfits. Each sim can have up to five o
 This mod has been inspired by 'Copy Any Outfit' by scumbumbo. All code has been written from scratch.
 
 ## Images
+![Menu 4](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_4.png)
 ![Menu 1](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_1.png)
 ![Menu 2](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_2.png)
 ![Menu 3](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_3.png)
-![Menu 4](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_4.png)
 ![Transfer 1](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_1.png)
-![Transfer 2](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_1.png)
-![Transfer 3](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_1.png)
-![Transfer 4](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_1.png)
+![Transfer 2](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_2.png)
+![Transfer 3](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_3.png)
+![Transfer 4](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_4.png)
 
 # Addendum
 
