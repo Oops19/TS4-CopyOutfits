@@ -45,7 +45,7 @@ from sims4communitylib.utils.localization.common_localization_utils import Commo
 from sims4communitylib.utils.localization.common_localized_string_colors import CommonLocalizedStringColor
 from sims4communitylib.utils.sims.common_sim_utils import CommonSimUtils
 
-log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity().name, 'interactions')
+log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), 'interactions')
 log.enable()
 
 

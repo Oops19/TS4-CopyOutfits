@@ -15,7 +15,7 @@ from ts4lib.utils.singleton import Singleton
 from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegistry
 
 
-log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity().name, ModInfo.get_identity().name)
+log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), ModInfo.get_identity().name)
 log.enable()
 
 
