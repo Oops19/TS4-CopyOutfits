@@ -88,5 +88,5 @@ class _RegisterOutfitTools_Copy_Outfits_0(CommonScriptObjectInteractionHandler):
 
     def should_add(self, script_object: ScriptObject, *args, **kwargs) -> bool:
         if not CommonTypeUtils.is_sim_instance(script_object):
-            return False # If the object is not a Sim, return False.
+            return False  # If the object is not a Sim, return False.
         return True
