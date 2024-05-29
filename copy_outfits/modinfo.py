@@ -28,10 +28,10 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.0.5'
+        return '1.0.6'
 
 
-'''
+r'''
 TODO Far Future
     Add Pie Menu to paste with filter
         Show a picker to select the outfit groups and then the BodyParts to delete one after the other
@@ -43,6 +43,8 @@ TODO New Features
     Split FACE and BODY modifiers/sliders
     Implement support to append a new (or replace 5th) outfit
 
+v1.0.6
+    Tested with TS4 v1.107
 V1.0.5
     Imports cleaned up
 V1.0.4
