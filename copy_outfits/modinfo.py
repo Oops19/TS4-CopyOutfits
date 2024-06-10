@@ -45,9 +45,9 @@ TODO New Features
 
 v1.0.6
     Tested with TS4 v1.107
-V1.0.5
+v1.0.5
     Imports cleaned up
-V1.0.4
+v1.0.4
     Added INFANT
     Added PET and BABY (likely never needed)
 v1.0.3

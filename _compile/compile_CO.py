@@ -1,5 +1,5 @@
-# compile.sh version 2.0.19
-
+# compile.sh version 2.0.23
+import datetime
 # This file searches from the parent directory for 'modinfo.py' in it or in any subdirectory.
 # Make sure to have only one 'modinfo.py' in your project directory. The first found 'modinfo.py' is used and loaded.
 
@@ -17,6 +17,7 @@ import ast
 import sys
 import shutil
 from typing import Tuple, Dict, Any
+from datetime import date
 
 from Utilities.unpyc3_compiler import Unpyc3PythonCompiler
 
@@ -42,6 +43,7 @@ except:
 
 beta_appendix = "-beta"  # or "-test-build"
 
+modinfo = None
 modinfo_py = 'modinfo.py'
 init_py = '__init__.py'
 init = ''
@@ -66,8 +68,7 @@ for root, dirs, files in os.walk('..'):
             from modinfo import ModInfo
 
             mi = ModInfo.get()
-            print(
-                f"Imported data for '{mi._author}:{mi._name}' from '../{mi._base_namespace}' with version '{mi._version}'")
+            print(f"Imported data for '{mi._author}:{mi._name}' from '../{mi._base_namespace}' with version '{mi._version}'")
             break
         except Exception as e:
             print(f"Error importing '{modinfo_py}' ({e}).")
@@ -82,6 +83,10 @@ mod_name = mi._name
 mod_directory = mi._base_namespace
 version = mi._version  # All versions 0., x.1, x.3, x.5, x.7, x.9 (also x.1.y, x.1.y.z) will be considered beta and the 'beta_appendix' gets appended.
 
+if not version:
+    print(f"Version not set, exiting")
+    exit(1)
+
 try:
     # S4CL_VERSION
     s4cl_modinfo_py = os.path.join('..', '..', 'Libraries', 'sims4communitylib', 'modinfo.py')
@@ -94,13 +99,42 @@ except Exception as e:
     print(f"Error reading S4CL ({e}).")
     exit(1)
 
-if add_readme:
-    file_game_version = 'c:' + os.sep + os.path.join(os.environ['HOMEPATH'], 'Documents', 'Electronic Arts',
-                                                     'The Sims 4', 'GameVersion.txt')
-    with open(file_game_version, 'rb') as fp:
-        _game_version = fp.read()
-        game_version = _game_version[4:].rsplit(b'.', 1)[0].decode('ASCII')
 
+release_directory = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(os.getcwd()))), 'Release')
+mod_base_directory = os.path.join(release_directory, mod_name)
+ts4_directory = os.path.join(mod_base_directory, 'Mods', f"_{author}_")
+src_folder = os.path.join(os.path.dirname(os.path.abspath(os.getcwd())), '_TS4')
+
+# Add version to mod_documentation/{mod_directory}/version.txt
+file_game_version = os.path.join('c:', os.sep, os.environ['HOMEPATH'], 'Documents', 'Electronic Arts', 'The Sims 4', 'GameVersion.txt')
+with open(file_game_version, 'rb') as fp:
+    _game_version = fp.read()
+    game_version = _game_version[4:].rsplit(b'.', 1)[0].decode('ASCII')
+
+print(os.path.abspath(modinfo))
+modinfo_data = ''
+with open(modinfo, 'rt', encoding='UTF-8') as fp:
+    modinfo_contents = fp.read()
+    for line in modinfo_contents.split('\n'):
+        line = line.replace('\r', '')
+        if line.startswith(f"v{mi._version}"):
+            modinfo_data += f"{line}\n"
+        elif modinfo_data:
+            if line.startswith(f"v"):
+                break
+            else:
+                modinfo_data += f"{line}\n"
+
+version_file = os.path.join(mod_base_directory, 'mod_documentation', mod_directory, 'version.txt')
+version_info = f"{mod_name} v{version} created on {date.today()} for The Sims 4 v{game_version} and S4CL v{s4cl_version}"
+if os.path.exists(version_file):
+    fp = open(version_file, 'rt', encoding='UTF-8')
+    current_version_info = fp.readline().strip()
+    if current_version_info == version_info:
+        print(f"'{version_info}' already exists. Skipping creation!")
+        exit(101)
+
+if add_readme:
     file_readme = os.path.join('..', '.private', 'README.md')
     file_footer = os.path.join('..', '..', 'FOOTER.md')
     gitignore = os.path.join('..', '.gitignore')
@@ -128,15 +162,10 @@ if add_readme:
         print(f"Files missing: {file_readme} or {gitignore} or {file_footer}")
         exit(1)
 
-release_directory = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(os.getcwd()))), 'Release')
-mod_base_directory = os.path.join(release_directory, mod_name)
-
 if os.path.exists(mod_base_directory):
     shutil.rmtree(mod_base_directory)
 
-ts4_directory = os.path.join(mod_base_directory, 'Mods', f"_{author}_")
 
-src_folder = os.path.join(os.path.dirname(os.path.abspath(os.getcwd())), '_TS4')
 for folder in ['mod_data', 'mod_documentation', 'Mods', 'mod_sources']:
     try:
         if os.path.exists(os.path.join(src_folder, folder)):
@@ -155,6 +184,17 @@ if version:
         if re.match(r"^(?:0|(?:0|[1-9][0-9]*)\.[0-9]*[13579])(?:\.[0-9]+)*$", version):
             zip_file_name = f"{zip_file_name}{beta_appendix}"
 zip_file_name = f"{zip_file_name}{file_appendix}"
+
+# Add version info
+with open(version_file, 'wt', encoding='UTF-8') as fp:
+    fp.write(f"{version_info}\n")
+    fp.write(f"{modinfo_data}\n")
+
+# Save version also to _TS4:
+version_file = os.path.join(src_folder, 'mod_documentation', mod_directory, 'version.txt')
+with open(version_file, 'wt', encoding='UTF-8') as fp:
+    fp.write(f"{version_info}\n")
+    fp.write(f"{modinfo_data}\n")
 
 # Add source
 if include_sources:
@@ -190,7 +230,20 @@ for exclude_folder in exclude_folders:
 shutil.make_archive(os.path.join(release_directory, f"{zip_file_name}"), 'zip', mod_base_directory)
 print(f'Created {os.path.join(release_directory, f"{zip_file_name}.zip")}')
 
-'''
+
+r'''
+v2.0.23
+    Do version check against the release directory - without a release create a new one.
+v2.0.22
+    Save version.txt to both folders.
+v2.0.21
+    Add changes from modinfo.py to 'The Sims 4/mod_documentation/{mod_name}/version.txt'.
+    To make this work for `def _version(self): return '1.1' append comments to the file,
+    starting with '\nv1.1\n', then random change text and then '\nv1.0'
+v2.0.20
+    Add 'The Sims 4/mod_documentation/{mod_name}/version.txt' with game version and compile date.
+    If this file exists and the content matches nothing will be compiled.
+    Contents: Mod name and version, TS4 version, S4CL version
 v2.0.19
     Remove backup option as it doesn't help with locked directories
 v2.0.18
@@ -235,3 +288,5 @@ v2.0.3
 v2.0.2
     Add 'additional_directories = ('foo', )' to 'modinfo.py' to include also other directories ('foo' in this case).
 '''
+
+exit(100)

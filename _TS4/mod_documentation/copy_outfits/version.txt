@@ -1,0 +1,4 @@
+CopyOutfits v1.0.6 created on 2024-06-09 for The Sims 4 v1.107.151 and S4CL v3.4
+v1.0.6
+    Tested with TS4 v1.107
+
