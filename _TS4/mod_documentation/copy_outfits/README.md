@@ -1,6 +1,6 @@
 # Copy Outfits
-`Copy Outfits` allows to copy outfits and more. It is basically the same as [Outfit Tools - Copy Any Outfit v4](https://modthesims.info/d/541770/outfit-tools-copy-any-outfit-v4.html) 
-by scumbumbo while the code has been written from scratch and menu interactions have been added to replace the cheat console input.
+`Copy Outfits` allows to copy outfits and more.
+It is basically the same as 'Outfit Tools - Copy Any Outfit v4' by scumbumbo while the code has been written from scratch and menu interactions have been added to replace the cheat console input.
 With the current update the sims appearance can be cloned completely.
 
 It allows to copy outfits from one sim to the other and also to and from special categories.
@@ -9,6 +9,108 @@ Outfits for Teen, Young Adult, Adult and Elder are shared for these age groups.
 
 `Copy Outfits` is a 'hidden' debug menu as it is meant to fix issues or to prepare sims but not for normal game play.
 Enable cheats with `testingcheats true` to activate it and Shift-click on sims to use it.
+
+
+## Mannequins and other changes
+As of 2024-07 it offers experimental support for mannequins and some menus have been restructured.
+
+Some icons (128x128 px² DDS images) are broken on purpose as this is a beta mod (or a TS4 issue).
+
+All adult and child mannequins are supported.
+
+Pasting an outfit to a naked mannequin doesn't dress it. Such an outfit can't be bought by sims.
+
+### 'Add Outfits' (new)
+Select (or pick if at least one outfit exists) an outfit category like 'EVERYTHING'.
+The category will be filled with missing outfits until the limit is reached (0-4 for EVERYTHING, 0-2 for CAREER, ...).
+This allows to paste outfits to otherwise unavailable outfit slots.
+* `Copy Outfits > Add Outfits > Category | X-Category | Picker | X-Picker`
+* Available but not implemented: Picker | X-Picker
+
+
+## 'Skin tone' (new)
+The TS4 skin tone is not a CAS Part.
+Now it can be cloned while it is not the same as many 'CC skin tones and overlays' which usually use a body slot.
+
+* `Copy Outfits > Copy` to select the source sim.
+* `Copy Outfits > Clone > Characteristics > Skintone` to transfer the TS4 skin tone.
+* 
+
+### 'Mannequin > Add' (new)
+This menu is always visible while it only works if there is an outfit in the clipboard 0.
+A mannequin is added to the lot.
+
+In build-buy mode the number of allowed mannequins is limited.
+Adding to much of them makes it impossible to exit build-buy mode until the mannequins have been deleted.
+There are 3rd party mods available to increase this number.
+
+### 'Mannequin > Skins' (new)
+CC skin tones and/or overlays which are bound to the wrist, tattoo and/or other body locations can be transferred with `Clone > Everything` and/or `Clone > CAS Parts > All` and they will collide with skin parts applied to the head.
+Normally one will clone sim skins this way.
+
+The Skins should only be applied to mannequins without a skin as they are bound to the (mannequin) head.
+Skins don't work out of the box as this mod does not contain skins.
+It contains CAS parts to reference skins by other creators.
+Such skins usually do not contain 'underwear'.
+The vanilla 'Censor Grid' is not applied to mannequins but the default TS4 'Sexy Underwear' is applied to them.
+
+Skins can of course be applied to sims too, this might deform the head and binds the skin to the head.
+Probably not what you want.
+But it gives you the freedom to use all body slots normally as 'head' is usually not used.
+
+#### Supported 3rd party skins
+The normal versions (not overlay) are supported.
+These can be used normally for sims, and if installed also for mannequins (usually limited to one skin out of 30).
+* This Is Them
+  * TYAE Female: PamelaA, Rihanna, SalmaH, SelenaG 
+  * TYAE Female: Abény, Anok, Asha, Ashley, Clémentine, Divya, Hye-Jeong, Jenna, Nayla, Suzie, Yoon Young
+  * TYAE Male: A$AP, Dijbril, Jacob&Barry
+  * Child Female: 18, 19, 22, 23
+  * Chile Male: 17, 19, 23, 24
+* Dark Pink:
+  * TYAE Female: Miami Skin V1
+* JaySims
+  * TYAE Female: 7, 8
+
+### 'Clone'
+The 'Clone' menu offers now a global 'Everything' option and two menus for 'Characteristics' and/or 'CAS Parts'.
+The CAS Parts are grouped into:
+* Garment: Hat FullBody UpperBody LowerBody Shoes Cummerbund Gloves Socks Tights AttachmentBack 
+* Head: Head Teeth Eyecolor EyecolorSecondary SkindetailNoseColor Hair HaircolorOverride FacialHair 
+* Piercing: LipRingLeft LipRingRight NoseRingLeft NoseRingRight BrowRingLeft BrowRingRight 
+* Head Jewelry: Earrings Glasses Necklace 
+* Hand Jewelry: WristLeft WristRight IndexFingerLeft IndexFingerRight RingFingerLeft RingFingerRight MiddleFingerLeft MiddleFingerRight 
+* Head Paint: LipsTick EyeShadow EyeLiner Blush Facepaint Eyebrows Mascara 
+* Skin: SkinOverlay BodyhairArm BodyhairTorsofront BodyhairLeg BodyhairTorsoback 
+* Tattoo: TattooArmLowerLeft TattooArmUpperLeft TattooArmLowerRight TattooArmUpperRight TattooLegLeft TattooLegRight TattooTorsoBackLower TattooTorsoBackUpper TattooTorsoFrontLower TattooTorsoFrontUpper 
+* Nail Color: Fingernail Toenail  
+* Occults: OccultBrow OccultEyeSocket OccultEyeLid OccultMouth OccultLeftCheek OccultRightCheek OccultNeckScar 
+* Scars: ForearmScar BodyscarArmleft BodyscarTorsofrontvalue, BodyscarLegleft BodyscarArmright BodyscarTorsoback BodyscarLegright 
+* Other: Acne SkindetailAcnePuberty SkindetailFreckles Bodyfreckles SkindetailDimpleLeft SkindetailDimpleRight Bite Scarface 
+* Mole / Crease: SkindetailMoleLipLeft SkindetailMoleLipRight SkindetailMoleCheekLeft SkindetailMoleCheekRight SkindetailCreaseMouth SkindetailCreaseForehead Moleface Molechestupper Molebackupper  
+* Marks: Birthmarkface Birthmarktorsofront Birthmarktorsoback StretchmarksFront StretchmarksBack Birthmarkarms Birthmarklegs 
+* Horse: Saddle Bridle Reins Blanket SkindetailHoofColor HairMane HairTail HairForelock HairFeathers Horn TailBase 
+* Pet: FurBody Ears Tail 
+
+The Characteristics are grouped into:
+* Age Gender
+* ~~Genetics~~
+* Physics & Genetics
+* Sliders
+* Walkstyle
+* ~~Traits~~
+* ~~Skills~~
+* Skintone (the TS4 skin tone, see above)
+
+The Skin menu contains:
+* Same Skin - To apply the same skin again
+* Next Skin - To apply the next skin
+* Previous Skin - To apply the previous skin
+* Random Skin - To apply a random skin
+
+
+# Previous version
+Everything new is above. Everything below should still work in this version.
 
 ## Menu 'Copy Outfits'
 * The most simple option is to use 'Copy' to copy the current outfit to the internal clipboard #0 and 'Paste' to paste from #0 to the current outfit.

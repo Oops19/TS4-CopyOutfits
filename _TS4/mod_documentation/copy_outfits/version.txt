@@ -1,4 +1,16 @@
-CopyOutfits v1.0.6 created on 2024-06-09 for The Sims 4 v1.107.151 and S4CL v3.4
-v1.0.6
-    Tested with TS4 v1.107
+CopyOutfits v1.9.0 for The Sims 4 v1.107.151 and S4CL v3.4
+Created on 2024-07-04
+v1.9.0
+    Experimental support for mannequins
+    TS4lib requires an update.
+    This mod doesn't create a new outfit (dress the mannequin) when replacing the 'bathing' outfit.
+    Most useful interactions: 'Clone > Everything', 'Mannequin > Skins | Add'
+    'Clone > Characteristics' may require a 'Reset' to apply these.
+    Allow to add non-existing outfits to sims.
+    Allow to de-/spawn mannequins on the floor, also off-lot.
+    Fixed Age.PET
+    Added Age.HORSE
+    Added X-OutfitCategory.SPECIAL[FASHION]
+    Outfit order is now: BATHING; SITUATION; CAREER.[0-2]; SPECIAL.[DEFAULT,TOWEL,FASHION]; BATUU.[0-4] with picker hint notification.
+    Address exception "_on_outfit_change() 'missing 2 required positional arguments: 'sim_info_wrapper' and 'outfit_category_and_index'" within a 3rd party mod.
 

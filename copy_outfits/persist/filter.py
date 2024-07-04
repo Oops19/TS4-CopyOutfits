@@ -10,12 +10,12 @@ from copy_outfits.enums.outfit_groups import OutfitGroups
 from copy_outfits.enums.physic_filters import PhysicFilters
 from copy_outfits.enums.various_filters import VariousFilters
 from copy_outfits.modinfo import ModInfo
-from ts4lib.common_enums.body_part import BodyPart
+from ts4lib.common_enums.body_type import BodyType
 from ts4lib.utils.singleton import Singleton
 from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegistry
 
 
-log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), ModInfo.get_identity().name)
+log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), 'Filter')
 log.enable()
 
 
@@ -34,12 +34,12 @@ class Filter(object, metaclass=Singleton):
         @param body_parts: False to filter nothing; True to filter all body parts; List[str] to specify individual body parts
         """
         if body_parts is True:
-            self._filter_body_parts = {e.value for e in BodyPart}
+            self._filter_body_parts = {e.value for e in BodyType}
         elif body_parts is False:
             self._filter_body_parts = {}
         elif body_parts:
             for body_part in body_parts:
-                bp = getattr(BodyPart, body_part)
+                bp = getattr(BodyType, body_part)
                 if bp:
                     self._filter_body_parts.add(bp.value)
         log.debug(f"Excluded BodyPart IDs: {self._filter_body_parts}")
@@ -50,7 +50,7 @@ class Filter(object, metaclass=Singleton):
         """
         if body_parts:
             for body_part in body_parts:
-                bp = getattr(BodyPart, body_part)
+                bp = getattr(BodyType, body_part)
                 if bp and bp in self._filter_body_parts:
                     self._filter_body_parts.remove(bp)
         log.debug(f"Excluded BodyPart IDs: {self._filter_body_parts}")
@@ -70,7 +70,7 @@ class Filter(object, metaclass=Singleton):
         @param attributes: False to filter nothing; True to filter all attributes; List[str] to specify individual attributes
         """
         if attributes is True:
-            self._filter_body_parts = {e.value for e in BodyPart}
+            self._filter_body_parts = {e.value for e in BodyType}
         elif attributes is False:
             self._filter_body_parts = {}
         elif attributes:
@@ -93,7 +93,7 @@ class Filter(object, metaclass=Singleton):
         @param physiques: False to filter nothing; True to filter all physiques; List[str] to specify individual physiques
         """
         if physiques is True:
-            self._filter_body_parts = {e.value for e in BodyPart}
+            self._filter_body_parts = {e.value for e in BodyType}
         elif physiques is False:
             self._filter_body_parts = {}
         elif physiques:

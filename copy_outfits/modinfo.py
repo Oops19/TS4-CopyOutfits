@@ -28,21 +28,34 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.0.6'
+        return '1.9.0'
 
 
 r'''
-TODO Far Future
+IDEAS for the far future
     Add Pie Menu to paste with filter
         Show a picker to select the outfit groups and then the BodyParts to delete one after the other
         Show a picker to define what to filter - replace the cheat command
-        
-TODO New Features
-    Clone relationships
-    Implement support for filters
+    Clone buffs and/or relationship bits
     Split FACE and BODY modifiers/sliders
-    Implement support to append a new (or replace 5th) outfit
 
+TODO
+    Load and Save outfits
+    Read config files / support user defined skins
+    
+v1.9.0
+    Experimental support for mannequins
+    TS4lib requires an update.
+    This mod doesn't create a new outfit (dress the mannequin) when replacing the 'bathing' outfit.
+    Most useful interactions: 'Clone > Everything', 'Mannequin > Skins | Add'
+    'Clone > Characteristics' may require a 'Reset' to apply these.
+    Allow to add non-existing outfits to sims.
+    Allow to de-/spawn mannequins on the floor, also off-lot.
+    Fixed Age.PET
+    Added Age.HORSE
+    Added X-OutfitCategory.SPECIAL[FASHION]
+    Outfit order is now: BATHING; SITUATION; CAREER.[0-2]; SPECIAL.[DEFAULT,TOWEL,FASHION]; BATUU.[0-4] with picker hint notification.
+    Address exception "_on_outfit_change() 'missing 2 required positional arguments: 'sim_info_wrapper' and 'outfit_category_and_index'" within a 3rd party mod.
 v1.0.6
     Tested with TS4 v1.107
 v1.0.5

@@ -12,7 +12,7 @@ from copy_outfits.enums.various_filters import VariousFilters
 from copy_outfits.persist.filter import Filter
 from copy_outfits.modinfo import ModInfo
 
-from ts4lib.common_enums.body_part import BodyPart
+from ts4lib.common_enums.body_type import BodyType
 
 from sims4communitylib.services.commands.common_console_command import CommonConsoleCommand, CommonConsoleCommandArgument
 from sims4communitylib.services.commands.common_console_command_output import CommonConsoleCommandOutput
@@ -86,7 +86,7 @@ o19.cpo.filter disable  # Disable the filters temporarily. Each modification ena
 o19.cpo.filter enable  # Enable temporarily disabled filters.
 o19.cpo.filter exclude "bp=... og=... v=... ph=..."  # Define exclude filters
 o19.cpo.filter include "bp=... og=... v=... ph=..."  # Define include filters""")
-                _a = {e.key for e in BodyPart}
+                _a = {e.key for e in BodyType}
                 log.info(f"BodyParts BP: {_a}")
                 for _s in 'body_paint cloth hand_accessories head_accessories head_paint head_piercings occult_scars pet unknown sim'.split(' '):
                     log.info(f"OutfitGroup OG: {_s}={getattr(OutfitGroups, _s)}")

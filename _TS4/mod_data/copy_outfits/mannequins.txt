@@ -1,0 +1,16 @@
+{
+   CopyOutfitsAge.TYAE: {
+        True: [71052, 75022, 75023, 75024, 75025, 75026, 75027, 75028, 75029, 75030, ],  # Female
+        False: [71054, 75031, 75032, 75033, 75034, 75035, 75036, 75037, 75038, 75039, ],  # Male
+    },
+    CopyOutfitsAge.CHILD: {
+        True: [71056, 75040, 75041, 75042, 75043, 75044, 75045, 75046, 75047, 75048, ],  # Female
+        False: [71059, 75049, 75050, 75051, 75052, 75053, 75054, 75055, 75056, 75057, ],  # Male
+    },
+}
+
+# Currently this file is not read!
+
+# It defines the mannequin IDs which will be used to spawn a mannequin.
+# These are currently for yf, ym, cf and/or cm: 10 realistic mannequins in different colors.
+# 4x 10 more 'abstract mannequins' could be added.

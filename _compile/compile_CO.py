@@ -1,4 +1,4 @@
-# compile.sh version 2.0.23
+# compile.sh version 2.0.24
 import datetime
 # This file searches from the parent directory for 'modinfo.py' in it or in any subdirectory.
 # Make sure to have only one 'modinfo.py' in your project directory. The first found 'modinfo.py' is used and loaded.
@@ -126,7 +126,7 @@ with open(modinfo, 'rt', encoding='UTF-8') as fp:
                 modinfo_data += f"{line}\n"
 
 version_file = os.path.join(mod_base_directory, 'mod_documentation', mod_directory, 'version.txt')
-version_info = f"{mod_name} v{version} created on {date.today()} for The Sims 4 v{game_version} and S4CL v{s4cl_version}"
+version_info = f"{mod_name} v{version} for The Sims 4 v{game_version} and S4CL v{s4cl_version}"
 if os.path.exists(version_file):
     fp = open(version_file, 'rt', encoding='UTF-8')
     current_version_info = fp.readline().strip()
@@ -188,12 +188,14 @@ zip_file_name = f"{zip_file_name}{file_appendix}"
 # Add version info
 with open(version_file, 'wt', encoding='UTF-8') as fp:
     fp.write(f"{version_info}\n")
+    fp.write(f"Created on {date.today()}\n")
     fp.write(f"{modinfo_data}\n")
 
 # Save version also to _TS4:
 version_file = os.path.join(src_folder, 'mod_documentation', mod_directory, 'version.txt')
 with open(version_file, 'wt', encoding='UTF-8') as fp:
     fp.write(f"{version_info}\n")
+    fp.write(f"Created on {date.today()}\n")
     fp.write(f"{modinfo_data}\n")
 
 # Add source
@@ -232,6 +234,8 @@ print(f'Created {os.path.join(release_directory, f"{zip_file_name}.zip")}')
 
 
 r'''
+v2.0.24
+    Removed date from version.txt (line 1) to compile only new mod versions, not daily.
 v2.0.23
     Do version check against the release directory - without a release create a new one.
 v2.0.22

@@ -1,81 +1,126 @@
 #
 # LICENSE https://creativecommons.org/licenses/by/4.0/ https://creativecommons.org/licenses/by/4.0/legalcode
-# © 2023 https://github.com/Oops19
+# © 2024 https://github.com/Oops19
 #
 
 
-from ts4lib.common_enums.body_part import BodyPart
-from ts4lib.utils.singleton import Singleton
+from ts4lib.common_enums.body_type import BodyType
+from ts4lib.common_enums.enum_types.common_enum import CommonEnum
 
 
-class OutfitGroups(object, metaclass=Singleton):
+class OutfitGroups(CommonEnum):
 
-    body_paint = [
-        BodyPart.TATTOO_ARM_LOWER_LEFT.value, BodyPart.TATTOO_ARM_UPPER_LEFT.value,
-        BodyPart.TATTOO_ARM_LOWER_RIGHT.value, BodyPart.TATTOO_ARM_UPPER_RIGHT.value,
-        BodyPart.TATTOO_LEG_LEFT.value, BodyPart.TATTOO_LEG_RIGHT.value,
-        BodyPart.TATTOO_TORSO_BACK_LOWER.value, BodyPart.TATTOO_TORSO_BACK_UPPER.value,
-        BodyPart.TATTOO_TORSO_FRONT_LOWER.value, BodyPart.TATTOO_TORSO_FRONT_UPPER.value,
-        BodyPart.SKIN_OVERLAY.value,
-        BodyPart.FINGERNAIL.value, BodyPart.TOENAIL.value,
+    PET_ALL = [
+        BodyType.FUR_BODY.value, BodyType.EARS.value, BodyType.TAIL.value,
     ]
 
-    cloth = [
-        BodyPart.HAT.value, BodyPart.FULL_BODY.value, BodyPart.UPPER_BODY.value, BodyPart.LOWER_BODY.value,
-        BodyPart.SHOES.value, BodyPart.CUMMERBUND.value, BodyPart.GLOVES.value, BodyPart.SOCKS.value, BodyPart.TIGHTS.value,
-        BodyPart.ATTACHMENT_BACK.value,
+    HORSE_ALL = [
+        BodyType.SADDLE.value, BodyType.BRIDLE.value, BodyType.REINS.value, BodyType.BLANKET.value,
+        BodyType.SKINDETAIL_HOOF_COLOR.value, BodyType.HAIR_MANE.value, BodyType.HAIR_TAIL.value, BodyType.HAIR_FORELOCK.value,
+        BodyType.HAIR_FEATHERS.value, BodyType.HORN.value, BodyType.TAIL_BASE.value,
+    ]
+    SIM_GARMENT = [
+        BodyType.HAT.value, BodyType.FULL_BODY.value, BodyType.UPPER_BODY.value, BodyType.LOWER_BODY.value,
+        BodyType.SHOES.value, BodyType.CUMMERBUND.value, BodyType.GLOVES.value, BodyType.SOCKS.value, BodyType.TIGHTS.value,
+        BodyType.ATTACHMENT_BACK.value,
+    ]
+    SIM_HEAD_DETAILS = [
+        BodyType.HEAD.value, BodyType.TEETH.value,
+        BodyType.EYECOLOR.value, BodyType.EYECOLOR_SECONDARY.value,
+        BodyType.SKINDETAIL_NOSE_COLOR.value,
+    ]
+    SIM_HEAD_HAIR = [
+        BodyType.HAIR.value, BodyType.HAIRCOLOR_OVERRIDE.value, BodyType.FACIAL_HAIR.value,
+    ]
+    SIM_HEAD = SIM_HEAD_DETAILS + SIM_HEAD_HAIR
+    SIM_HEAD_PAINT = [
+        BodyType.LIPS_TICK.value, BodyType.EYE_SHADOW.value, BodyType.EYE_LINER.value, BodyType.BLUSH.value,
+        BodyType.FACEPAINT.value, BodyType.EYEBROWS.value, BodyType.MASCARA.value,
     ]
 
-    hand_accessories = [
-        BodyPart.WRIST_LEFT.value, BodyPart.WRIST_RIGHT.value, BodyPart.INDEX_FINGER_LEFT.value, BodyPart.INDEX_FINGER_RIGHT.value,
-        BodyPart.RING_FINGER_LEFT.value, BodyPart.RING_FINGER_RIGHT.value, BodyPart.MIDDLE_FINGER_LEFT.value, BodyPart.MIDDLE_FINGER_RIGHT
+    SIM_PIERCING = [
+        BodyType.LIP_RING_LEFT.value, BodyType.LIP_RING_RIGHT.value, BodyType.NOSE_RING_LEFT.value, BodyType.NOSE_RING_RIGHT.value,
+        BodyType.BROW_RING_LEFT.value, BodyType.BROW_RING_RIGHT.value,
+    ]
+    SIM_HEAD_JEWELRY = [
+        BodyType.EARRINGS.value, BodyType.GLASSES.value, BodyType.NECKLACE.value,
+    ]
+    SIM_HAND_JEWELRY = [
+        BodyType.WRIST_LEFT.value, BodyType.WRIST_RIGHT.value, BodyType.INDEX_FINGER_LEFT.value, BodyType.INDEX_FINGER_RIGHT.value,
+        BodyType.RING_FINGER_LEFT.value, BodyType.RING_FINGER_RIGHT.value, BodyType.MIDDLE_FINGER_LEFT.value, BodyType.MIDDLE_FINGER_RIGHT
+    ]
+    SIM_ALL_JEWELRY = SIM_HEAD_JEWELRY + SIM_HAND_JEWELRY + SIM_PIERCING
+
+    SIM_BODY_HAIR = [
+        BodyType.BODYHAIR_ARM.value, BodyType.BODYHAIR_TORSOFRONT.value,
+        BodyType.BODYHAIR_LEG.value, BodyType.BODYHAIR_TORSOBACK.value,
+    ]
+    SIM_SKIN_OVERLAY = [
+        BodyType.SKIN_OVERLAY.value,
+    ]
+    SIM_SKIN = SIM_SKIN_OVERLAY + SIM_BODY_HAIR
+
+    SIM_TATTOO = [
+        BodyType.TATTOO_ARM_LOWER_LEFT.value, BodyType.TATTOO_ARM_UPPER_LEFT.value,
+        BodyType.TATTOO_ARM_LOWER_RIGHT.value, BodyType.TATTOO_ARM_UPPER_RIGHT.value,
+        BodyType.TATTOO_LEG_LEFT.value, BodyType.TATTOO_LEG_RIGHT.value,
+        BodyType.TATTOO_TORSO_BACK_LOWER.value, BodyType.TATTOO_TORSO_BACK_UPPER.value,
+        BodyType.TATTOO_TORSO_FRONT_LOWER.value, BodyType.TATTOO_TORSO_FRONT_UPPER.value,
     ]
 
-    head_accessories = [
-        BodyPart.EARRINGS.value, BodyPart.GLASSES.value, BodyPart.NECKLACE.value,
+    SIM_NAIL_COLOR = [
+        BodyType.FINGERNAIL.value, BodyType.TOENAIL.value,
+    ]
+    SIM_ALL_BODY_PAINT = SIM_TATTOO + SIM_NAIL_COLOR
+
+    SIM_OCCULTS = [
+        BodyType.OCCULT_BROW.value, BodyType.OCCULT_EYE_SOCKET.value, BodyType.OCCULT_EYE_LID.value, BodyType.OCCULT_MOUTH.value,
+        BodyType.OCCULT_LEFT_CHEEK.value, BodyType.OCCULT_RIGHT_CHEEK.value, BodyType.OCCULT_NECK_SCAR.value,
+    ]
+    SIM_SCARS = [
+        BodyType.FOREARM_SCAR.value,
+        BodyType.BODYSCAR_ARMLEFT.value, BodyType.BODYSCAR_TORSOFRONTvalue, BodyType.BODYSCAR_LEGLEFT.value,
+        BodyType.BODYSCAR_ARMRIGHT.value, BodyType.BODYSCAR_TORSOBACK.value, BodyType.BODYSCAR_LEGRIGHT.value,
+    ]
+    SIM_ALL_OCCULT_SCARS = SIM_OCCULTS + SIM_SCARS
+
+    SIM_OTHER = [
+        BodyType.ACNE.value, BodyType.SKINDETAIL_ACNE_PUBERTY.value, BodyType.SKINDETAIL_FRECKLES.value, BodyType.BODYFRECKLES.value,
+        BodyType.SKINDETAIL_DIMPLE_LEFT.value, BodyType.SKINDETAIL_DIMPLE_RIGHT.value,
+        BodyType.BITE.value, BodyType.SCARFACE.value,
     ]
 
-    head_paint = [
-        BodyPart.LIPS_TICK.value, BodyPart.EYE_SHADOW.value, BodyPart.EYE_LINER.value, BodyPart.BLUSH.value,
-        BodyPart.FACEPAINT.value, BodyPart.EYEBROWS.value, BodyPart.MASCARA.value,
+    SIM_MOLE_CREASE = [
+        BodyType.SKINDETAIL_MOLE_LIP_LEFT.value, BodyType.SKINDETAIL_MOLE_LIP_RIGHT.value, BodyType.SKINDETAIL_MOLE_CHEEK_LEFT.value, BodyType.SKINDETAIL_MOLE_CHEEK_RIGHT.value,
+        BodyType.SKINDETAIL_CREASE_MOUTH.value, BodyType.SKINDETAIL_CREASE_FOREHEAD.value,
+        BodyType.MOLEFACE.value, BodyType.MOLECHESTUPPER.value, BodyType.MOLEBACKUPPER.value,
+    ]
+    SIM_MARKS = [
+        BodyType.BIRTHMARKFACE.value,
+        BodyType.BIRTHMARKTORSOFRONT.value, BodyType.BIRTHMARKTORSOBACK.value,
+        BodyType.STRETCHMARKS_FRONT.value, BodyType.STRETCHMARKS_BACK.value,
+        BodyType.BIRTHMARKARMS.value, BodyType.BIRTHMARKLEGS.value,
     ]
 
-    head_piercings = [
-        BodyPart.LIP_RING_LEFT.value, BodyPart.LIP_RING_RIGHT.value, BodyPart.NOSE_RING_LEFT.value, BodyPart.NOSE_RING_RIGHT.value,
-        BodyPart.BROW_RING_LEFT.value, BodyPart.BROW_RING_RIGHT.value,
-    ]
+    SIM_ALL = SIM_HEAD + SIM_HEAD_HAIR + SIM_BODY_HAIR + SIM_GARMENT + \
+        SIM_PIERCING + SIM_HEAD_JEWELRY + SIM_HAND_JEWELRY + SIM_HEAD_PAINT + \
+        SIM_TATTOO + SIM_SKIN + SIM_NAIL_COLOR + \
+        SIM_OCCULTS + SIM_SCARS + \
+        SIM_OTHER + SIM_MOLE_CREASE + SIM_MARKS
 
-    occult_scars = [
-        BodyPart.OCCULT_BROW.value, BodyPart.OCCULT_EYE_SOCKET.value, BodyPart.OCCULT_EYE_LID.value, BodyPart.OCCULT_MOUTH.value,
-        BodyPart.OCCULT_LEFT_CHEEK.value, BodyPart.OCCULT_RIGHT_CHEEK.value, BodyPart.OCCULT_NECK_SCAR.value, BodyPart.FOREARM_SCAR.value,
-    ]
-
-    pet = [
-        BodyPart.FUR_BODY.value, BodyPart.EARS.value, BodyPart.TAIL.value,
-    ]
-
-    sim = [
-        BodyPart.HEAD.value, BodyPart.TEETH.value,
-        BodyPart.HAIR.value, BodyPart.HAIRCOLOR_OVERRIDE.value, BodyPart.FACIAL_HAIR.value, BodyPart.EYECOLOR.value,
-        BodyPart.SKINDETAIL_CREASE_FOREHEAD.value, BodyPart.SKINDETAIL_FRECKLES.value, BodyPart.SKINDETAIL_DIMPLE_LEFT.value,
-        BodyPart.SKINDETAIL_DIMPLE_RIGHT.value, BodyPart.SKINDETAIL_MOLE_LIP_LEFT.value, BodyPart.SKINDETAIL_MOLE_LIP_RIGHT.value,
-        BodyPart.SKINDETAIL_MOLE_CHEEK_LEFT.value, BodyPart.SKINDETAIL_MOLE_CHEEK_RIGHT.value, BodyPart.SKINDETAIL_CREASE_MOUTH.value,
-        BodyPart.MOLEFACE.value, BodyPart.MOLECHESTUPPER.value, BodyPart.MOLEBACKUPPER.value,
-        BodyPart.BIRTHMARKFACE.value, BodyPart.BIRTHMARKTORSOBACK.value, BodyPart.BIRTHMARKTORSOFRONT.value, BodyPart.BIRTHMARKARMS.value, BodyPart.BIRTHMARKLEGS.value,
-        BodyPart.STRETCHMARKS_FRONT.value, BodyPart.STRETCHMARKS_BACK.value,
-        BodyPart.SKINDETAIL_NOSE_COLOR.value, BodyPart.EYECOLOR_SECONDARY.value,
-        BodyPart.BODYFRECKLES.value, BodyPart.SKINDETAIL_ACNE_PUBERTY.value, BodyPart.ACNE.value,
-        BodyPart.BODYHAIR_LEG.value, BodyPart.BODYHAIR_TORSOFRONT.value, BodyPart.BODYHAIR_TORSOBACK.value,  BodyPart.BODYHAIR_ARM.value, BodyPart.BODYSCAR_ARMLEFT.value, BodyPart.BODYSCAR_ARMRIGHT.value,
-        BodyPart.SCARFACE.value, BodyPart.BITE.value, BodyPart.BODYSCAR_TORSOFRONT.value, BodyPart.BODYSCAR_TORSOBACK.value, BodyPart.BODYSCAR_LEGLEFT.value, BodyPart.BODYSCAR_LEGRIGHT.value,
-    ]
+    EVERYTHING = None  # we use this instead of a very long list.
+    # EVERYTHING = [e.value for e in BodyType]
+    # EVERYTHING = SIM_ALL + PET_ALL + HORSE_ALL
 
     # Order as in PieMenuActionIds
-    # None | All | Body Paint | Cloth | Hand Accessories | Head Accessories | Head Paint | Head Piercings | Occult Scars | Pet | Sim
+    # None | Sim | Body Paint | Cloth | Hand Accessories | Head Accessories | Head Paint | Head Piercings | Occult Scars | Pet |
+    r'''
     parts = [
-        None,
-        body_paint + cloth + hand_accessories + head_accessories + head_paint + head_piercings + occult_scars + pet + sim,
-        body_paint, cloth, hand_accessories, head_accessories, head_paint, head_piercings, occult_scars, pet, sim
+        EVERYTHING,
+        SIM_ALL,
+        SIM_GARMENT, SIM_JEWELRY, SIM_HAND_ACCESSORIES, SIM_HEAD_PAINT, SIM_BODY_PAINT, SIM_PIERCING, SIM_OCCULTS_SCARS, PET, HORSE
     ]
+    '''
 
     outfit_categories = dict({
         0: 'Everyday',
