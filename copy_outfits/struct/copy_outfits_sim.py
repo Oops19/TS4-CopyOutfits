@@ -36,7 +36,7 @@ class CopyOutfitsSim:
         self.sim_info: Union[SimInfo, SimInfoBaseWrapper, None] = None
         self.sim_id: int = CopyOutfitsMannequin.SIM_ID_NONE.value
         self.sim_age: CopyOutfitsAge = CopyOutfitsAge.UNKNOWN
-        self.is_female: bool = None
+        self.is_female: Union[bool, None] = None
         self.mannequin_component: Union[MannequinComponent, None] = None
         self.sim_name = 'Unknown#Unknown'
         self.outfit_name = 'Unknown'
@@ -60,7 +60,7 @@ class CopyOutfitsSim:
             if f"{interaction_target}".startswith('object_Mannequin'):
                 self.mannequin_component = interaction_target.mannequin_component
                 self.sim_info = getattr(self.mannequin_component, '_sim_info_data', None)
-                self.sim_name = 'Mannequin'
+                self.sim_name = 'Mannequin#Mannequin'
 
                 if f"{interaction_target}".startswith('object_Mannequin_Adult'):
                     self.sim_id = CopyOutfitsMannequin.SIM_ID_MANNEQUIN_ADULT
@@ -88,7 +88,7 @@ class CopyOutfitsSim:
                 self.sim_info = None
                 self.sim_id = CopyOutfitsMannequin.SIM_ID_NONE.value
                 self.sim_age = CopyOutfitsAge.UNKNOWN
-                self.is_female: bool = None
+                self.is_female: Union[bool, None] = None
                 self.sim_name = 'Terrain#Terrain'
                 self.outfit_name = 'Terrain'
                 log.debug(f"TerrainPoint, setting only '{self.action}' and '{self.action_id}'")

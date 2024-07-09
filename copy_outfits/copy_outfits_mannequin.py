@@ -61,7 +61,7 @@ class CopyOutfitsMannequin:  # (metaclass=Singleton):
         elif zim.action_id in [PieMenuActionId.MANNEQUIN_ROTATE_ZERO, PieMenuActionId.MANNEQUIN_ROTATE_LEFT, PieMenuActionId.MANNEQUIN_ROTATE_RIGHT, ]:
             self.rotate_mannequin(zim, interaction_target)
 
-        elif  zim.action_id in [PieMenuActionId.MANNEQUIN_REMOVE, ]:
+        elif zim.action_id in [PieMenuActionId.MANNEQUIN_REMOVE, ]:
             self.destroy_mannequin(zim, interaction_target)
 
     def rotate_mannequin(self, zim: CopyOutfitsSim, interaction_target: Any):
@@ -182,7 +182,8 @@ class CopyOutfitsMannequin:  # (metaclass=Singleton):
             mannequin_component = zim.mannequin_component = game_object.mannequin_component
             sim_info = zim.sim_info = getattr(zim.mannequin_component, '_sim_info_data', None)
 
-            outfit_category = zim.outfit_category = random.randint(OutfitCategory.EVERYDAY.value, OutfitCategory.BATUU.value)  # (OutfitCategory.EVERYDAY.value, OutfitCategory.PARTY.value)== 5 = safe; (OutfitCategory.EVERYDAY.value, OutfitCategory.BATUU.value)  # 13 risky
+            # TODO (OutfitCategory.EVERYDAY.value, OutfitCategory.PARTY.value)== 5 = safe; (OutfitCategory.EVERYDAY.value, OutfitCategory.BATUU.value)  # 13 risky
+            outfit_category = zim.outfit_category = random.randint(OutfitCategory.EVERYDAY.value, OutfitCategory.BATUU.value)
             maximum_outfits = get_maximum_outfits_for_category(zim.outfit_category)
             outfit_index = zim.outfit_index = random.randint(0, maximum_outfits - 1)
 

@@ -66,7 +66,7 @@ These can be used normally for sims, and if installed also for mannequins (usual
   * TYAE Female: Abény, Anok, Asha, Ashley, Clémentine, Divya, Hye-Jeong, Jenna, Nayla, Suzie, Yoon Young
   * TYAE Male: A$AP, Dijbril, Jacob&Barry
   * Child Female: 18, 19, 22, 23
-  * Chile Male: 17, 19, 23, 24
+  * Child Male: 17, 19, 23, 24
 * Dark Pink:
   * TYAE Female: Miami Skin V1
 * JaySims

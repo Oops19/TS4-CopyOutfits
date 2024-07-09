@@ -81,7 +81,8 @@ class OutfitSkin(metaclass=Singleton):
             },
         }
         self.skin_store = SkinStore(self.config)
-# A78520CC00C7191C
+
+    # A78520CC00C7191C
     def apply_skin(self, zim: CopyOutfitsSim):
         sim_info = zim.sim_info
         outfit_category = zim.outfit_category

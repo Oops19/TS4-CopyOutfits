@@ -56,7 +56,7 @@ class ConfigReader:
             elif isinstance(v, str):
                 if re.match(r"([A-Z][A-Za-z]*\.[A-Z_]*)", v):
                     class_name, _, value = v.partition('.')
-                    if not class_name in self.classes.keys():
+                    if class_name not in self.classes.keys():
                         """ Here we could dynamically locate the enum class and add it to classes with importlib """
                     if class_name in self.classes.keys():
                         value = getattr(self.classes.get(class_name), value).value

@@ -189,8 +189,6 @@ class Main:
         outfit_category = zim.outfit_category
         outfit_index = zim.outfit_index
         clipboard_index = 0
-        # outfit_name = zim.outfit_name
-        mannequin_component = zim.mannequin_component
 
         new_parts = CopyOutfitUtilities().get_parts_from_clipboard(sim_age, clipboard_index)
         if not new_parts:
@@ -371,12 +369,12 @@ class Main:
             self.open_outfit_picker(zim, action, None, None)
         elif action_id == PieMenuActionId.X_PICKER:
             occult_type: CommonOccultType = CommonSimOccultTypeUtils.determine_current_occult_type(sim_info)
-            if zim.sim_age >= CopyOutfitsAge.PET:
+            if zim.sim_age in [CopyOutfitsAge.PET, CopyOutfitsAge.HORSE, ]:
                 log.warn(f"Pets, cats, dogs, foxes and/or horses shouldn't have special outfits (not supported by 'Copy Outfits').")
                 OutfitNotifications().show_notification(f"Animals have no special outfits.")
                 return True
-            if CommonOccultType.MERMAID == occult_type or CommonOccultType.ALIEN == occult_type:
-                log.warn(f"Occult '{occult_type}' might have no special outfits. Expect than an unexpected exception gets thrown.")
+            if occult_type in [CommonOccultType.MERMAID, CommonOccultType.ALIEN, ]:
+                log.warn(f"Occult '{occult_type}' might have no special outfits. Expect an 'unexpected'000ffffffff exception.")
             OutfitNotifications().show_notification(f"Categories: All | Bathing.0 | Situation.0 | Career.0-2 | Special.0/Towel/Fashion | Batuu.0-4 .")
             self.open_outfit_picker(
                 zim,
@@ -401,13 +399,6 @@ class Main:
                 OutfitNotifications().show_notification(f"No outfit found in clipboard [{clipboard_index}].")
 
     def copy_outfit(self, zim: CopyOutfitsSim):
-        r'''
-                self.action = PieMenuAction(_action)
-        self.action_id = PieMenuActionId(_action_id)
-        self.group_id = OutfitGroupId(_group_id)
-        @param zim:
-        @return:
-        '''
         sim_info = zim.sim_info
         sim_age = zim.sim_age
         sim_id = zim.sim_id

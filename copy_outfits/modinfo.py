@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.0'
+        return '1.9.3'
 
 
 r'''
@@ -43,6 +43,12 @@ TODO
     Load and Save outfits
     Read config files / support user defined skins
     
+v1.9.3
+    Add outfits instead replacing .0
+v1.9.2
+    Cleanup coe style
+v1.9.1
+    Fix menu order within 'Rotate'
 v1.9.0
     Experimental support for mannequins
     TS4lib requires an update.
@@ -50,7 +56,7 @@ v1.9.0
     Most useful interactions: 'Clone > Everything', 'Mannequin > Skins | Add'
     'Clone > Characteristics' may require a 'Reset' to apply these.
     Allow to add non-existing outfits to sims.
-    Allow to de-/spawn mannequins on the floor, also off-lot.
+    Allow to de-/spawn mannequins on terrain, also off-lot.
     Fixed Age.PET
     Added Age.HORSE
     Added X-OutfitCategory.SPECIAL[FASHION]

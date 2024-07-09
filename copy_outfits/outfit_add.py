@@ -72,7 +72,7 @@ class OutfitAdd:
             else:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_BATHING, )
 
-            CommonOutfitUtils.generate_outfit(sim_info, (outfit_category, 0), tag_list)
+            CommonOutfitUtils.generate_outfit(sim_info, (outfit_category, outfit_index), tag_list)
             num_outfits_created += 1
 
         log.debug(f"Added {num_outfits_created} '{outfit_category}' outfits to '{zim.sim_info}'")
