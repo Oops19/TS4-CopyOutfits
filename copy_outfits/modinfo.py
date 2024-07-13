@@ -46,7 +46,7 @@ TODO
 v1.9.3
     Add outfits instead replacing .0
 v1.9.2
-    Cleanup coe style
+    Cleanup code style
 v1.9.1
     Fix menu order within 'Rotate'
 v1.9.0
