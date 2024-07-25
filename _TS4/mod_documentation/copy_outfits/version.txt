@@ -1,6 +1,5 @@
-CopyOutfits v1.9.4 for The Sims 4 v1.108.329 and S4CL v3.5
+CopyOutfits v1.9.4 for The Sims 4 v1.108.329 and S4CL v3.6
 Created on 2024-07-25
 v1.9.4
     Rename MASCARA to EYELASHES (requires TS4T v0.3.24) 
-    Current version should work fine with old and new TS4T library, no need to update.
 
