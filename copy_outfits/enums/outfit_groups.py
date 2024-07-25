@@ -35,7 +35,7 @@ class OutfitGroups(CommonEnum):
     SIM_HEAD = SIM_HEAD_DETAILS + SIM_HEAD_HAIR
     SIM_HEAD_PAINT = [
         BodyType.LIPS_TICK.value, BodyType.EYE_SHADOW.value, BodyType.EYE_LINER.value, BodyType.BLUSH.value,
-        BodyType.FACEPAINT.value, BodyType.EYEBROWS.value, BodyType.MASCARA.value,
+        BodyType.FACEPAINT.value, BodyType.EYEBROWS.value, BodyType.EYELASHES.value,
     ]
 
     SIM_PIERCING = [

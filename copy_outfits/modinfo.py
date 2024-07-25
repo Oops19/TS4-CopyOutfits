@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.3'
+        return '1.9.4'
 
 
 r'''
@@ -43,6 +43,8 @@ TODO
     Load and Save outfits
     Read config files / support user defined skins
     
+v1.9.4
+    Rename MASCARA to EYELASHES (requires TS4T v0.3.24) 
 v1.9.3
     Add outfits instead replacing .0
 v1.9.2
