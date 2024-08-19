@@ -33,6 +33,7 @@ class OutfitPaste(metaclass=Singleton):
                 return outfit_index
         return outfit_index
 
+    # def copy(self, zim: CopyOutfitsSim, clipboard_index: int = 0, outfit_category: int = None, outfit_index: int = None) -> bool:
     def paste(self, zim: CopyOutfitsSim, valid_parts_ids, clipboard_index: int = 0, outfit_category: int = None, outfit_index: int = None, merge_parts: bool = False) -> bool:
         """
         @param zim: Copy parts from 'clipboard_index' to zim.sim_info outfit_category.outfit_index

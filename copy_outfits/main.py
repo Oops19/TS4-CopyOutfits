@@ -36,7 +36,6 @@ from sims4communitylib.dialogs.common_choose_outfit_dialog import CommonChooseOu
 from sims4communitylib.enums.common_occult_type import CommonOccultType
 from sims4communitylib.enums.traits_enum import CommonTraitId
 from sims4communitylib.services.sim.cas.common_sim_outfit_io import CommonSimOutfitIO
-from sims4communitylib.utils.cas.common_outfit_utils import CommonOutfitUtils
 from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegistry
 from sims4communitylib.utils.localization.common_localization_utils import CommonLocalizationUtils
 from sims4communitylib.utils.localization.common_localized_string_colors import CommonLocalizedStringColor
@@ -169,7 +168,8 @@ class Main:
                 log.warn(f"Outfit 'Copy' failed.")
 
         elif action == PieMenuAction.PASTE:
-            if OutfitPaste().paste(zim, clipboard_index, outfit_category, outfit_index):
+            valid_parts_ids = OutfitGroups.SIM_GARMENT.value  # Paste all outfit parts, nothing else.
+            if OutfitPaste().paste(zim, valid_parts_ids, clipboard_index, outfit_category, outfit_index):
                 pass
             else:
                 log.warn(f"Outfit 'Paste' failed.")

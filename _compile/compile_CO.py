@@ -1,5 +1,4 @@
-# compile.sh version 2.0.24
-import datetime
+# compile.sh version 2.0.25
 # This file searches from the parent directory for 'modinfo.py' in it or in any subdirectory.
 # Make sure to have only one 'modinfo.py' in your project directory. The first found 'modinfo.py' is used and loaded.
 
@@ -234,6 +233,8 @@ print(f'Created {os.path.join(release_directory, f"{zip_file_name}.zip")}')
 
 
 r'''
+v2.0.25
+    Remove unused import
 v2.0.24
     Removed date from version.txt (line 1) to compile only new mod versions, not daily.
 v2.0.23

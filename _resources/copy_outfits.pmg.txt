@@ -1,44 +1,68 @@
 {
     'author': 'o19',
     'mod_name': 'Copy Outfits',  # 'Copy Outfits',
-    'mod_folder': 'copy_outfits',  # All files in this folder will be deleted! Do not point to your mod folder.
+    'mod_folder': 'copy_outfits.pie',  # All files in this folder will be deleted! Do not point to your mod folder.
 
+    # PieMenuCategory: DDS Format: Compression: None, Mimpaps: None
     'PieMenuCategory': {
-        'Copy Outfits': {'display_priority': 10, 'icon': 'copy_outfit.dds', 'debug': True, },  # display_priority=0 >>> show on last page
-        'Copy Outfits/Transfer': {},  # All | Body Paint | Cloth | Hand Accessories | Head Accessories | Head Paint | Head Piercings | Occult Scars | Pet |  Sim
-        'Copy Outfits/X-Transfer': {},  # Age & Gender | Physics & Genetics | Genetics  # Sliders |Traits
+        # 'Copy Outfits': {'display_priority': DisplayPriority.HIGHEST, 'icon': 'copy_outfit.dds', 'debug': True, },  # display_priority=0 >>> show on last page
+        'Copy Outfits': {'display_priority': DisplayPriority.HIGHEST, 'icon': '00B2D882!00000000!CDAA68799250052C', 'debug': True, },  # display_priority=0 >>> show on last page
 
-        # No need to transfer single items
-        #'Copy Outfits/Transfer Item': {},  # All | Body Paint | Cloth | Hand Accessories | Head Accessories | Head Paint | Head Piercings | Occult Scars | Sim
-        #'Copy Outfits/Transfer/Body Paint': {},  # Tattoo_Arm_Lower_Left, Tattoo_Arm_Upper_Left,  Tattoo_Arm_Lower_Right, Tattoo_Arm_Upper_Right, Tattoo_Leg_Left, Tattoo_Leg_Right, Tattoo_Torso_Back_Lower, Tattoo_Torso_Back_Upper, Tattoo_Torso_Front_Lower, Tattoo_Torso_Front_Upper, Skin_Overlay, Acne, Fingernail, Toenail
-        #'Copy Outfits/Transfer/Cloth': {},  # Hat, Full_Body, Upper_Body, Lower_Body, Shoes, Cummerbund, Gloves, Socks, Tights
-        #'Copy Outfits/Transfer/Hand Accessories': {},  # Wrist_Left, Wrist_Right, Index_Finger_Left, Index_Finger_Right, Ring_Finger_Left, Ring_Finger_Right, Middle_Finger_Left, Middle_Finger_Right
-        #'Copy Outfits/Transfer/Head Accessories': {},  # Earrings, Glasses, Necklace
-        #'Copy Outfits/Transfer/Head Paint': {},  # Lips_Tick, Eye_Shadow, Eye_Liner, Blush, Facepaint, Eyebrows, Mascara
-        #'Copy Outfits/Transfer/Head Piercings': {},  # Lip_Ring_Left, Lip_Ring_Right, Nose_Ring_Left, Nose_Ring_Right, Brow_Ring_Left, Brow_Ring_Right
-        #'Copy Outfits/Transfer/Occult Scars': {},  # Occult_Brow, Occult_Eye_Socket, Occult_Eye_Lid, Occult_Mouth, Occult_Left_Cheek, Occult_Right_Cheek, Occult_Neck_Scar, Forearm_Scar
-        #'Copy Outfits/Transfer/Sim': {}, # Head, Teeth, Hair, Facial_Hair, Eyecolor, Skindetail_Crease_Forehead, Skindetail_Freckles, Skindetail_Dimple_Left, Skindetail_Dimple_Right, Skindetail_Mole_Lip_Left, Skindetail_Mole_Lip_Right, Skindetail_Mole_Cheek_Left, Skindetail_Mole_Cheek_Right, Skindetail_Crease_Mouth, Fur_Body, Ears, Tail, Skindetail_Nose_Color, Eyecolor_Secondary
-        #'Copy Outfits/Transfer/Pets: {}, # #  Fur_Body, Ears, Tail
-
-        'Copy Outfits/More': {'display_priority': 0, },  # Print Clipboard | Clear All
-        'Copy Outfits/More/Clear': {},  # [0..4]
-
-        'Copy Outfits/Copy': {'display_priority': 9, },  # Picker | X-Picker
+        'Copy Outfits/Copy': {'display_priority': DisplayPriority.HIGHEST, },  # Picker | X-Picker
         'Copy Outfits/Copy/Category': {},  # Everyday | Formal | Athletic | Sleep | Party | Swimwear | Hot Weather | Cold Weather
         'Copy Outfits/Copy/X-Category': {},  # Bathing | Career | Situation  | Special | Batuu
+        # CDAA68799250052C.ts4_woman_standing-2.dds Compression: None, No Mipmaps
         'Copy Outfits/Copy/to': {},  # [0..4] (clipboard_index)
 
-        'Copy Outfits/Paste': {'display_priority': 7, },  # Picker | X-Picker
+        'Copy Outfits/Paste': {'display_priority': 7, },  # Picker | X-Picker [ +'Items' for an outfit picker ]
         'Copy Outfits/Paste/Category': {},  # Everyday | Formal | Athletic | Sleep | Party | Swimwear | Hot Weather | Cold Weather
         'Copy Outfits/Paste/X-Category': {},  # Bathing | Career | Situation  | Special | Batuu
-        'Copy Outfits/Paste/to': {},  # [0..4] (clipboard_index)
-        'Copy Outfits/Paste/from': {},  # [0..4] (clipboard_index 100-104)
+        'Copy Outfits/Paste/from': {},  # [1..4] (clipboard_index)
+
+        # Implement 'Items' as a picker
+        # 'Copy Outfits/Paste Item/Items/Garment': {}, #  Hat | Full_Body, Upper_Body, Lower_Body, Shoes, Cummerbund, Gloves, Socks, Tights
+        # 'Copy Outfits/Paste Item/Items/ZZZ': {},  #  Hair | Hair (2nd) | Head | Teeth | Facial Hair | Eyebrows | Eye Color | Eye Color (2nd)
+        # 'Copy Outfits/Paste Item/Items/Fingers': {},  #  8 Fingers
+        # No need to transfer single items
+        # 'Copy Outfits/Paste Item': {},  # All | Body Paint | Cloth | Hand Accessories | Head Accessories | Head Paint | Head Piercings | Occult Scars | Sim
+        # 'Copy Outfits/Paste Item/Body Paint': {},  # Tattoo_Arm_Lower_Left, Tattoo_Arm_Upper_Left,  Tattoo_Arm_Lower_Right, Tattoo_Arm_Upper_Right, Tattoo_Leg_Left, Tattoo_Leg_Right, Tattoo_Torso_Back_Lower, Tattoo_Torso_Back_Upper, Tattoo_Torso_Front_Lower, Tattoo_Torso_Front_Upper, Skin_Overlay, Acne, Fingernail, Toenail
+        # 'Copy Outfits/Paste Item/Cloth': {},  # Hat, Full_Body, Upper_Body, Lower_Body, Shoes, Cummerbund, Gloves, Socks, Tights
+        # 'Copy Outfits/Paste Item/Hand Accessories': {},  # Wrist_Left, Wrist_Right, Index_Finger_Left, Index_Finger_Right, Ring_Finger_Left, Ring_Finger_Right, Middle_Finger_Left, Middle_Finger_Right
+        # 'Copy Outfits/Paste Item/Head Accessories': {},  # Earrings, Glasses, Necklace
+        # 'Copy Outfits/Paste Item/Head Paint': {},  # Lips_Tick, Eye_Shadow, Eye_Liner, Blush, Facepaint, Eyebrows, Mascara
+        # 'Copy Outfits/Paste Item/Head Piercings': {},  # Lip_Ring_Left, Lip_Ring_Right, Nose_Ring_Left, Nose_Ring_Right, Brow_Ring_Left, Brow_Ring_Right
+        # 'Copy Outfits/Paste Item/Occult Scars': {},  # Occult_Brow, Occult_Eye_Socket, Occult_Eye_Lid, Occult_Mouth, Occult_Left_Cheek, Occult_Right_Cheek, Occult_Neck_Scar, Forearm_Scar
+        # 'Copy Outfits/Paste Item/Sim': {}, # Head, Teeth, Hair, Facial_Hair, Eyecolor, Skindetail_Crease_Forehead, Skindetail_Freckles, Skindetail_Dimple_Left, Skindetail_Dimple_Right, Skindetail_Mole_Lip_Left, Skindetail_Mole_Lip_Right, Skindetail_Mole_Cheek_Left, Skindetail_Mole_Cheek_Right, Skindetail_Crease_Mouth, Fur_Body, Ears, Tail, Skindetail_Nose_Color, Eyecolor_Secondary
+        # 'Copy Outfits/Paste Item/Pets: {}, # Fur_Body, Ears, Tail
+        # 'Copy Outfits/Paste Item/Horse: {}, # ...
+
+        'Copy Outfits/Clone': {'display_priority': 6, 'xicon': '00B2D882!00000000!FB8C758589B9EFC2', },
+        'Copy Outfits/Clone/CAS Parts': {},  # All | Body Paint | Cloth | Hand Accessories | Head Accessories | Head Paint | Head Piercings | Occult Scars | Pet |  Sim
+        'Copy Outfits/Clone/Characteristics': {},  # Age & Gender | Physics & Genetics | Genetics | Sliders |Traits
+
+        'Copy Outfits/Mannequin': {'display_priority': 5, 'xicon': '00B2D882!00000000!C7D7087A36401DA9', },  # Next Skin | Random Skin [ | Select Skin requires tuning with author, description and ID to show popup ]
+        'Copy Outfits/Mannequin/Add': {'display_priority': DisplayPriority.HIGHEST, 'xicon': '00B2D882!00000000!C7D7087A36401DA9', },  # Next Skin | Random Skin [ | Select Skin requires tuning with author, description and ID to show popup ]
+        'Copy Outfits/Mannequin/Skins': {'display_priority': DisplayPriority.HIGH, 'xicon': '00B2D882!00000000!C7D7087A36401DA9', },  # Next Skin | Random Skin [ | Select Skin requires tuning with author, description and ID to show popup ]
+        'Copy Outfits/Mannequin/Rotate': {},  # Zero, Left, Right
+        'Copy Outfits/Mannequin/Remove': {'display_priority': DisplayPriority.NONE,  },  # Destroy
+
+        'Copy Outfits/More': {'display_priority': 4, },  # Print Clipboard | Clear All
+        'Copy Outfits/More/Clear': {},  # [0..4]
+
+        # The Picker and X-Picker can't be used to create missing outfits!
+        'Copy Outfits/Add Outfits': {'display_priority': 3, },  # Picker | X-Picker | All Standard | All Special
+        'Copy Outfits/Add Outfits/Category': {},  # Everyday | Formal | Athletic | Sleep | Party | Swimwear | Hot Weather | Cold Weather
+        'Copy Outfits/Add Outfits/X-Category': {},  # Bathing (1) | Career (1) | Situation (1) |  Special (3) | Batuu (5)
+
     },
     # Copy Outfits - priority 0 ==> Show on last page
     # Copy Outfits/Copy - priority 10 (1st)
     # Copy Outfits/Copy/ - priority 9 (2nd)
     # Copy Outfits/Paste - priority 8 (3rd)
     # Copy Outfits/Paste/ - priority 7 (4th)
+    # Copy Outfits/Clone/ - priority 6
+    # Copy Outfits/Skins/ - priority 5
+    # Copy Outfits/More/ - priority 4
 
     'Texts': [
         { "Name": "Outfit-Picker Popup > Title", "Text": "Select {0.String} Outfit"},
@@ -72,515 +96,915 @@
                     # 'pie_menu_priority': 5,  # -1 = not set globally
                     # no default tunables, define them with:
                     'tunables': {
-                        'outfit_category': {'default': -1, 'type': 'int'},  # -1..12
+                        'outfit_category': {'default': OutfitCategory.CURRENT_OUTFIT, 'type': 'int'},  # -1..12
                         'outfit_index': {'default': -1, 'type': 'int'},  # -1..4
 						'clipboard_index': {'default': 0, 'type': 'int'},  # 0..4 || 100..104 from
-                        'action':  {'default': 0, 'type': 'int'},  # 1 Copy || 2 Paste || 4 Clone || 8 Clear || 16 Print
-                        'action_id': {'default': 0, 'type': 'int'}, # 1 All || 2 Body Paint || .. || 9 Sim || 100 Picker || 101 X-Picker || -1 from
+                        'action':  {'default': PieMenuAction.NONE, 'type': 'int'},  # PieMenuAction.py >> 1 Copy || 2 Paste || 4 Clone CAS Parts || 26 Clone Sim Data || 8 Clear || 16 Print || 32 Skin || 64 Add || 128 BodyType
+                        'action_id': {'default': PieMenuActionId.NONE, 'type': 'int'}, # PieMenuActionId.py >> (outdated) 1 All || 2 Body Paint || .. || 9 Sim || 100 Picker || 101 X-Picker || -1 from
+                        'group_id': {'default': OutfitGroupId.EVERYTHING, 'type': 'int'}  # OutfitGroupId.py >> 1 Head || 2 Garment || ...
                     },
                     'debug': True,
                 },
-                # Print options
+
+# 'Copy Outfits/Copy': {'display_priority': 10, },  # Picker | X-Picker
                 {
-                    'parent': 'Copy Outfits/More',
-                    'display_name': 'Print Clipboard',
+                    'parent': 'Copy Outfits',
+                    'display_name': 'Copy',
+                    'icon': 'copy.dds',
+                    'pie_menu_priority': DisplayPriority.HIGHEST,
                     'tunables': {
-                        'action': {'value': 16},  # Print
-                        'action_id': {'value': 1},  # All
-                    },
-                },
-                # Clear options
-                {
-                    'display_name': 'Clear All',
-                    'tunables': {
-                        'action': {'value': 8},  # Clear
-                        'clipboard_index': {'value': 1},  # All
-                    },
-                }, {
-                    'parent': 'Copy Outfits/More/Clear',
-                    'display_name': 'Clipboard 0',
-                    'tunables': {
-                        'action': {'value': 8},  # Clear
+                        'action': {'value': PieMenuAction.COPY},  # Copy
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
                         'clipboard_index': {'value': 0},
                     },
                 }, {
-                    'display_name': 'Clipboard 1',
+                    'parent': 'Copy Outfits/Copy',
+                    'display_name': 'Picker',
                     'tunables': {
-                        'action': {'value': 8},  # Clear
-                        'clipboard_index': {'value': 1},
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.PICKER},  # Picker / 100
                     },
                 }, {
-                    'display_name': 'Clipboard 2',
+                    'parent': 'Copy Outfits/Copy',
+                    'display_name': 'X-Picker',
                     'tunables': {
-                        'action': {'value': 8},  # Clear
-                        'clipboard_index': {'value': 2},
-                    },
-                }, {
-                    'display_name': 'Clipboard 3',
-                    'tunables': {
-                        'action': {'value': 8},  # Clear
-                        'clipboard_index': {'value': 3},
-                    },
-                }, {
-                    'display_name': 'Clipboard 4',
-                    'tunables': {
-                        'action': {'value': 8},  # Clear
-                        'clipboard_index': {'value': 4},
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.X_PICKER},  # X-Picker / 101
                     },
                 },
-                # Transfer options
+
+# 'Copy Outfits/Copy (all)/Category': {},  # Everyday | Formal | Athletic | Sleep | Party | Swimwear | Hot Weather | Cold Weather
+#    EVERYDAY = 0
+#    FORMAL = 1
+#    ATHLETIC = 2
+#    SLEEP = 3
+#    PARTY = 4
+#    SWIMWEAR = 9
+#    HOTWEATHER = 10
+#    COLDWEATHER = 11
                 {
-                    'parent': 'Copy Outfits/Transfer',
-                    'display_name': 'Complete Outfit',
-                    'pie_menu_priority': 10,  # 1st item to show to clone the sim outfit
+                    'parent': 'Copy Outfits/Copy/Category',
+                    'display_name': 'Everyday',
                     'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 1},  # Complete Outfit
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.EVERYDAY},  # outfit_category_id(Everyday) / 0
                     },
                 }, {
-                    'display_name': 'Body Paint',
+                    'parent': 'Copy Outfits/Copy/Category',
+                    'display_name': 'Formal',
                     'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 2},  # Body Paint
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.FORMAL},  # outfit_category_id(Formal) 1
                     },
                 }, {
-                    'display_name': 'Cloth',
-                    'pie_menu_priority': 0,  # Hide in 'More ...' on page 2 as it is useless (the default)
+                    'parent': 'Copy Outfits/Copy/Category',
+                    'display_name': 'Athletic',
                     'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 3},  # Cloth
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.ATHLETIC},  # outfit_category_id(Athletic) 2
                     },
                 }, {
-                    'display_name': 'Hand Accessories',
+                    'parent': 'Copy Outfits/Copy/Category',
+                    'display_name': 'Sleep',
                     'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 4},  # Hand Accessories
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.SLEEP},  # outfit_category_id(Sleep) 3
                     },
                 }, {
-                    'display_name': 'Head Accessories',
+                    'parent': 'Copy Outfits/Copy/Category',
+                    'display_name': 'Party',
                     'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 5},  # Head Accessories
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.PARTY},  # outfit_category_id(Party) 4
                     },
                 }, {
-                    'display_name': 'Head Paint',
+                    'parent': 'Copy Outfits/Copy/Category',
+                    'display_name': 'Swimwear',
                     'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 6},  # Head Paint
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.SWIMWEAR},  # outfit_category_id(Swimwear) 5
                     },
                 }, {
-                    'display_name': 'Head Piercings',
+                    'parent': 'Copy Outfits/Copy/Category',
+                    'display_name': 'Hotweather',
                     'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 7},  # Head Piercings
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.HOTWEATHER},  # outfit_category_id(Hotweather) 10
                     },
                 }, {
-                    'display_name': 'Occult Scars',
+                    'parent': 'Copy Outfits/Copy/Category',
+                    'display_name': 'Coldweather',
                     'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 8},  # Occult Scars
-                    },
-                }, {
-                    'display_name': 'Pet',
-                    'pie_menu_priority': 0,  # Hide in 'More ...' on page 2 as it is useless except for pets
-                    'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 9},  # Pet
-                    },
-                }, {
-                    'display_name': 'Sim',
-                    'pie_menu_priority': 10,
-                    'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 10},  # Sim
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.COLDWEATHER},  # outfit_category_id(Coldweather) 10
                     },
                 },
-                # X-Transfer options
-                 {
-                    'parent': 'Copy Outfits/X-Transfer',
+
+# 'Copy Outfits/Copy (all)/X-Category': {},  # Bathing | Career | Situation  | Special | Batuu
+#    BATHING = 5
+#    CAREER = 6
+#    SITUATION = 7
+#    SPECIAL = 8
+#    BATUU = 12
+                {
+                    'parent': 'Copy Outfits/Copy/X-Category',
+                    'display_name': 'Bathing',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.BATHING},  # outfit_category_id(Bathing) 5
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Copy/X-Category',
+                    'display_name': 'Career',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.CAREER},  # outfit_category_id(Career) 6
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Copy/X-Category',
+                    'display_name': 'Situation',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.SITUATION},  # outfit_category_id(Situation) 7
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Copy/X-Category',
+                    'display_name': 'Special',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.SPECIAL},  # outfit_category_id(Special) 8
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Copy/X-Category',
+                    'display_name': 'Batuu',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': OutfitCategory.BATUU},  # outfit_category_id(Batuu) 12
+                    },
+                },
+
+# 'Copy Outfits/Copy (single)/to': {},  # [0..4] (clipboard_index)
+                {
+                    'parent': 'Copy Outfits/Copy/to',
                     'display_name': 'All',
-                    'pie_menu_priority': 10,   # 1st item to show to clone the sim
                     'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 20},  # All
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                     },
                 }, {
-                    'display_name': 'Age & Gender',
-                    'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 21},  # Age & Gender
-                    },
-                }, {
-                    'display_name': 'Physics & Genetics',
-                    'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 22},  # Physics & Genetics
-                    },
-                }, {
-                    'display_name': 'Genetics',
-                    'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 23},  # Genetics
-                    },
-                }, {
-                    'display_name': 'Sliders',
-                    'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 24},  # Sliders
-                    },
-                }, {
-                    'display_name': 'Traits',
-                    'tunables': {
-                        'action': {'value': 4},  # Clone
-                        'action_id': {'value': 25},  # Traits
-                    },
-                },
-                # 'Copy Outfits/Paste/from': {},
-                {
-                    'parent': 'Copy Outfits/Paste/from',
-                    'display_name': 'Clipboard 1',
-                    'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'clipboard_index': {'value': 101},  # from
-                    },
-                }, {
-                    'display_name': 'Clipboard 2',
-                    'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'clipboard_index': {'value': 102},  # from
-                    },
-                }, {
-                    'display_name': 'Clipboard 3',
-                    'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'clipboard_index': {'value': 103},  # from
-                    },
-                }, {
-                    'display_name': 'Clipboard 4',
-                    'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'clipboard_index': {'value': 104},  # from
-                    },
-                },
-                # 'Copy Outfits/Paste/to': {},
-                {
-                    'parent': 'Copy Outfits/Paste/to',
-                    'display_name': 'Outfit 0',
-                    'tunables': {
-                        'action': {'value': 2},
-                        'clipboard_index': {'value': 0},
-                    },
-                }, {
-                    'display_name': 'Outfit 1',
-                    'tunables': {
-                        'action': {'value': 2},
-                        'clipboard_index': {'value': 1},
-                    },
-                }, {
-                    'display_name': 'Outfit 2',
-                    'tunables': {
-                        'action': {'value': 2},
-                        'clipboard_index': {'value': 2},
-                    },
-                }, {
-                    'display_name': 'Outfit 3',
-                    'tunables': {
-                        'action': {'value': 2},
-                        'clipboard_index': {'value': 3},
-                    },
-                }, {
-                    'display_name': 'Outfit 4',
-                    'tunables': {
-                        'action': {'value': 2},
-                        'clipboard_index': {'value': 4},
-                    },
-                },
-                # 'Copy Outfits/Copy/to': {},
-                {
                     'parent': 'Copy Outfits/Copy/to',
                     'display_name': 'Clipboard 1',
                     'tunables': {
-                        'action': {'value': 1},
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
                         'clipboard_index': {'value': 1},
                     },
                 }, {
                     'display_name': 'Clipboard 2',
                     'tunables': {
-                        'action': {'value': 1},
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
                         'clipboard_index': {'value': 2},
                     },
                 }, {
                     'display_name': 'Clipboard 3',
                     'tunables': {
-                        'action': {'value': 1},
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
                         'clipboard_index': {'value': 3},
                     },
                 }, {
                     'display_name': 'Clipboard 4',
                     'tunables': {
-                        'action': {'value': 1},
+                        'action': {'value': PieMenuAction.COPY},  # Copy / 1
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
                         'clipboard_index': {'value': 4},
                     },
                 },
-                # 'Copy Outfits/Paste': {},  # Current** | Picker
+
+# 'Copy Outfits/Paste': {'display_priority': 7, },  # Picker | X-Picker
                 {
                     'parent': 'Copy Outfits',
                     'display_name': 'Paste',
                     'icon': 'paste.dds',
                     'pie_menu_priority': 8,
                     'tunables': {
-                        'action': {'value': 2},  # Paste
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
+                        'clipboard_index': {'value': 0},  # from
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste',
                     'display_name': 'Picker',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 100},  # Picker
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.PICKER},  # Picker / 100
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste',
                     'display_name': 'X-Picker',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 101},  # X-Picker
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.X_PICKER},  # X-Picker / 101
                     },
                 },
-                # 'Copy Outfits/Copy': {},  # Current** | Picker
+
+# 'Copy Outfits/Paste (all)/Category': {},  # Everyday | Formal | Athletic | Sleep | Party | Swimwear | Hot Weather | Cold Weather
+#    EVERYDAY = 0
+#    FORMAL = 1
+#    ATHLETIC = 2
+#    SLEEP = 3
+#    PARTY = 4
+#    SWIMWEAR = 9
+#    HOTWEATHER = 10
+#    COLDWEATHER = 11
                 {
-                    'parent': 'Copy Outfits',
-                    'display_name': 'Copy',
-                    'icon': 'copy.dds',
-                    'pie_menu_priority': 10,
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy',
-                    'display_name': 'Picker',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 100},  # Picker
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy',
-                    'display_name': 'X-Picker',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 101},  # X-Picker
-                    },
-                },
-                # Category stuff [_create_menu.py]
-                {
-                    'parent': 'Copy Outfits/Copy/Category',
-                    'display_name': 'Everyday',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 0},  # outfit_category_id(Everyday)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/Category',
-                    'display_name': 'Formal',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 1},  # outfit_category_id(Formal)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/Category',
-                    'display_name': 'Athletic',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 2},  # outfit_category_id(Athletic)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/Category',
-                    'display_name': 'Sleep',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 3},  # outfit_category_id(Sleep)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/Category',
-                    'display_name': 'Party',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 4},  # outfit_category_id(Party)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/X-Category',
-                    'display_name': 'Bathing',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 5},  # outfit_category_id(Bathing)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/X-Category',
-                    'display_name': 'Career',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 6},  # outfit_category_id(Career)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/X-Category',
-                    'display_name': 'Situation',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 7},  # outfit_category_id(Situation)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/X-Category',
-                    'display_name': 'Special',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 8},  # outfit_category_id(Special)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/Category',
-                    'display_name': 'Swimwear',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 9},  # outfit_category_id(Swimwear)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/Category',
-                    'display_name': 'Hotweather',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 10},  # outfit_category_id(Hotweather)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/Category',
-                    'display_name': 'Coldweather',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 11},  # outfit_category_id(Coldweather)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Copy/X-Category',
-                    'display_name': 'Batuu',
-                    'tunables': {
-                        'action': {'value': 1},  # Copy
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 12},  # outfit_category_id(Batuu)
-                    },
-                }, {
                     'parent': 'Copy Outfits/Paste/Category',
                     'display_name': 'Everyday',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                         'outfit_category': {'value': 0},  # outfit_category_id(Everyday)
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste/Category',
                     'display_name': 'Formal',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                         'outfit_category': {'value': 1},  # outfit_category_id(Formal)
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste/Category',
                     'display_name': 'Athletic',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                         'outfit_category': {'value': 2},  # outfit_category_id(Athletic)
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste/Category',
                     'display_name': 'Sleep',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                         'outfit_category': {'value': 3},  # outfit_category_id(Sleep)
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste/Category',
                     'display_name': 'Party',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                         'outfit_category': {'value': 4},  # outfit_category_id(Party)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Paste/X-Category',
-                    'display_name': 'Bathing',
-                    'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 5},  # outfit_category_id(Bathing)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Paste/X-Category',
-                    'display_name': 'Career',
-                    'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 6},  # outfit_category_id(Career)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Paste/X-Category',
-                    'display_name': 'Situation',
-                    'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 7},  # outfit_category_id(Situation)
-                    },
-                }, {
-                    'parent': 'Copy Outfits/Paste/X-Category',
-                    'display_name': 'Special',
-                    'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
-                        'outfit_category': {'value': 8},  # outfit_category_id(Special)
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste/Category',
                     'display_name': 'Swimwear',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                         'outfit_category': {'value': 9},  # outfit_category_id(Swimwear)
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste/Category',
                     'display_name': 'Hotweather',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                         'outfit_category': {'value': 10},  # outfit_category_id(Hotweather)
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste/Category',
                     'display_name': 'Coldweather',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                         'outfit_category': {'value': 11},  # outfit_category_id(Coldweather)
+                    },
+                },
+
+# 'Copy Outfits/Paste (all)/X-Category': {},  # Bathing | Career | Situation  | Special | Batuu
+#    BATHING = 5
+#    CAREER = 6
+#    SITUATION = 7
+#    SPECIAL = 8
+#    BATUU = 12
+                {
+                    'parent': 'Copy Outfits/Paste/X-Category',
+                    'display_name': 'Bathing',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': 5},  # outfit_category_id(Bathing)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Paste/X-Category',
+                    'display_name': 'Career',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': 6},  # outfit_category_id(Career)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Paste/X-Category',
+                    'display_name': 'Situation',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': 7},  # outfit_category_id(Situation)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Paste/X-Category',
+                    'display_name': 'Special',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                        'outfit_category': {'value': 8},  # outfit_category_id(Special)
                     },
                 }, {
                     'parent': 'Copy Outfits/Paste/X-Category',
                     'display_name': 'Batuu',
                     'tunables': {
-                        'action': {'value': 2},  # Paste
-                        'action_id': {'value': 1},  # All
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
                         'outfit_category': {'value': 12},  # outfit_category_id(Batuu)
                     },
                 },
+
+ # 'Copy Outfits/Paste (single)/from': {},  # [1..4] (clipboard_index)
+                {
+                    'parent': 'Copy Outfits/Paste/from',
+                    'display_name': 'All',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All / 2
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Paste/from',
+                    'display_name': 'Clipboard 1',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
+                        'clipboard_index': {'value': 1},  # from
+                    },
+                }, {
+                    'display_name': 'Clipboard 2',
+                    'tunables': {
+                        'action': {'value': 2},  # Paste
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
+                        'clipboard_index': {'value': 2},  # from
+                    },
+                }, {
+                    'display_name': 'Clipboard 3',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
+                        'clipboard_index': {'value': 3},  # from
+                    },
+                }, {
+                    'display_name': 'Clipboard 4',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.PASTE},  # Paste / 2
+                        'action_id': {'value': PieMenuActionId.SELECTED},  # SELECTED / 1
+                        'clipboard_index': {'value': 4},  # from
+                    },
+                },
+
+
+# 'Copy Outfits/Clone/CAS Parts': {'display_priority': 6, },  # All | Body Paint | Cloth | Hand Accessories | Head Accessories | Head Paint | Head Piercings | Occult Scars | Pet |  Sim
+                # Transfer options
+                {
+                    'parent': 'Copy Outfits/Clone',
+                    'display_name': 'Everything',
+                    'pie_menu_priority': DisplayPriority.HIGHEST,  # 1st item to show to clone the whole sim (CAS Parts and Genetics etc.)
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.EVERYTHING},  # Everything 0
+                    },
+                },{
+                    'parent': 'Copy Outfits/Clone/CAS Parts',
+                    'display_name': 'All',
+                    'pie_menu_priority': DisplayPriority.HIGHEST,  # 1st item to show to clone the sim outfit
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_ALL},  # Sim 65535
+                    },
+                }, {
+                    'display_name': 'Head',
+                    'pie_menu_priority': DisplayPriority.VERY_HIGH,  # 2nd item to show to clone the sim outfit
+                    'xicon': '00B2D882!00000000!7AB640D8A49DB05C',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_HEAD},  # Head 1
+
+                    },
+                }, {
+                    'display_name': 'Garment',
+                    'pie_menu_priority': DisplayPriority.VERY_HIGH,  # 3rd item to show to clone the sim outfit
+                    'xicon': '00B2D882!00000000!0EF0972FF61D16B1',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_GARMENT},  # Complete Outfit 2
+
+                    },
+                }, {
+                    'display_name': 'Piercings',
+                    'pie_menu_priority': DisplayPriority.HIGH,
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_PIERCING},  # Piercings 4
+                    },
+                }, {
+                    'display_name': 'Head Jewelry',
+                    'pie_menu_priority': DisplayPriority.HIGH,
+                    'xicon': '00B2D882!00000000!A680EA9834D242F0',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_HEAD_JEWELRY},  # Head Jewelry 8
+
+                    },
+                }, {
+                    'display_name': 'Hand Jewelry',
+                    'pie_menu_priority': DisplayPriority.HIGH,
+                    'xicon': '00B2D882!00000000!0B962EFEBD70C9B7',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_HAND_JEWELRY},  # Hand Jewelry 16
+                    },
+                }, {
+                    'display_name': 'Head Paint',
+                    'pie_menu_priority': DisplayPriority.ABOVE_AVERAGE,
+                    'xicon': '00B2D882!00000000!D24A091F8AD4C036',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_HEAD_PAINT},  # Head Paint 32
+                    },
+                }, {
+                    'display_name': 'Skin',
+                    'pie_menu_priority': DisplayPriority.AVERAGE,
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_SKIN},  # Skin 128
+                    },
+                },  {
+                    'display_name': 'Tattoo',
+                    'pie_menu_priority': DisplayPriority.AVERAGE,
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_TATTOO},  # Tattoo 64
+                    },
+                },{
+                    'display_name': 'Nail Color',
+                    'pie_menu_priority': DisplayPriority.AVERAGE,
+                    'xicon': '00B2D882!00000000!63A0AF85970E0E10',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_NAIL_COLOR},  # Nail Color 256
+                    },
+                },{
+                    'display_name': 'Occults',
+                    'pie_menu_priority': DisplayPriority.MINIMAL,
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_OCCULTS},  # Occult 512
+                    },
+                }, {
+                    'display_name': 'Scars',
+                    'pie_menu_priority': DisplayPriority.MINIMAL,
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_SCARS},  # Scars 1024
+                    },
+                }, {
+                    'display_name': 'Other',
+                    'pie_menu_priority': DisplayPriority.MINIMAL,
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_OTHER},  #
+                    },
+                }, {
+                    'display_name': 'Mole / Crease',
+                    'pie_menu_priority': DisplayPriority.MINIMAL,
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_MOLE_CREASE},  #
+                    },
+                }, {
+                    'display_name': 'Marks',
+                    'pie_menu_priority': DisplayPriority.MINIMAL,
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.SIM_MARKS},  #
+                    },
+                }, {
+                    'pie_menu_priority': DisplayPriority.NONE,  # Hide in 'More ...' on page 2 as it is useless except for pets
+                    'display_name': 'Pet',
+                    'xicon': '00B2D882!00000000!081A83107859D45C',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.PET_ALL},  # Pet 16384
+                    },
+                }, {
+                    'pie_menu_priority': DisplayPriority.NONE,  # Hide in 'More ...' on page 2 as it is useless except for horses
+                    'display_name': 'Horse',
+                    'xicon': '00B2D882!00000000!B3457C4BFFEEE468',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.HORSE_ALL},  # Horse 32768
+                    },
+                }, {
+                    'pie_menu_priority': DisplayPriority.NONE,  # Hide in 'More ...' on page 2 as it is not implemented TODO
+                    'display_name': 'Picker',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_CAS_PARTS},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.PICKER},  # Picker 8388608
+                    },
+                },
+
+# 'Copy Outfits/Clone/Characteristics': {},  # Age & Gender | Physics & Genetics | Genetics | Sliders | Traits
+                 {
+                    'parent': 'Copy Outfits/Clone/Characteristics',
+                    'display_name': 'All',
+                    'pie_menu_priority': DisplayPriority.HIGHEST,   # 1st item to show to clone the sim
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_SIM_DATA},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.X_ALL},  # X-All 301
+                    },
+                }, {
+                    'display_name': 'Age & Gender',
+                    'tunables': {
+                       'action': {'value': PieMenuAction.CLONE_SIM_DATA},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.X_AGE_GENDER},  # Age & Gender 302
+                    },
+                }, {
+                    'display_name': 'Genetics',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_SIM_DATA},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.X_GENETICS},  # Genetics
+                    },
+                }, {
+                    'display_name': 'Physics & Genetics',
+                    'xicon': '00B2D882!00000000!CA1AC3442D20ADFF',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_SIM_DATA},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.X_PHYSICS_GENETICS},  # Physics & Genetics
+                    },
+                }, {
+                    'display_name': 'Sliders',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_SIM_DATA},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.X_SLIDERS},  # Sliders
+                    },
+                }, {
+                    'display_name': 'Walkstyle',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_SIM_DATA},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.X_WALKSTYLE},  # Walkstyle
+                    },
+                }, {
+                    'display_name': 'Traits',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_SIM_DATA},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.X_TRAITS},  # Traits
+                    },
+                }, {
+                    'display_name': 'Skills',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_SIM_DATA},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.X_SKILLS},  # Skills
+                    },
+                }, {
+                    'display_name': 'Skintone',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLONE_SIM_DATA},  # Clone / 4
+                        'group_id': {'value': OutfitGroupId.X_SKIN_TONE},  # Skintone
+                    },
+                },
+
+# 'Copy Outfits/Mannequin/Skins': {'display_priority': 5, },  # Next Skin | Random Skin [ | Select Skin requires tuning with author, description and ID to show popup ]
+                {
+                    'parent': 'Copy Outfits/Mannequin/Skins',
+                    'display_name': 'Same Skin',
+                    'xicon': '00B2D882!00000000!BE676248B25F2018',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.SKIN},  # Skin / 256
+                        'action_id': {'value': PieMenuActionId.SAME_SKIN},  # Next / 200
+                    },
+                }, {
+                    'display_name': 'Next Skin',
+                    'xicon': '00B2D882!00000000!F88F4F8E76472E99',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.SKIN},  # Skin / 256
+                        'action_id': {'value': PieMenuActionId.NEXT_SKIN},  # NEXT_SKIN / 201
+                    },
+                }, {
+                    'display_name': 'Previous Skin',
+                    'xicon': '00B2D882!00000000!072E0910CAAD7A87',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.SKIN},  # Skin / 256
+                        'action_id': {'value': PieMenuActionId.PREVIOUS_SKIN},  # Next / 202
+                    },
+                }, {
+                    'display_name': 'Random Skin',
+                    'xicon': '00B2D882!00000000!FFE4C86D63EFFD01',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.SKIN},  # Skin / 256
+                        'action_id': {'value': PieMenuActionId.RANDOM_SKIN},  # Random / 203
+                    },
+                },
+
+# 'Copy Outfits/Mannequin/Add
+                {
+                    'parent': 'Copy Outfits/Mannequin/Add',
+                    'display_name': 'Adult Female',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.MANNEQUIN},  # Mannequin / 512
+                        'action_id': {'value': PieMenuActionId.MANNEQUIN_YF},  # Next / 200
+                    },
+                }, {
+                    'display_name': 'Adult Male',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.MANNEQUIN},  # Mannequin / 512
+                        'action_id': {'value': PieMenuActionId.MANNEQUIN_YM},  # NEXT_SKIN / 201
+                    },
+                }, {
+                    'display_name': 'Child Female',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.MANNEQUIN},  # Mannequin / 512
+                        'action_id': {'value': PieMenuActionId.MANNEQUIN_CF},  # Next / 202
+                    },
+                }, {
+                    'display_name': 'Child Male',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.MANNEQUIN},  # Mannequin / 512
+                        'action_id': {'value': PieMenuActionId.MANNEQUIN_CM},  # Random / 203
+                    },
+                },
+
+# 'Copy Outfits/Mannequin/Rotate
+                {
+                    'parent': 'Copy Outfits/Mannequin/Rotate',
+                    'display_name': 'Zero',
+                    'pie_menu_priority': 10,  # show on top (3 pie entries)
+                    'tunables': {
+                        'action': {'value': PieMenuAction.MANNEQUIN},  # Mannequin / 512
+                        'action_id': {'value': PieMenuActionId.MANNEQUIN_ROTATE_ZERO},  # Zero / 210
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Mannequin/Rotate',
+                    'display_name': 'Left',
+                    'pie_menu_priority': DisplayPriority.VERY_HIGH,  # show on right side with text 'Left'. Sim rotates left / for the viewer to the right side.
+                    'tunables': {
+                        'action': {'value': PieMenuAction.MANNEQUIN},  # Mannequin / 512
+                        'action_id': {'value': PieMenuActionId.MANNEQUIN_ROTATE_LEFT},  # Left / 211
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Mannequin/Rotate',
+                    'display_name': 'Right',
+                    'pie_menu_priority': DisplayPriority.HIGH,  # show on left side
+                    'tunables': {
+                        'action': {'value': PieMenuAction.MANNEQUIN},  # Mannequin / 512
+                        'action_id': {'value': PieMenuActionId.MANNEQUIN_ROTATE_RIGHT},  # Right / 212
+                    },
+                },
+
+# 'Copy Outfits/Mannequin/Remove
+                {
+                    'parent': 'Copy Outfits/Mannequin/Remove',
+                    'display_name': 'Destroy',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.MANNEQUIN},  # Mannequin / 512
+                        'action_id': {'value': PieMenuActionId.MANNEQUIN_REMOVE},  # Destroy / 213
+                    },
+                },
+
+# 'Copy Outfits/More': {'display_priority': 4, },  # Print Clipboard | Clear All
+                {
+                    'parent': 'Copy Outfits/More',
+                    'display_name': 'Print Clipboard',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.PRINT},  # PRINT = 16
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                    },
+                },
+
+# 'Copy Outfits/More/Clear': {},  # [0..4]
+                {
+                    'display_name': 'Clear All',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLEAR},  # Clear 8
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                    },
+                }, {
+                    'parent': 'Copy Outfits/More/Clear',
+                    'display_name': 'Clipboard 0',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLEAR},  # Clear 8
+                        'clipboard_index': {'value': 0},
+                    },
+                }, {
+                    'display_name': 'Clipboard 1',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLEAR},  # Clear 8
+                        'clipboard_index': {'value': 1},
+                    },
+                }, {
+                    'display_name': 'Clipboard 2',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLEAR},  # Clear 8
+                        'clipboard_index': {'value': 2},
+                    },
+                }, {
+                    'display_name': 'Clipboard 3',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLEAR},  # Clear 8
+                        'clipboard_index': {'value': 3},
+                    },
+                }, {
+                    'display_name': 'Clipboard 4',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.CLEAR},  # Clear 8
+                        'clipboard_index': {'value': 4},
+                    },
+                },
+
+# 'Copy Outfits/Add Outfits': {'display_priority': 3, },  # Picker | X-Picker [ | All Standard | All Special TODO ]
+                {
+                    'parent': 'Copy Outfits/Add Outfits',
+                    'display_name': 'Picker',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.PICKER},  # Picker / 100
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits',
+                    'display_name': 'X-Picker',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.X_PICKER},  # X-Picker / 101
+                    },
+                },
+
+# 'Copy Outfits/Add Outfits/Category': {},  # Everyday | Formal | Athletic | Sleep | Party | Swimwear | Hot Weather | Cold Weather
+#    EVERYDAY = 0
+#    FORMAL = 1
+#    ATHLETIC = 2
+#    SLEEP = 3
+#    PARTY = 4
+#    SWIMWEAR = 9
+#    HOTWEATHER = 10
+#    COLDWEATHER = 11
+                {
+                    'parent': 'Copy Outfits/Add Outfits/Category',
+                    'display_name': 'Everyday',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 0},  # outfit_category_id(Everyday)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/Category',
+                    'display_name': 'Formal',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 1},  # outfit_category_id(Formal)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/Category',
+                    'display_name': 'Athletic',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 2},  # outfit_category_id(Athletic)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/Category',
+                    'display_name': 'Sleep',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 3},  # outfit_category_id(Sleep)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/Category',
+                    'display_name': 'Party',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 4},  # outfit_category_id(Party)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/Category',
+                    'display_name': 'Swimwear',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 9},  # outfit_category_id(Swimwear)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/Category',
+                    'display_name': 'Hotweather',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 10},  # outfit_category_id(Hotweather)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/Category',
+                    'display_name': 'Coldweather',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 11},  # outfit_category_id(Coldweather)
+                    },
+                },
+
+# 'Copy Outfits/Add Outfits/X-Category': {},  # Bathing (1) | Career (1) | Situation (1) |  Special (3) | Batuu (5)
+#    BATHING = 5
+#    CAREER = 6
+#    SITUATION = 7
+#    SPECIAL = 8
+#    BATUU = 12
+                {
+                    'parent': 'Copy Outfits/Add Outfits/X-Category',
+                    'display_name': 'Bathing',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 5},  # outfit_category_id(Bathing)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/X-Category',
+                    'display_name': 'Career',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 6},  # outfit_category_id(Career)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/X-Category',
+                    'display_name': 'Situation',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 7},  # outfit_category_id(Situation)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/X-Category',
+                    'display_name': 'Special',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 8},  # outfit_category_id(Special)
+                    },
+                }, {
+                    'parent': 'Copy Outfits/Add Outfits/X-Category',
+                    'display_name': 'Batuu',
+                    'tunables': {
+                        'action': {'value': PieMenuAction.ADD},  # Add / 64
+                        'action_id': {'value': PieMenuActionId.ALL_OUTFITS_FOR_CATEGORY},  # All 1
+                        'outfit_category': {'value': 12},  # outfit_category_id(Batuu)
+                    },
+                },
+
             ]
         }
     }
 }
+
+# CAS Parts:
+# 'icon': '00B2D882!00000000!F4D3931BBC31B05B',  # teeth
+# 'icon': '00B2D882!00000000!46B9D077EBB5409B',  # glove
+# 'icon': '00B2D882!00000000!0B962EFEBD70C9B7',  # l/r pinky/diamond
+# 'icon': '00B2D882!00000000!A680EA9834D242F0',  # necklace/diamond
+# 'icon': '00B2D882!00000000!07357E6ACD56A3F4',  # hat
+# 'icon': '00B2D882!00000000!1AF6CA60BAE7CCD0',  # glasses
+# 'icon': '00B2D882!00000000!F596317B6F6B60EF',  # TOP
+# 'icon': '00B2D882!00000000!96A83ADB77B59610',  # PANTS
+# 'icon': '00B2D882!00000000!A4124F64DDC9A982',  # SHORTS
+# 'icon': '00B2D882!00000000!0E2D08D8F83280A0',  # SOCKS
+# 'icon': '00B2D882!00000000!6DD3751CB6EE161F',  # SHOES
+#
+# Random
+# 'icon': '00B2D882!00000000!4078171EA76C734E',  # puppet
+# 'icon': '00B2D882!00000000!F82A710CDDDC79A9',  # headphone
+# 'icon': '00B2D882!00000000!2223777C8C2F8215',  # voodoo doll
+# 'icon': '00B2D882!00000000!7AB640D8A49DB05C',  # head bebe
+
+# Mannequin > Skins
+# Mannequin > Add [yf ym cf cm]
