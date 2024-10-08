@@ -70,10 +70,11 @@ class CopyOutfitUtilities(metaclass=Singleton):
             if parts:
                 source = OutfitStore.outfits.get(sim_age).get(clipboard_index)
                 debug_message = f"(with data from '{source}')"
-                pass
             else:
                 debug_message = f"(clipboard is empty)"
         else:
             debug_message = "(no outfits available for this age)"
         log.debug(f"get_parts_from_clipboard({sim_age}, {clipboard_index}) -> '{parts}' {debug_message}")
-        return parts.copy()
+        if parts:
+            return parts.copy()
+        return {}
