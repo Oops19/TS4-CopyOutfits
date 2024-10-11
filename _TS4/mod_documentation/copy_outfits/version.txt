@@ -1,5 +1,5 @@
-CopyOutfits v1.9.7 for The Sims 4 v1.109.185 and S4CL v3.7
-Created on 2024-10-08
-v1.9.7
-    Fix NPE within get_parts_from_clipboard() when no CAS parts are available.
+CopyOutfits v1.9.8 for The Sims 4 v1.109.185 and S4CL v3.7
+Created on 2024-10-11
+v1.9.8
+    Remove all CAS Part flags (including DefaultForBodyTypeFemale/Male) to avoid that TS4 uses them when aging up sims.
 

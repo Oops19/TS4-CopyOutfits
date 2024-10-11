@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.7'
+        return '1.9.8'
 
 
 r'''
@@ -42,6 +42,9 @@ IDEAS for the far future
 TODO
     Load and Save outfits
     Read config files / support user defined skins
+    
+v1.9.8
+    Remove all CAS Part flags (including DefaultForBodyTypeFemale/Male) to avoid that TS4 uses them when aging up sims.
 v1.9.7
     Fix NPE within get_parts_from_clipboard() when no CAS parts are available.
 v1.9.6
