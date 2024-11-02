@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.8'
+        return '1.9.9'
 
 
 r'''
@@ -42,7 +42,13 @@ IDEAS for the far future
 TODO
     Load and Save outfits
     Read config files / support user defined skins
-    
+v1.9.9
+    Yet another release to address the broken skin for sims.
+    Remaining CAS Part flags are 'Child or Elder, Female and/or Male'.
+    This may still cause skin issues for child end elder sims while mannequins can still use it.
+    In case of skin issues set the default head with 's4clib.attach_cas_part head_id 3'. The default head_id for 'female male child' are 6977 8860 and 27816.
+    Especially for (child and elder) occult sims these CAS parts are still selected by TS4 even if the referenced image/skin resource is missing.
+    Hopefully EA fixes this TS4 bug one day and verifies that the referenced images actually exists before using a CAS Part.
 v1.9.8
     Remove all CAS Part flags (including DefaultForBodyTypeFemale/Male) to avoid that TS4 uses them when aging up sims.
 v1.9.7
