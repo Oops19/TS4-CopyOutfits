@@ -201,7 +201,7 @@ This mod has been inspired by 'Copy Any Outfit' by scumbumbo. All code has been 
 # Addendum
 
 ## Game compatibility
-This mod has been tested with `The Sims 4` 1.110.311, S4CL 3.9, TS4Lib 0.3.25 (2024-11-03).
+This mod has been tested with `The Sims 4` 1.110.311, S4CL 3.9, TS4Lib 0.3.28 (2024-11-14).
 It is expected to be compatible with many upcoming releases of TS4, S4CL and TS4Lib.
 
 ## Dependencies
