@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.9'
+        return '1.9.10'
 
 
 r'''
@@ -42,6 +42,9 @@ IDEAS for the far future
 TODO
     Load and Save outfits
     Read config files / support user defined skins
+v1.9.10
+    Resent physical attributes also for modified base attributes
+    Update physical attributes less often
 v1.9.9
     Yet another release to address the broken skin for sims.
     Remaining CAS Part flags are 'Child or Elder, Female and/or Male'.

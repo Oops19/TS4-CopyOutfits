@@ -251,27 +251,32 @@ class Main:
             """ A mannequin can't currently be used as a slider source """
             """ A mannequin can't currently be used as a genetics and physics source """
         else:
+            resend_attributes = False
             # age-gender
             if group_id in [OutfitGroupId.EVERYTHING, OutfitGroupId.X_ALL, OutfitGroupId.X_AGE_GENDER, ]:
                 log.debug(f"Cloning base attributes (age, gender, species).")
                 SimInfoBaseWrapper.copy_base_attributes(sim_info, src_sim_info)  # Order: dest, src
+                resend_attributes = True
 
             # sliders
             if group_id in [OutfitGroupId.EVERYTHING, OutfitGroupId.X_ALL, OutfitGroupId.X_SLIDERS, ]:
                 log.debug(f"Cloning sliders.")
                 sim_info.facial_attributes = src_sim_info.facial_attributes
-                SimInfoBaseWrapper.resend_physical_attributes(sim_info)
+                resend_attributes = True
 
             # genetics
             if group_id in [OutfitGroupId.EVERYTHING, OutfitGroupId.X_ALL, OutfitGroupId.X_GENETICS, ]:
                 log.debug(f"Cloning genetics.")
                 SimInfoBaseWrapper.copy_genetic_data(sim_info, src_sim_info)
-                SimInfoBaseWrapper.resend_physical_attributes(sim_info)
+                resend_attributes = True
 
             # genetics and physics
             if group_id in [OutfitGroupId.EVERYTHING, OutfitGroupId.X_ALL, OutfitGroupId.X_PHYSICS_GENETICS, ]:
                 log.debug(f"Cloning physics and genetics.")
                 SimInfoBaseWrapper.copy_physical_attributes(sim_info, src_sim_info)
+                resend_attributes = True
+
+            if resend_attributes:
                 SimInfoBaseWrapper.resend_physical_attributes(sim_info)
 
         if src_sim_info is None or mannequin_component:
