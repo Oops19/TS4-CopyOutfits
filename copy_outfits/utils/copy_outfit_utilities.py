@@ -32,7 +32,7 @@ class CopyOutfitUtilities(metaclass=Singleton):
         if not CommonOutfitUtils.has_outfit(zim.sim_info, (outfit_category, outfit_index)):
             # Create an outfit for the sim with not too much cas parts
             tag_list = (CommonGameTag.OUTFIT_CATEGORY_BATHING, )
-            CommonOutfitUtils.generate_outfit(zim.sim_info, (OutfitCategory.BATHING, 0), tag_list)
+            CommonOutfitUtils.generate_outfit(zim.sim_info, (OutfitCategory.BATHING.value, 0), tag_list)
         return CommonOutfitUtils.get_outfit_parts(zim.sim_info, (outfit_category, outfit_index))
 
     @staticmethod

@@ -1,6 +1,5 @@
-CopyOutfits v1.9.10 for The Sims 4 v1.110.311 and S4CL v3.9
-Created on 2024-11-21
-v1.9.10
-    Resent physical attributes also for modified base attributes
-    Update physical attributes less often
+CopyOutfits v1.9.11 for The Sims 4 v1.110.311 and S4CL v3.9
+Created on 2024-11-26
+v1.9.11
+    Fix generate_outfit()
 
