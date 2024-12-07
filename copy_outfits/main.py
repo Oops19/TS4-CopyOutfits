@@ -112,8 +112,9 @@ class Main:
             elif _action == PieMenuAction.ADD:
                 OutfitAdd().add_outfits(self._sim)
             elif _action == PieMenuAction.BODY_TYPE:
-
                 log.debug(f"TODO - BODY_TYPE Picker")
+            elif _action == PieMenuAction.FIX_HEAD:
+                OutfitSkin().fix_head(self.interaction_target)
             else:
                 log.warn(f"Unknown action '{_action}'. This should never happen.")
         except Exception as e:

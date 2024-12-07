@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.11'
+        return '1.9.13'
 
 
 r'''
@@ -42,6 +42,10 @@ IDEAS for the far future
 TODO
     Load and Save outfits
     Read config files / support user defined skins
+v1.9.13
+    Add PieMenu More > Fix Head
+v1.9.12
+    Add 'o19.co.fix' to apply the vanilla head to Child, Teen-Elder sims
 v1.9.11
     Fix generate_outfit()
 v1.9.10

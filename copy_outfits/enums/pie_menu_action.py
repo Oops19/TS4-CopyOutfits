@@ -21,3 +21,7 @@ class PieMenuAction(CommonEnum):
 
     SKIN = 256  # Apply next head/skin to mannequin
     MANNEQUIN = 512  # Add mannequin
+
+    RESERVED = 1024  # free
+
+    FIX_HEAD = 2048

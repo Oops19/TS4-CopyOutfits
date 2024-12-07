@@ -1,5 +1,5 @@
-CopyOutfits v1.9.11 for The Sims 4 v1.110.311 and S4CL v3.9
-Created on 2024-11-26
-v1.9.11
-    Fix generate_outfit()
+CopyOutfits v1.9.13 for The Sims 4 v1.111.102 and S4CL v3.9
+Created on 2024-12-07
+v1.9.13
+    Add PieMenu More > Fix Head
 

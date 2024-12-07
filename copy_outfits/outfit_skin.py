@@ -2,17 +2,33 @@
 # LICENSE https://creativecommons.org/licenses/by/4.0/ https://creativecommons.org/licenses/by/4.0/legalcode
 # © 2024 https://github.com/Oops19
 #
-import random
 
+
+import random
+import sys
+import threading
+import traceback
+from typing import Dict, Set
+
+import services
 from copy_outfits.enums.copy_outfits_age import CopyOutfitsAge
 from copy_outfits.enums.default_head import DefaultHead
 from copy_outfits.enums.pie_menu_action_id import PieMenuActionId
 from copy_outfits.modinfo import ModInfo
 from copy_outfits.persist.skin_store import SkinStore
 from copy_outfits.struct.copy_outfits_sim import CopyOutfitsSim
+from objects import HiddenReasonFlag, ALL_HIDDEN_REASONS
+from sims.sim_info import SimInfo
+from sims4communitylib.services.commands.common_console_command import CommonConsoleCommand
+from sims4communitylib.services.commands.common_console_command_output import CommonConsoleCommandOutput
 from sims4communitylib.services.sim.cas.common_sim_outfit_io import CommonSimOutfitIO
+from sims4communitylib.utils.cas.common_cas_utils import CommonCASUtils
 from sims4communitylib.utils.cas.common_outfit_utils import CommonOutfitUtils
 from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegistry
+from sims4communitylib.utils.sims.common_age_utils import CommonAgeUtils
+from sims4communitylib.utils.sims.common_gender_utils import CommonGenderUtils
+from sims4communitylib.utils.sims.common_sim_utils import CommonSimUtils
+from ts4lib.common_enums.body_type import BodyType
 from ts4lib.utils.singleton import Singleton
 
 log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), 'OutfitSkin')
@@ -20,12 +36,44 @@ log.enable()
 
 
 class OutfitSkin(metaclass=Singleton):
-    """ Add skins to sims """
+    do_init = True
+
     def __init__(self):
-        self.config = {
+        log.debug(f"{OutfitSkin.do_init}")
+        if OutfitSkin.do_init is True:
+            OutfitSkin.do_init = False
+            self.init()
+
+    """ Add skins to sims """
+    def init(self):
+        log.debug(f"init")
+        try:
+            log.debug(f"Thread Dump")
+            for thread in threading.enumerate():
+                log.debug(f"{thread}")
+                thread_details = traceback.extract_stack(sys._current_frames()[thread.ident])
+                for thread_detail in thread_details:
+                    (filename, number, function, line_text) = thread_detail
+                    log.debug(f"    {filename}#{number} '{line_text}' in '{function}()'")
+            log.debug(f"")
+        except:
+            pass
+
+        self.available_skins: Dict = {
+            CopyOutfitsAge.TYAE: {
+                True: [],  # Female / is_female==True
+                False: [],  # Male
+            },
+            CopyOutfitsAge.CHILD: {
+                True: [],  # Female
+                False: [],  # Male
+            },
+        }
+        self.supported_skins: Dict = {
             CopyOutfitsAge.TYAE: {
                 True: [  # is_female, used in o19_yfHead.package
                     # The high-bit must be set for all custom CAS Parts. Otherwise, they will not be found.
+                    # custom head cas part, custom skin images, description
                     (0xFD57E11C9F0D2AFD, 0xA83ABE943B90DD44, 'ddarkpinkrosa0_Miami_Skin_V1'),
                     (0xE2F29393763FBEFD, 0xE9DF3FAEC660DE19, 'ddarkpinkrosa0_Miami_Skin_V1'),
                     (0xF2157D9C0F5DBB0C, 0xE1750D34ED49C938, 'ddarkpinkrosa0_Miami_Skin_V1'),
@@ -36,7 +84,6 @@ class OutfitSkin(metaclass=Singleton):
                     (0x8B269F3A852B0059, 0xC42933F4CFD6B686, 'JS_008Skin'),
                     (0x8F30F85CC19644C1, 0xDABE010DB300612C, 'JS_008Skin'),
                     (0x8D88C11365FFA9EC, 0xA91D148D8D6709B5, 'JS_008Skin'),
-
                     (0xCD27D0CC83CC79CE, 0xA2C37B6FF654696D, '[THISISTHEM] Pamela Anderson Skin'),
                     (0x8111880154582F44, 0xBF054E412D1C3FF1, '[THISISTHEM] Selena G. Skin'),
                     (0xD8191C563F223169, 0x945804D533C7195C, '[THISISTHEM] Salma Hayek Skin'),
@@ -53,7 +100,6 @@ class OutfitSkin(metaclass=Singleton):
                     (0xF5E803E374BAAA88, 0xC6E085AE73312D6D, '[THISISTHEM] Ashley Skin'),
                     (0xA59BBF6B64B413FF, 0xAD660A57BEC2E456, '[THISISTHEM] Abény Skin'),
                     (DefaultHead.YF_HEAD_DEFAULT.value, DefaultHead.YF_HEAD_DEFAULT.value, 'TS4 Default'),
-
                 ],
                 False: [  # is_male, used in o19_ymHead.package
                     (0xE66AA85AD5A6C480, 0xA63963459FAC2D01, '[THISISTHEM] A$AP Rocky Skin'),
@@ -77,10 +123,35 @@ class OutfitSkin(metaclass=Singleton):
                     (0x800298CD9078A60D, 0xA78520CC00C7191C, '[THISISTHEM] Child Skin N24'),
                     (DefaultHead.CU_HEAD_DEFAULT.value, DefaultHead.CU_HEAD_DEFAULT.value, 'TS4 Default'),
                 ],
-
             },
         }
-        self.skin_store = SkinStore(self.config)
+
+        missing_packages: Set = set()
+        for sim_age in [CopyOutfitsAge.CHILD, CopyOutfitsAge.TYAE, ]:
+            _ages = {}
+            for is_female in [True, False, ]:
+                _available_skins = []
+                for data in self.supported_skins.get(sim_age).get(is_female):
+                    check_cas_part, use_cas_part, package_name = data
+                    if CommonCASUtils.is_cas_part_loaded(check_cas_part):
+                        if CommonCASUtils.is_cas_part_loaded(use_cas_part):
+                            _available_skins.append(use_cas_part)
+                        else:
+                            # this should never happen
+                            log.warn(f"copy_outfits.package missing or broken - {use_cas_part:016X} not found!")
+                    else:
+                        missing_packages.add(package_name)
+                        log.warn(f"Dropping: {is_female} {sim_age}: {data}")
+                _ages.update({is_female: _available_skins})
+            self.available_skins.update({sim_age: _ages})
+
+        if missing_packages:
+            log.info(f"Optional packages which are not installed: '{missing_packages}'. Install some of them to use more skins on mannequins.")
+
+        log.debug(f".... {self.available_skins}")
+        # Initialize store with the available skins
+        self.skin_store = SkinStore(self.available_skins)
+        log.debug(f"init-end")
 
     # A78520CC00C7191C
     def apply_skin(self, zim: CopyOutfitsSim):
@@ -116,6 +187,31 @@ class OutfitSkin(metaclass=Singleton):
             sim_info._current_outfit = (outfit_category, outfit_index)
         log.debug(f"Replacing head {current_head} with new {head_skin}.")
 
+    def fix_head(self, sim_info: SimInfo):
+        sim_info = CommonSimUtils.get_sim_info(sim_info)
+        if not sim_info:
+            return
+        if CommonAgeUtils.is_child(sim_info):
+            sim_age = CopyOutfitsAge.CHILD
+        elif CommonAgeUtils.is_teen_adult_or_elder(sim_info):
+            sim_age = CopyOutfitsAge.TYAE
+        else:
+            log.info(f"Age not supported.")
+            return
+        is_female = CommonGenderUtils.is_female(sim_info)
+        old_head_id = CommonCASUtils.get_cas_part_id_at_body_type(sim_info, BodyType.HEAD.value)
+        # True == CommonCASUtils.is_cas_part_loaded(old_head_id) as the part is 'in use'. A test makes no sense.
+        head_ids = OutfitSkin().available_skins.get(sim_age).get(is_female)
+        head_id = random.choice(head_ids)
 
-# Init SkinStore as soon as possible
+        log.info(f"Fixing '{sim_info}'s head to {head_id} (from {old_head_id}).")
+        CommonCASUtils.attach_cas_part_to_sim(sim_info, head_id, BodyType.HEAD.value)
+
+    @staticmethod
+    @CommonConsoleCommand(ModInfo.get_identity(), 'o19.co.fix', 'Fix the head of the active sim.')
+    def cheat_o19_test_print_genetics(output: CommonConsoleCommandOutput):
+        sim_info = CommonSimUtils.get_active_sim_info()
+        OutfitSkin().fix_head(sim_info)
+
+# Init OutfitSkin / SkinStore as soon as possible
 OutfitSkin()

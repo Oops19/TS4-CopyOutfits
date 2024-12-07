@@ -101,6 +101,7 @@ class RegisterCopyOutfitsInteractions(CommonScriptObjectInteractionHandler):
             0xC11F89ED9D7FF93A,  # 'Destroy' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Mannequin__Remove_PMA_Destroy_debug')
 
             0x4B864F684F7FC787,  # 'Print Clipboard' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More_PMA_Print_Clipboard_debug')
+            0x9D595705F4525479,  # 'Fix Head' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More_PMA_Fix_Head_debug')
             0x5BA6F113C0F2661A,  # 'Clear All' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More_PMA_Clear_All_debug')
             0xA88C83FEBA17597D,  # 'Clipboard 0' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More__Clear_PMA_Clipboard_0_debug')
             0x71BE7E2EB047630C,  # 'Clipboard 1' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More__Clear_PMA_Clipboard_1_debug')

@@ -39,7 +39,7 @@ log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), 'A
 log.enable()
 
 
-class CopyOutfitsMannequin:  # (metaclass=Singleton):
+class CopyOutfitsMannequin(metaclass=Singleton):
     def __init__(self):
         self.guids = {
             CopyOutfitsAge.TYAE: {
