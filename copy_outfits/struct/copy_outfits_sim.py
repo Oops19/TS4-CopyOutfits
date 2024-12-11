@@ -96,8 +96,13 @@ class CopyOutfitsSim:
                 log.warn(f"Error getting sim_id for interaction_target: '{type(interaction_target)}' = '{interaction_target}'")
 
         if self.sim_info:
-            if self.outfit_category == -1:
+            if self.outfit_category == OutfitCategory.CURRENT_OUTFIT.value:
                 self.outfit_category = CommonOutfitUtils.get_current_outfit_category(self.sim_info)
+                if not isinstance(self.outfit_category, int):
+                    try:
+                        self.outfit_category = OutfitCategory(self.outfit_category).value
+                    except:
+                        pass
             if self.outfit_index == -1:
                 self.outfit_index = CommonOutfitUtils.get_current_outfit_index(self.sim_info)
             try:
@@ -105,7 +110,7 @@ class CopyOutfitsSim:
             except:
                 pass
 
-        log.debug(f"Setting sim_info={self.sim_info}; sim_id={self.sim_id}; sim_age={self.sim_age.name}; sim_outfit={self.outfit_name}.{self.outfit_index}")
+        log.debug(f"Setting sim_info={self.sim_info}; sim_id={self.sim_id}; sim_age={self.sim_age.name}; sim_outfit={self.outfit_name}({self.outfit_category}).{self.outfit_index}")
 
     @staticmethod
     def get_age(sim_info: SimInfo) -> CopyOutfitsAge:

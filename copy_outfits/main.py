@@ -240,10 +240,11 @@ class Main:
                 OutfitNotifications().show_notification(f"No sim_info found in cache.")
                 return False
 
+        resend_attributes = False
         if group_id in [OutfitGroupId.EVERYTHING, OutfitGroupId.X_ALL, OutfitGroupId.X_SKIN_TONE, ]:
             sim_info.skin_tone = src_sim_info.skin_tone
             sim_info.skin_tone_val_shift = src_sim_info.skin_tone_val_shift
-            sim_info.resend_skin_tone()
+            resend_attributes = True
             log.debug(f"X_SKIN_TONE")
 
         if src_sim_info is None:
@@ -252,7 +253,7 @@ class Main:
             """ A mannequin can't currently be used as a slider source """
             """ A mannequin can't currently be used as a genetics and physics source """
         else:
-            resend_attributes = False
+
             # age-gender
             if group_id in [OutfitGroupId.EVERYTHING, OutfitGroupId.X_ALL, OutfitGroupId.X_AGE_GENDER, ]:
                 log.debug(f"Cloning base attributes (age, gender, species).")
@@ -277,8 +278,8 @@ class Main:
                 SimInfoBaseWrapper.copy_physical_attributes(sim_info, src_sim_info)
                 resend_attributes = True
 
-            if resend_attributes:
-                SimInfoBaseWrapper.resend_physical_attributes(sim_info)
+        if resend_attributes:
+            SimInfoBaseWrapper.resend_physical_attributes(sim_info)
 
         if src_sim_info is None or mannequin_component:
             log.debug(f"Mannequin can't neither distribute nor retrieve (gender related) traits, walk style and/or skill data.")

@@ -59,7 +59,7 @@ class OutfitPaste(metaclass=Singleton):
             clipboard_index = zim.clipboard_index
 
         log.debug(f"Pasting outfit '{outfit_name}.{outfit_index}' to '{sim_info}' from clipboard '{clipboard_index}'")
-        maximum_outfits = get_maximum_outfits_for_category(outfit_category)  # 1, 3 or 5
+        maximum_outfits = self._get_maximum_outfits_for_category(outfit_category)  # 1, 3 or 5
         if outfit_index >= maximum_outfits:
             log.info(f"Outfit '{outfit_name}' supports only {maximum_outfits} different outfit(s). Won't create '{outfit_name}.{outfit_index}'.")
             return False
@@ -74,11 +74,12 @@ class OutfitPaste(metaclass=Singleton):
             OutfitModifiers().remove_all_outfit_appearance_modifiers(sim_info)
         return True
 
+    # outfit_utils.py#def get_maximum_outfits_for_category(outfit_category):
     @staticmethod
     def _get_maximum_outfits_for_category(outfit_category):
-        if outfit_category in [OutfitCategory.BATHING, OutfitCategory.SITUATION]:
+        if outfit_category in [OutfitCategory.BATHING, OutfitCategory.SITUATION, ]:
             return 1
-        elif outfit_category in [OutfitCategory.SPECIAL, OutfitCategory.CAREER]:
+        elif outfit_category in [OutfitCategory.SPECIAL, OutfitCategory.CAREER, ]:
             return 3
         return 5
-
+        # return get_maximum_outfits_for_category(outfit_category)

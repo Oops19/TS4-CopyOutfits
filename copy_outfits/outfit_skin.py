@@ -47,17 +47,6 @@ class OutfitSkin(metaclass=Singleton):
     """ Add skins to sims """
     def init(self):
         log.debug(f"init")
-        try:
-            log.debug(f"Thread Dump")
-            for thread in threading.enumerate():
-                log.debug(f"{thread}")
-                thread_details = traceback.extract_stack(sys._current_frames()[thread.ident])
-                for thread_detail in thread_details:
-                    (filename, number, function, line_text) = thread_detail
-                    log.debug(f"    {filename}#{number} '{line_text}' in '{function}()'")
-            log.debug(f"")
-        except:
-            pass
 
         self.available_skins: Dict = {
             CopyOutfitsAge.TYAE: {
@@ -212,6 +201,7 @@ class OutfitSkin(metaclass=Singleton):
     def cheat_o19_test_print_genetics(output: CommonConsoleCommandOutput):
         sim_info = CommonSimUtils.get_active_sim_info()
         OutfitSkin().fix_head(sim_info)
+
 
 # Init OutfitSkin / SkinStore as soon as possible
 OutfitSkin()

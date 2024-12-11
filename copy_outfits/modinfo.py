@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.13'
+        return '1.9.15'
 
 
 r'''
@@ -42,6 +42,12 @@ IDEAS for the far future
 TODO
     Load and Save outfits
     Read config files / support user defined skins
+    
+v1.9.15
+    Remove debug thread dump during startup
+v1.9.14
+    Resend also physical attribute skintone_value_shift
+    Fixed type of int/OutfitCategory
 v1.9.13
     Add PieMenu More > Fix Head
 v1.9.12
