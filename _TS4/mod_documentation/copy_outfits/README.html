@@ -1,0 +1,404 @@
+<h1>Copy Outfits - also to Mannequins</h1>
+<i>Copy Outfits</i> allows to copy outfits and more.<br/>
+It is basically the same as 'Outfit Tools - Copy Any Outfit v4' by scumbumbo while the code has been written from scratch and menu interactions have been added to replace the cheat console input.<br/>
+With the current update the sims appearance can be cloned completely.<br/>
+<br/>
+It allows to copy outfits from one sim to the other and also to and from special categories.<br/>
+Outfits for Toddlers are only available for Toddlers, the same applies to Children.<br/>
+Outfits for Teen, Young Adult, Adult and Elder are shared for these age groups.<br/>
+<br/>
+<i>Copy Outfits</i> is a 'hidden' debug menu as it is meant to fix issues or to prepare sims but not for normal game play.<br/>
+Enable cheats with <i>testingcheats true</i> to activate it and Shift-click on sims to use it.<br/>
+<br/>
+<br/>
+<h2>Mannequins and other changes</h2>
+As of 2024-07 it offers experimental support for mannequins and some menus have been restructured.<br/>
+<br/>
+Some icons (128x128 px² DDS images) are broken on purpose as this is a beta mod (or a TS4 issue).<br/>
+<br/>
+All adult and child mannequins are supported.<br/>
+<br/>
+Pasting an outfit to a naked mannequin doesn't dress it. Such an outfit can't be bought by sims.<br/>
+<br/>
+<h3>'Add Outfits' (new)</h3>
+Select (or pick if at least one outfit exists) an outfit category like 'EVERYTHING'.<br/>
+The category will be filled with missing outfits until the limit is reached (0-4 for EVERYTHING, 0-2 for CAREER, ...).<br/>
+This allows to paste outfits to otherwise unavailable outfit slots.<br/>
+<ul>
+	<li>`Copy Outfits > Add Outfits > Category | X-Category | Picker | X-Picker`</li>
+	<li>Available but not implemented: Picker | X-Picker</li>
+</ul>
+<br/>
+<br/>
+<h2>'Skin tone' (new)</h2>
+The TS4 skin tone is not a CAS Part.<br/>
+Now it can be cloned while it is not the same as many 'CC skin tones and overlays' which usually use a body slot.<br/>
+<br/>
+<ul>
+	<li>`Copy Outfits > Copy</i> to select the source sim.</li>
+	<li>`Copy Outfits > Clone > Characteristics > Skintone</i> to transfer the TS4 skin tone.</li>
+</ul>
+<br/>
+<h3>'Mannequin > Add' (new)</h3>
+This menu is always visible while it only works if there is an outfit in the clipboard 0.<br/>
+A mannequin is added to the lot.<br/>
+<br/>
+In build-buy mode the number of allowed mannequins is limited.<br/>
+Adding to much of them makes it impossible to exit build-buy mode until the mannequins have been deleted.<br/>
+There are 3rd party mods available to increase this number.<br/>
+<br/>
+<h3>'Mannequin > Skins' (new)</h3>
+CC skin tones and/or overlays which are bound to the wrist, tattoo and/or other body locations can be transferred with <i>Clone > Everything</i> and/or <i>Clone > CAS Parts > All</i> and they will collide with skin parts applied to the head.<br/>
+Normally one will clone sim skins this way.<br/>
+<br/>
+The Skins should only be applied to mannequins without a skin as they are bound to the (mannequin) head.<br/>
+Skins don't work out of the box as this mod does not contain skins.<br/>
+It contains CAS parts to reference skins by other creators.<br/>
+Such skins usually do not contain 'underwear'.<br/>
+The vanilla 'Censor Grid' is not applied to mannequins but the default TS4 'Sexy Underwear' is applied to them.<br/>
+<br/>
+Skins can of course be applied to sims too, this might deform the head and binds the skin to the head.<br/>
+Probably not what you want.<br/>
+But it gives you the freedom to use all body slots normally as 'head' is usually not used.<br/>
+<br/>
+<h4>Supported 3rd party skins</h4>
+The normal versions (not overlay) are supported.<br/>
+These can be used normally for sims, and if installed also for mannequins (usually limited to one skin out of 30).<br/>
+<ul>
+	<li>This Is Them</li>
+	<li>TYAE Female: PamelaA, Rihanna, SalmaH, SelenaG</li>
+	<li>TYAE Female: Abény, Anok, Asha, Ashley, Clémentine, Divya, Hye-Jeong, Jenna, Nayla, Suzie, Yoon Young</li>
+	<li>TYAE Male: A$AP, Dijbril, Jacob&Barry</li>
+	<li>Child Female: 18, 19, 22, 23</li>
+	<li>Child Male: 17, 19, 23, 24</li>
+	<li>Dark Pink:</li>
+	<li>TYAE Female: Miami Skin V1</li>
+	<li>JaySims</li>
+	<li>TYAE Female: 7, 8</li>
+</ul>
+<br/>
+<h3>'Clone'</h3>
+The 'Clone' menu offers now a global 'Everything' option and two menus for 'Characteristics' and/or 'CAS Parts'.<br/>
+The CAS Parts are grouped into:<br/>
+<ul>
+	<li>Garment: Hat FullBody UpperBody LowerBody Shoes Cummerbund Gloves Socks Tights AttachmentBack</li>
+	<li>Head: Head Teeth Eyecolor EyecolorSecondary SkindetailNoseColor Hair HaircolorOverride FacialHair</li>
+	<li>Piercing: LipRingLeft LipRingRight NoseRingLeft NoseRingRight BrowRingLeft BrowRingRight</li>
+	<li>Head Jewelry: Earrings Glasses Necklace</li>
+	<li>Hand Jewelry: WristLeft WristRight IndexFingerLeft IndexFingerRight RingFingerLeft RingFingerRight MiddleFingerLeft MiddleFingerRight</li>
+	<li>Head Paint: LipsTick EyeShadow EyeLiner Blush Facepaint Eyebrows Mascara</li>
+	<li>Skin: SkinOverlay BodyhairArm BodyhairTorsofront BodyhairLeg BodyhairTorsoback</li>
+	<li>Tattoo: TattooArmLowerLeft TattooArmUpperLeft TattooArmLowerRight TattooArmUpperRight TattooLegLeft TattooLegRight TattooTorsoBackLower TattooTorsoBackUpper TattooTorsoFrontLower TattooTorsoFrontUpper</li>
+	<li>Nail Color: Fingernail Toenail</li>
+	<li>Occults: OccultBrow OccultEyeSocket OccultEyeLid OccultMouth OccultLeftCheek OccultRightCheek OccultNeckScar</li>
+	<li>Scars: ForearmScar BodyscarArmleft BodyscarTorsofrontvalue, BodyscarLegleft BodyscarArmright BodyscarTorsoback BodyscarLegright</li>
+	<li>Other: Acne SkindetailAcnePuberty SkindetailFreckles Bodyfreckles SkindetailDimpleLeft SkindetailDimpleRight Bite Scarface</li>
+	<li>Mole / Crease: SkindetailMoleLipLeft SkindetailMoleLipRight SkindetailMoleCheekLeft SkindetailMoleCheekRight SkindetailCreaseMouth SkindetailCreaseForehead Moleface Molechestupper Molebackupper</li>
+	<li>Marks: Birthmarkface Birthmarktorsofront Birthmarktorsoback StretchmarksFront StretchmarksBack Birthmarkarms Birthmarklegs</li>
+	<li>Horse: Saddle Bridle Reins Blanket SkindetailHoofColor HairMane HairTail HairForelock HairFeathers Horn TailBase</li>
+	<li>Pet: FurBody Ears Tail</li>
+</ul>
+<br/>
+The Characteristics are grouped into:<br/>
+<ul>
+	<li>Age Gender</li>
+	<li>~~Genetics~~</li>
+	<li>Physics & Genetics</li>
+	<li>Sliders</li>
+	<li>Walkstyle</li>
+	<li>~~Traits~~</li>
+	<li>~~Skills~~</li>
+	<li>Skintone (the TS4 skin tone, see above)</li>
+</ul>
+<br/>
+The Skin menu contains:<br/>
+<ul>
+	<li>Same Skin - To apply the same skin again</li>
+	<li>Next Skin - To apply the next skin</li>
+	<li>Previous Skin - To apply the previous skin</li>
+	<li>Random Skin - To apply a random skin</li>
+</ul>
+<br/>
+<br/>
+<h1>Previous version</h1>
+Everything new is above. Everything below should still work in this version.<br/>
+<br/>
+<h2>Menu 'Copy Outfits'</h2>
+<ul>
+	<li>The most simple option is to use 'Copy' to copy the current outfit to the internal clipboard #0 and 'Paste' to paste from #0 to the current outfit.</li>
+	<li>Appearance modifiers are not taken into account. If the sim wears no shoes due to an appearance modifier (Snowy Escape DLC) the shoes will still be copied - and of course vice versa. If the sim wears boots due to an appearance modifier the boots will not be copied.</li>
+	<li>The 'Copy/Paste ...' > '(X-)Picker ...' menus allow to select a specific outfit. It will be copied to/from clipboard 0. See <i>Menu Special-Picker</i> for details.</li>
+	<li>'Transfer ...' allows to copy other things from clipboard 0 to the current outfit. See <i>Menu Transfer</i> for details.</li>
+</ul>
+<br/>
+The other menu options may be used rarely:<br/>
+<ul>
+	<li>The 'Copy/Paste ...' > '(X-)Category ...' menus allow to copy/paste all outfits, up to five.</li>
+	<li>'Copy to ...' allows to copy the current outfit to one of the other clipboards [1..4].</li>
+	<li>'Paste from ...' allows to paste the outfit from another clipboards  [1..4] to the current outfit.</li>
+	<li>'Paste to ...' allows to paste the outfit from clipboard 0 to the current outfit category but to a specific index [0..4].</li>
+</ul>
+<br/>
+<h3>Menu Special-Picker (X-Picker)</h3>
+It allows to select individual special outfits. These include:<br/>
+<ul>
+	<li>Bathing[0] (Nude)</li>
+	<li>Situation[0]</li>
+	<li>Special[0..1] (0=Special 1=Nude with Towel)</li>
+	<li>Career[0]</li>
+	<li>Batuu[0..4]</li>
+</ul>
+<br/>
+<h3>Menu Transfer</h3>
+<ul>
+	<li>'Sim' includes everything (no sliders) which defines a sim. These are the head, teeth, hair, eye colors, and many skin details.</li>
+	<li>'Cloth' pastes the hat, full body or upper and lower outfit, shoes, cummerbund, gloves, socks, tights. The 'Paste' commands from above pastes these items.</li>
+	<li>'Body Paint' pastes all body paint. This includes tattoos, skin overlays, acne and nails.</li>
+	<li>'Hand Accessories' pastes bracelets and rings and other accessories attached to writs or fingers.</li>
+	<li>'Head Accessories' pastes ear rings, glasses and the necklace.</li>
+	<li>'Head Paint' includes lipstick, eyebrows, shadow and liner, blush, mascara and face paint.</li>
+	<li>'Head Piercings' includes brow, lip and nose piercings.</li>
+	<li>'occult_scars' includes all occult scars and also the non-occult forearm scar.</li>
+	<li>'Pet' includes the fur body, ears and tail (not tested).</li>
+	<li>'Complete Outfit' (previously All) pastes everything (see above) to the selected sim. Sliders are not transferred but the sims will look very similar.</li>
+</ul>
+<br/>
+<h3>Menu X-Transfer</h3>
+This is the sub menu which does not really has something to do with 'Copy Outfits'.<br/>
+<ul>
+	<li>'Age & Gender' includes age, gender, '¿extended_species?', walk styles, body frame, clothing preferences and whether the sim can give/receive pregnancy. Existing pregnancies will neither be canceled or transferred.</li>
+	<li>'Genetics' is only '¿genetics?', whatever it is.</li>
+	<li>'Physics & Genetics' includes '?genetics?', physic, sliders, voice, skin and if available also pelt and/or '¿base_traits?', whatever this is.</li>
+	<li>'Traits' includes all traits.</li>
+	<li>'All' includes 'Complete Outfit' and everything from above.</li>
+	<li>~~'Sliders'</s> - not implemented as a standalone interaction, use 'All' or 'Physics & Genetics'</li>
+	<li>~~'Walkstyles'</s> - not implemented as a standalone interaction, use 'All' or 'Age & Gender'</li>
+	<li>~~'Relationships'</s> - not implemented</li>
+	<li>~~'Only Face Sliders'</s> - not implemented</li>
+	<li>~~'Only Body Sliders'</s> - not implemented</li>
+	<li>~~'Skintones'</s> - not implemented</li>
+</ul>
+<br/>
+<h3>Menu More</h3>
+<ul>
+	<li>'Print Clipboard' prints the copied outfits including the source sim. Outfit IDs are logged to the log file where you can copy them and will not flood the notification area.</li>
+	<li>'Clear All' removes all outfits from the cache.</li>
+	<li>'Clear ...' allows to remove a specific outfit from the cache.</li>
+</ul>
+<br/>
+<h2>Random sims</h2>
+<h3>Mermaids (Tail)</h3>
+Special outfit categories aren't supported.<br/>
+<h3>Aliens (Disguise)</h3>
+Special outfit categories aren't supported.<br/>
+<h3>Pets (Cats & Dogs)</h3>
+Do not copy outfits from cats to dogs and vice versa. Technically it works but it looks odd.<br/>
+<h3>Witch, Vampire</h3>
+These should work as every other sim<br/>
+<h3>Robots, Plant Sim, Ghost, Skeleton</h3>
+Not tested. It is possible that they do not support special outfits and may throw an exception.<br/>
+<br/>
+<h2>Technical Details</h2>
+There are six groups to store outfits:<br/>
+<ul>
+	<li>Teen, Young Adult, Adult and Elder</li>
+	<li>Children</li>
+	<li>Toddler</li>
+	<li>Infants</li>
+	<li>Babies</li>
+	<li>Unknown (non-sims, could be pets - not tested)</li>
+</ul>
+<br/>
+There are five clipboards [0..4] for the outfits. Each sim can have up to five outfits [0..4] for each normal category and 1 to 5 for special categories.<br/>
+<br/>
+<h3>History</h3>
+This mod has been inspired by 'Copy Any Outfit' by scumbumbo. All code has been written from scratch.<br/>
+<br/>
+<h2>Images</h2>
+!<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_4.png'>Menu 4</a><br/>
+!<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_1.png'>Menu 1</a><br/>
+!<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_2.png'>Menu 2</a><br/>
+!<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Menu_3.png'>Menu 3</a><br/>
+!<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_1.png'>Transfer 1</a><br/>
+!<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_2.png'>Transfer 2</a><br/>
+!<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_3.png'>Transfer 3</a><br/>
+!<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_4.png'>Transfer 4</a><br/>
+<br/>
+<h1>Addendum</h1>
+<br/>
+<h2>Game compatibility</h2>
+This mod has been tested with <i>The Sims 4</i> 1.111.102, S4CL 3.9, TS4Lib 0.3.33.<br/>
+It is expected to be compatible with many upcoming releases of TS4, S4CL and TS4Lib.<br/>
+<br/>
+<h2>Dependencies</h2>
+Download the ZIP file, not the sources.<br/>
+<ul>
+	<li><a href='../../releases/latest'>This Mod</a></li>
+	<li><a href='https://github.com/Oops19/TS4-Library/releases/latest'>TS4-Library</a></li>
+	<li><a href='https://github.com/ColonolNutty/Sims4CommunityLibrary/releases/latest'>S4CL</a></li>
+	<li><a href='https://www.ea.com/games/the-sims/the-sims-4'>The Sims 4</a></li>
+</ul>
+<br/>
+If not installed download and install TS4 and these mods.<br/>
+All are available for free.<br/>
+<br/>
+<h2>Installation</h2>
+<ul>
+	<li>Locate the localized <i>The Sims 4</i> folder which contains the <i>Mods</i> folder.</li>
+	<li>Extract the ZIP file into this <i>The Sims 4</i> folder.</li>
+	<li>It will create the directories/files <i>Mods/_o19_/$mod_name.ts4script`, <i>Mods/_o19_/$mod_name.package`, <i>mod_data/$mod_name/*</i> and/or <i>mod_documentation/$mod_name/*`</li>
+	<li>`mod_logs/$mod_name.txt</i> will be created as soon as data is logged.</li>
+</ul>
+<br/>
+<h3>Manual Installation</h3>
+If you don't want to extract the ZIP file into <i>The Sims 4</i> folder you might want to read this.<br/>
+<ul>
+	<li>The files in <i>ZIP-File/mod_data</i> are usually required and should be extracted to <i>The Sims 4/mod_data`.</li>
+	<li>The files in <i>ZIP-File/mod_documentation</i> are for you to read it. They are not needed to use this mod.</li>
+	<li>The <i>Mods/_o19_/*.ts4script</i> files can be stored in a random folder within <i>Mods</i> or directly in <i>Mods</i>. I highly recommend to store it in <i>_o19_</i> so you know who created it.</li>
+</ul>
+<br/>
+<h2>Usage Tracking / Privacy</h2>
+This mod does not send any data to tracking servers. The code is open source, not obfuscated, and can be reviewed.<br/>
+<br/>
+Some log entries in the log file ('mod_logs' folder) may contain the local username, especially if files are not found (WARN, ERROR).<br/>
+<br/>
+<h2>External Links</h2>
+<a href='https://github.com/Oops19/'>Sources</a><br/>
+<a href='https://discord.gg/d8X9aQ3jbm'>Support</a><br/>
+<a href='https://www.patreon.com/o19'>Donations</a><br/>
+<br/>
+<h2>Copyright and License</h2>
+<ul>
+	<li>© 2024 <a href='https://github.com/Oops19'>Oops19</a></li>
+	<li>License for '.package' files: <a href='https://tos.ea.com/legalapp/WEBTERMS/US/en/PC/'>Electronic Arts TOS for UGC</a></li>
+	<li>License for other media unless specified differently: <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a> unless the Electronic Arts TOS for UGC overrides it.</li>
+</ul>
+This allows you to use this mod and re-use the code even if you don't own The Sims 4.<br/>
+Have fun extending this mod and/or integrating it with your mods.<br/>
+<br/>
+Oops19 / o19 is not endorsed by or affiliated with Electronic Arts or its licensors.<br/>
+Game content and materials copyright Electronic Arts Inc. and its licensors.<br/>
+Trademarks are the property of their respective owners.<br/>
+<br/>
+<h3>TOS</h3>
+<ul>
+	<li>Please don't put it behind a paywall.</li>
+	<li>Please don't create mods which break with every TS4 update.</li>
+	<li>For simple tuning modifications use <a href='https://github.com/Oops19/TS4-PatchXML'>Patch-XML</a></li>
+	<li>or <a href='https://github.com/Oops19/TS4-LiveXML'>LiveXML</a>.</li>
+	<li>To check the XML structure of custom tunings use <a href='https://github.com/Oops19/TS4-VanillaLogs'>VanillaLogs</a>.</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<h1>Addendum</h1>
+<br/>
+<h2>Game compatibility</h2>
+This mod has been tested with <i>The Sims 4</i> 1.112.519, S4CL 3.10, TS4Lib 0.3.36.<br/>
+It is expected to be compatible with many upcoming releases of TS4, S4CL and TS4Lib.<br/>
+<br/>
+<h2>Dependencies</h2>
+Download the ZIP file, not the sources.<br/>
+<ul>
+	<li><a href='../../releases/latest'>This Mod</a></li>
+	<li><a href='https://github.com/Oops19/TS4-Library/releases/latest'>TS4-Library</a></li>
+	<li><a href='https://github.com/ColonolNutty/Sims4CommunityLibrary/releases/latest'>S4CL</a></li>
+	<li><a href='https://www.ea.com/games/the-sims/the-sims-4'>The Sims 4</a></li>
+</ul>
+<br/>
+If not installed download and install TS4 and these mods.<br/>
+All are available for free.<br/>
+<br/>
+<h2>Removal of the mod</h2>
+The mod installation with unzip writes to a few directories.<br/>
+To remove this mod and all related files locate the files and folders and remove them:<br/>
+<ul>
+	<li>`The Sims 4/Mods/_o19_/$mod_name.*`</li>
+	<li>`The Sims 4/mod_data/_o19_/$mod_name/`</li>
+	<li>`The Sims 4/mod_documentation/_o19_/$mod_name/`</li>
+	<li>`The Sims 4/mod_sources/_o19_/$mod_name/`</li>
+</ul>
+<br/>
+To remove all of my mods locate these folders and remove them:<br/>
+<ul>
+	<li>`The Sims 4/Mods/_o19_/`</li>
+	<li>`The Sims 4/mod_data/_o19_/`</li>
+	<li>`The Sims 4/mod_documentation/_o19_/`</li>
+	<li>`The Sims 4/mod_sources/_o19_/`</li>
+</ul>
+<br/>
+<h2>Installation</h2>
+<ul>
+	<li>Locate the localized <i>The Sims 4</i> folder which contains the <i>Mods</i> folder.</li>
+	<li>Extract the ZIP file into this <i>The Sims 4</i> folder.</li>
+	<li>It will create the directories/files <i>Mods/_o19_/$mod_name.ts4script`, <i>Mods/_o19_/$mod_name.package`, <i>mod_data/$mod_name/*</i> and/or <i>mod_documentation/$mod_name/*</i> and/or <i>mod_sources/$mod_name/*`</li>
+	<li>CAS and build-buy UGC without scripts will create <i>Mods/o19/$mod_name.package`.</li>
+	<li>`mod_logs/$mod_name.txt</i> will be created as soon as data is logged.</li>
+	<li>`mod_documentation/$mod_name/</i> and/or <i>mod_sources/$mod_name/</i> are not required and can be deleted.</li>
+</ul>
+<br/>
+<h3>Manual Installation</h3>
+If you don't want to extract the ZIP file into <i>The Sims 4</i> folder you might want to read this.<br/>
+You can extract the ZIP file to a temporary directory and copy the folders manually.<br/>
+<ul>
+	<li>The files in <i>ZIP-File/mod_data</i> are usually required and should be extracted to <i>The Sims 4/mod_data`.</li>
+	<li>The files in <i>ZIP-File/mod_documentation</i> are for you to read it. They are not needed to use this mod.</li>
+	<li>The files in <i>ZIP-File/mod_sources</i> are not needed to use this mod.</li>
+	<li>The <i>Mods/_o19_/*.ts4script</i> files can be stored in a random folder within <i>Mods</i> or directly in <i>Mods</i>. I highly recommend to store it in <i>_o19_</i> so you know who created it.</li>
+</ul>
+<br/>
+<h2>Troubleshooting</h2>
+When installed properly this is not necessary at all.<br/>
+For manual installations check these things and make sure each question can be answered with 'yes'.<br/>
+<ul>
+	<li>Does 'The Sims 4' (localized to Die Sims 4, Les Sims 4, Los Sims 4, The Sims 4, ...) exist?</li>
+	<li>Does <i>The Sims 4</i> contain the folder <i>Mods`?</li>
+	<li>Does <i>Mods</i> contain the folder <i>_o19_`?</li>
+	<li>Does <i>_19_</i> contain <i>ts4lib.ts4script</i> and <i>ts4lib.package</i> files?</li>
+	<li>Does <i>_19_</i> contain <i>{mod_name}.ts4script</i> and/or <i>{mod_name}.package</i> files?</li>
+	<li>Does <i>The Sims 4</i> contain the folder <i>mod_data`?</li>
+	<li>Does <i>mod_data</i> contain the folder <i>{mod_name}`?</li>
+	<li>Does <i>{mod_name}</i> contain files or folders?</li>
+	<li>Does <i>The Sims 4</i> contain the <i>mod_logs</i> ?</li>
+	<li>Does <i>mod_logs</i> contain the file <i>Sims4CommunityLib_*_Messages.txt`?</li>
+	<li>Does <i>mod_logs</i> contain the file <i>TS4-Library_*_Messages.txt`?</li>
+	<li>Is this the most recent version or can it be updated?</li>
+	<li>Does <i>mod_logs</i> contain the file <i>{mod_name}_*_Messages.txt`?</li>
+	<li>Is this the most recent version or can it be updated?</li>
+	<li>Doesn't <i>The Sims 4</i> contain the file(s) <i>last_exception.txt</i>  and/or <i>last_exception*.txt</i> ?</li>
+	<li>Share the <i>The Sims 4/mod_logs/Sims4CommunityLib_*_Messages.txt</i> and <i>The Sims 4/mod_logs/{mod_name}_*_Messages.txt</i>  file.</li>
+</ul>
+<br/>
+<h2>Usage Tracking / Privacy</h2>
+This mod does not send any data to tracking servers. The code is open source, not obfuscated, and can be reviewed.<br/>
+<br/>
+Some log entries in the log file ('mod_logs' folder) may contain the local username, especially if files are not found (WARN, ERROR).<br/>
+<br/>
+<h2>External Links</h2>
+<a href='https://github.com/Oops19/'>Sources</a><br/>
+<a href='https://discord.gg/d8X9aQ3jbm'>Support</a><br/>
+<a href='https://www.patreon.com/o19'>Donations</a><br/>
+<br/>
+<h2>Copyright and License</h2>
+<ul>
+	<li>© 2020-2025 <a href='https://github.com/Oops19'>Oops19</a></li>
+	<li>License for '.package' files: <a href='https://tos.ea.com/legalapp/WEBTERMS/US/en/PC/'>Electronic Arts TOS for UGC</a></li>
+	<li>License for other media unless specified differently: <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a> unless the Electronic Arts TOS for UGC overrides it.</li>
+</ul>
+This allows you to use this mod and re-use the code even if you don't own The Sims 4.<br/>
+Have fun extending this mod and/or integrating it with your mods.<br/>
+<br/>
+Oops19 / o19 is not endorsed by or affiliated with Electronic Arts or its licensors.<br/>
+Game content and materials copyright Electronic Arts Inc. and its licensors.<br/>
+Trademarks are the property of their respective owners.<br/>
+<br/>
+<h3>TOS</h3>
+<ul>
+	<li>Please don't put it behind a paywall.</li>
+	<li>Please don't create mods which break with every TS4 update.</li>
+	<li>For simple tuning modifications use <a href='https://github.com/Oops19/TS4-PatchXML'>Patch-XML</a></li>
+	<li>or <a href='https://github.com/Oops19/TS4-LiveXML'>LiveXML</a>.</li>
+	<li>To check the XML structure of custom tunings use <a href='https://github.com/Oops19/TS4-VanillaLogs'>VanillaLogs</a>.</li>
+</ul>
+<br/>
