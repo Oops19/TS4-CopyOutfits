@@ -22,3 +22,4 @@ class OutfitCategory(CommonEnum):
     HOTWEATHER = 10
     COLDWEATHER = 11
     BATUU = 12
+    SMALL_BUSINESS = 13

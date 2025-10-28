@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.15'
+        return '1.9.17'
 
 
 r'''
@@ -42,7 +42,13 @@ IDEAS for the far future
 TODO
     Load and Save outfits
     Read config files / support user defined skins
-    
+
+v1.9.17
+    Pie Menu for 'Small Business' - icons missing
+v1.9.16
+    Allow to create missing 'Small Business Outfits'
+    'Small Business Outfits' are found in the normal 'Picker'
+    Named menu icons are still missing.
 v1.9.15
     Remove debug thread dump during startup
 v1.9.14

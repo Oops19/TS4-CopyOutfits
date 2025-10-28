@@ -1,5 +1,5 @@
-CopyOutfits v1.9.15 for The Sims 4 v1.111.102 and S4CL v3.9
-Created on 2024-12-08
-v1.9.15
-    Remove debug thread dump during startup
+CopyOutfits v1.9.17 for The Sims 4 v1.118.257 and S4CL v3.15
+Created on 2025-10-28
+v1.9.17
+    Pie Menu for 'Small Business' - icons missing
 

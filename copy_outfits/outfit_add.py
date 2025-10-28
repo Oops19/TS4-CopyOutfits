@@ -69,6 +69,8 @@ class OutfitAdd:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_SITUATION, )
             elif outfit_category == OutfitCategory.SWIMWEAR:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_SWIMWEAR, )
+            elif outfit_category == OutfitCategory.SMALL_BUSINESS:
+                tag_list = (CommonGameTag.UNIFORM_SMALL_BUSINESS_EMPLOYEE, )
             else:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_BATHING, )
 

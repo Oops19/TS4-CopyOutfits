@@ -123,6 +123,10 @@ class RegisterCopyOutfitsInteractions(CommonScriptObjectInteractionHandler):
             0x193C7DC81219FD5A,  # 'Situation' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Xx2DCategory_PMA_Situation_debug')
             0xD5329B0934E989D7,  # 'Special' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Xx2DCategory_PMA_Special_debug')
             0x1A54B1AF82F79ACD,  # 'Batuu' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Xx2DCategory_PMA_Batuu_debug')
+
+            0xA5C5F7534A1EA693,  # 'Small Business' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy__Category_PMA_Small_Business_debug')
+            0x17C7A5D010AC54C9,  # 'Small Business' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste__Category_PMA_Small_Business_debug')
+            0x441A309CE4051C06,  # 'Small Business' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Category_PMA_Small_Business_debug')
         )
         return interactions
 
