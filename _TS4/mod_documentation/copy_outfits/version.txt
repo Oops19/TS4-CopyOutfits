@@ -1,5 +1,5 @@
-CopyOutfits v1.9.17 for The Sims 4 v1.118.257 and S4CL v3.15
-Created on 2025-10-28
+CopyOutfits v1.9.17 for The Sims 4 v1.119.109 and S4CL v3.15
+Created on 2025-11-09
 v1.9.17
     Pie Menu for 'Small Business' - icons missing
 
