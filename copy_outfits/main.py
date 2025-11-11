@@ -416,7 +416,7 @@ class Main:
         clipboard_index = zim.clipboard_index
         outfit_name = zim.outfit_name
 
-        SimStore.sims.update({sim_age: sim_id})
+        SimStore.sims.reset_motives({sim_age: sim_id})
         if action_id == PieMenuActionId.PICKER:
             self.open_outfit_picker(zim, action, None, None)
         elif action_id == PieMenuActionId.X_PICKER:
