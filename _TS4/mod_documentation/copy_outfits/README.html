@@ -1,36 +1,117 @@
-<h1>Copy Outfits - also to Mannequins</h1>
-<i>Copy Outfits</i> allows to copy outfits and more.<br/>
-It is basically the same as 'Outfit Tools - Copy Any Outfit v4' by scumbumbo while the code has been written from scratch and menu interactions have been added to replace the cheat console input.<br/>
-With the current update the sims appearance can be cloned completely.<br/>
+<h1>👕 Copy Outfits</h1>
+CopyOutfits allows you to copy outfits between Sims, outfit categories, and even mannequins.<br/>
+It’s inspired by Outfit Tools – Copy Any Outfit v4 by scumbumbo, but rebuilt from scratch with menu-based interactions instead of cheat commands.<br/>
 <br/>
-It allows to copy outfits from one sim to the other and also to and from special categories.<br/>
-Outfits for Toddlers are only available for Toddlers, the same applies to Children.<br/>
-Outfits for Teen, Young Adult, Adult and Elder are shared for these age groups.<br/>
+<h2>🧬 Key Features</h2>
+<ul>
+	<li>Copy outfits between Sims</li>
+	<li>Copy outfits to and from special categories (e.g., towel, bathing)</li>
+	<li>Copy outfits to **mannequins**</li>
+	<li>Clone a Sim’s entire appearance</li>
+	<li>Supports Toddlers, Children, and Teen–Elder age groups</li>
+	<li>Fully integrated into pie menus for ease of use</li>
+</ul>
 <br/>
-<i>Copy Outfits</i> is a 'hidden' debug menu as it is meant to fix issues or to prepare sims but not for normal game play.<br/>
-Enable cheats with <i>testingcheats true</i> to activate it and Shift-click on sims to use it.<br/>
+🧒 Note: Outfits for Toddlers and Children are age-specific. Teen through Elder share outfit compatibility.<br/>
+<br/>
+<h2>🧑‍💻 Usage</h2>
+<ul>
+	<li>Enable debug menus if needed</li>
+	<li>Shift-click on a Sim to access the CopyOutfits pie menu</li>
+	<li>Choose source and target outfits using the in-game interface</li>
+	<li>Works seamlessly with custom outfits created in CAS</li>
+</ul>
+<br/>
+<h2>🧵 Tips for Outfit Management</h2>
+<ul>
+	<li>Create your desired outfit in CAS (e.g., Everyday.1)</li>
+	<li>Use CopyOutfits to transfer it to special categories like SPECIAL.1 (towel) or BATHING.0 (nude)</li>
+	<li>Ideal for pairing with mods like <a href='https://github.com/Oops19/TS4-BlockGenerateOutfits'>TS4 Keep Outfit</a> to prevent auto-replacement.</li>
+</ul>
+<br/>
+<h2>⚠️ Known Limitations</h2>
+<ul>
+	<li>Some CAS parts may not transfer correctly for Children and Elders due to skin compatibility</li>
+	<li>Occult Sims are not explicitly supported</li>
+	<li>Mannequin outfit copying may still cause exceptions in rare cases</li>
+</ul>
 <br/>
 <br/>
-<h2>Mannequins and other changes</h2>
-As of 2024-07 it offers experimental support for mannequins and some menus have been restructured.<br/>
+<h2>Menu 'Copy Outfits'</h2>
+<ul>
+	<li>The most simple option is to use 'Copy' to copy the current outfit to the internal clipboard #0 and 'Paste' to paste from #0 to the current outfit.</li>
+	<li>Appearance modifiers are not taken into account. If the sim wears no shoes due to an appearance modifier (Snowy Escape DLC) the shoes will still be copied - and of course vice versa. If the sim wears boots due to an appearance modifier the boots will not be copied.</li>
+	<li>The 'Copy/Paste ...' > '(X-)Picker ...' menus allow to select a specific outfit. It will be copied to/from clipboard 0. See <i>Menu Special-Picker</i> for details.</li>
+	<li>'Transfer ...' allows to copy other things from clipboard 0 to the current outfit. See <i>Menu Transfer</i> for details.</li>
+</ul>
 <br/>
-Some icons (128x128 px² DDS images) are broken on purpose as this is a beta mod (or a TS4 issue).<br/>
+The other menu options may be used rarely:<br/>
+<ul>
+	<li>The 'Copy/Paste ...' > '(X-)Category ...' menus allow to copy/paste all outfits, up to five.</li>
+	<li>'Copy to ...' allows to copy the current outfit to one of the other clipboards [1..4].</li>
+	<li>'Paste from ...' allows to paste the outfit from another clipboards  [1..4] to the current outfit.</li>
+	<li>'Paste to ...' allows to paste the outfit from clipboard 0 to the current outfit category but to a specific index [0..4].</li>
+</ul>
 <br/>
-All adult and child mannequins are supported.<br/>
+<h2>Menu Special-Picker (X-Picker)</h2>
+It allows to select individual special outfits. These include:<br/>
+<ul>
+	<li>Bathing[0] (Nude)</li>
+	<li>Situation[0]</li>
+	<li>Special[0..1] (0=Special 1=Nude with Towel)</li>
+	<li>Career[0]</li>
+	<li>Batuu[0..4]</li>
+</ul>
 <br/>
-Pasting an outfit to a naked mannequin doesn't dress it. Such an outfit can't be bought by sims.<br/>
+<h2>Menu Transfer</h2>
+<ul>
+	<li>'Sim' includes everything (no sliders) which defines a sim. These are the head, teeth, hair, eye colors, and many skin details.</li>
+	<li>'Cloth' pastes the hat, full body or upper and lower outfit, shoes, cummerbund, gloves, socks, tights. The 'Paste' commands from above pastes these items.</li>
+	<li>'Body Paint' pastes all body paint. This includes tattoos, skin overlays, acne and nails.</li>
+	<li>'Hand Accessories' pastes bracelets and rings and other accessories attached to writs or fingers.</li>
+	<li>'Head Accessories' pastes ear rings, glasses and the necklace.</li>
+	<li>'Head Paint' includes lipstick, eyebrows, shadow and liner, blush, mascara and face paint.</li>
+	<li>'Head Piercings' includes brow, lip and nose piercings.</li>
+	<li>'occult_scars' includes all occult scars and also the non-occult forearm scar.</li>
+	<li>'Pet' includes the fur body, ears and tail (not tested).</li>
+	<li>'Complete Outfit' (previously All) pastes everything (see above) to the selected sim. Sliders are not transferred but the sims will look very similar.</li>
+</ul>
 <br/>
-<h3>'Add Outfits' (new)</h3>
+<h2>Menu X-Transfer</h2>
+This is the sub menu which does not really has something to do with 'Copy Outfits'.<br/>
+<ul>
+	<li>'Age & Gender' includes age, gender, '¿extended_species?', walk styles, body frame, clothing preferences and whether the sim can give/receive pregnancy. Existing pregnancies will neither be canceled or transferred.</li>
+	<li>'Genetics' is only '¿genetics?', whatever it is.</li>
+	<li>'Physics & Genetics' includes '?genetics?', physic, sliders, voice, skin and if available also pelt and/or '¿base_traits?', whatever this is.</li>
+	<li>'Traits' includes all traits.</li>
+	<li>'All' includes 'Complete Outfit' and everything from above.</li>
+	<li>~~'Sliders'</s> - not implemented as a standalone interaction, use 'All' or 'Physics & Genetics'</li>
+	<li>~~'Walkstyles'</s> - not implemented as a standalone interaction, use 'All' or 'Age & Gender'</li>
+	<li>~~'Relationships'</s> - not implemented</li>
+	<li>~~'Only Face Sliders'</s> - not implemented</li>
+	<li>~~'Only Body Sliders'</s> - not implemented</li>
+	<li>'Skintones' - not implemented</li>
+</ul>
+<br/>
+<h2>Menu More</h2>
+<ul>
+	<li>'Print Clipboard' prints the copied outfits including the source sim. Outfit IDs are logged to the log file where you can copy them and will not flood the notification area.</li>
+	<li>'Clear All' removes all outfits from the cache.</li>
+	<li>'Clear ...' allows to remove a specific outfit from the cache.</li>
+</ul>
+<br/>
+<br/>
+<h3>'Add Outfits'</h3>
 Select (or pick if at least one outfit exists) an outfit category like 'EVERYTHING'.<br/>
 The category will be filled with missing outfits until the limit is reached (0-4 for EVERYTHING, 0-2 for CAREER, ...).<br/>
 This allows to paste outfits to otherwise unavailable outfit slots.<br/>
 <ul>
-	<li>`Copy Outfits > Add Outfits > Category | X-Category | Picker | X-Picker`</li>
-	<li>Available but not implemented: Picker | X-Picker</li>
+	<li>`Copy Outfits > Add Outfits > Category | X-Category`</li>
+	<li>Also available but not implemented: Picker | X-Picker</li>
 </ul>
 <br/>
 <br/>
-<h2>'Skin tone' (new)</h2>
+<h3>'Skin tone'</h3>
 The TS4 skin tone is not a CAS Part.<br/>
 Now it can be cloned while it is not the same as many 'CC skin tones and overlays' which usually use a body slot.<br/>
 <br/>
@@ -39,7 +120,7 @@ Now it can be cloned while it is not the same as many 'CC skin tones and overlay
 	<li>`Copy Outfits > Clone > Characteristics > Skintone</i> to transfer the TS4 skin tone.</li>
 </ul>
 <br/>
-<h3>'Mannequin > Add' (new)</h3>
+<h3>'Mannequin > Add'</h3>
 This menu is always visible while it only works if there is an outfit in the clipboard 0.<br/>
 A mannequin is added to the lot.<br/>
 <br/>
@@ -47,7 +128,7 @@ In build-buy mode the number of allowed mannequins is limited.<br/>
 Adding to much of them makes it impossible to exit build-buy mode until the mannequins have been deleted.<br/>
 There are 3rd party mods available to increase this number.<br/>
 <br/>
-<h3>'Mannequin > Skins' (new)</h3>
+<h3>'Mannequin > Skins'</h3>
 CC skin tones and/or overlays which are bound to the wrist, tattoo and/or other body locations can be transferred with <i>Clone > Everything</i> and/or <i>Clone > CAS Parts > All</i> and they will collide with skin parts applied to the head.<br/>
 Normally one will clone sim skins this way.<br/>
 <br/>
@@ -119,73 +200,6 @@ The Skin menu contains:<br/>
 	<li>Random Skin - To apply a random skin</li>
 </ul>
 <br/>
-<br/>
-<h1>Previous version</h1>
-Everything new is above. Everything below should still work in this version.<br/>
-<br/>
-<h2>Menu 'Copy Outfits'</h2>
-<ul>
-	<li>The most simple option is to use 'Copy' to copy the current outfit to the internal clipboard #0 and 'Paste' to paste from #0 to the current outfit.</li>
-	<li>Appearance modifiers are not taken into account. If the sim wears no shoes due to an appearance modifier (Snowy Escape DLC) the shoes will still be copied - and of course vice versa. If the sim wears boots due to an appearance modifier the boots will not be copied.</li>
-	<li>The 'Copy/Paste ...' > '(X-)Picker ...' menus allow to select a specific outfit. It will be copied to/from clipboard 0. See <i>Menu Special-Picker</i> for details.</li>
-	<li>'Transfer ...' allows to copy other things from clipboard 0 to the current outfit. See <i>Menu Transfer</i> for details.</li>
-</ul>
-<br/>
-The other menu options may be used rarely:<br/>
-<ul>
-	<li>The 'Copy/Paste ...' > '(X-)Category ...' menus allow to copy/paste all outfits, up to five.</li>
-	<li>'Copy to ...' allows to copy the current outfit to one of the other clipboards [1..4].</li>
-	<li>'Paste from ...' allows to paste the outfit from another clipboards  [1..4] to the current outfit.</li>
-	<li>'Paste to ...' allows to paste the outfit from clipboard 0 to the current outfit category but to a specific index [0..4].</li>
-</ul>
-<br/>
-<h3>Menu Special-Picker (X-Picker)</h3>
-It allows to select individual special outfits. These include:<br/>
-<ul>
-	<li>Bathing[0] (Nude)</li>
-	<li>Situation[0]</li>
-	<li>Special[0..1] (0=Special 1=Nude with Towel)</li>
-	<li>Career[0]</li>
-	<li>Batuu[0..4]</li>
-</ul>
-<br/>
-<h3>Menu Transfer</h3>
-<ul>
-	<li>'Sim' includes everything (no sliders) which defines a sim. These are the head, teeth, hair, eye colors, and many skin details.</li>
-	<li>'Cloth' pastes the hat, full body or upper and lower outfit, shoes, cummerbund, gloves, socks, tights. The 'Paste' commands from above pastes these items.</li>
-	<li>'Body Paint' pastes all body paint. This includes tattoos, skin overlays, acne and nails.</li>
-	<li>'Hand Accessories' pastes bracelets and rings and other accessories attached to writs or fingers.</li>
-	<li>'Head Accessories' pastes ear rings, glasses and the necklace.</li>
-	<li>'Head Paint' includes lipstick, eyebrows, shadow and liner, blush, mascara and face paint.</li>
-	<li>'Head Piercings' includes brow, lip and nose piercings.</li>
-	<li>'occult_scars' includes all occult scars and also the non-occult forearm scar.</li>
-	<li>'Pet' includes the fur body, ears and tail (not tested).</li>
-	<li>'Complete Outfit' (previously All) pastes everything (see above) to the selected sim. Sliders are not transferred but the sims will look very similar.</li>
-</ul>
-<br/>
-<h3>Menu X-Transfer</h3>
-This is the sub menu which does not really has something to do with 'Copy Outfits'.<br/>
-<ul>
-	<li>'Age & Gender' includes age, gender, '¿extended_species?', walk styles, body frame, clothing preferences and whether the sim can give/receive pregnancy. Existing pregnancies will neither be canceled or transferred.</li>
-	<li>'Genetics' is only '¿genetics?', whatever it is.</li>
-	<li>'Physics & Genetics' includes '?genetics?', physic, sliders, voice, skin and if available also pelt and/or '¿base_traits?', whatever this is.</li>
-	<li>'Traits' includes all traits.</li>
-	<li>'All' includes 'Complete Outfit' and everything from above.</li>
-	<li>~~'Sliders'</s> - not implemented as a standalone interaction, use 'All' or 'Physics & Genetics'</li>
-	<li>~~'Walkstyles'</s> - not implemented as a standalone interaction, use 'All' or 'Age & Gender'</li>
-	<li>~~'Relationships'</s> - not implemented</li>
-	<li>~~'Only Face Sliders'</s> - not implemented</li>
-	<li>~~'Only Body Sliders'</s> - not implemented</li>
-	<li>~~'Skintones'</s> - not implemented</li>
-</ul>
-<br/>
-<h3>Menu More</h3>
-<ul>
-	<li>'Print Clipboard' prints the copied outfits including the source sim. Outfit IDs are logged to the log file where you can copy them and will not flood the notification area.</li>
-	<li>'Clear All' removes all outfits from the cache.</li>
-	<li>'Clear ...' allows to remove a specific outfit from the cache.</li>
-</ul>
-<br/>
 <h2>Random sims</h2>
 <h3>Mermaids (Tail)</h3>
 Special outfit categories aren't supported.<br/>
@@ -223,11 +237,12 @@ This mod has been inspired by 'Copy Any Outfit' by scumbumbo. All code has been 
 !<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_2.png'>Transfer 2</a><br/>
 !<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_3.png'>Transfer 3</a><br/>
 !<a href='https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_4.png'>Transfer 4</a><br/>
+---<br/>
 <br/>
 <h1>📝 Addendum</h1>
 <br/>
 <h2>🔄 Game compatibility</h2>
-This mod has been tested with <i>The Sims 4</i> 1.119.109, S4CL 3.15, TS4Lib 0.3.42.<br/>
+This mod has been tested with <i>The Sims 4</i> 1.119.109, S4CL 3.17, TS4Lib 0.3.42.<br/>
 It is expected to remain compatible with future releases of TS4, S4CL, and TS4Lib.<br/>
 <br/>
 <h2>📦 Dependencies</h2>
@@ -379,7 +394,7 @@ To remove all of my mods, delete the following folders:<br/>
 <h1>📝 Addendum</h1>
 <br/>
 <h2>🔄 Game compatibility</h2>
-This mod has been tested with <i>The Sims 4</i> 1.119.109, S4CL 3.15, TS4Lib 0.3.42.<br/>
+This mod has been tested with <i>The Sims 4</i> 1.119.109, S4CL 3.17, TS4Lib 0.3.42.<br/>
 It is expected to remain compatible with future releases of TS4, S4CL, and TS4Lib.<br/>
 <br/>
 <h2>📦 Dependencies</h2>
