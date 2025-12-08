@@ -70,6 +70,6 @@ class OutfitCopy(metaclass=Singleton):
         clipboard_data_sources: Dict = OutfitStore.sources.get(sim_age, {})
         clipboard_data_sources.update({clipboard_index: f"{sim_name} {outfit_name}.{outfit_index}"})
 
-        OutfitStore.outfits.reset_motives({sim_age: clipboard_data_outfits})
-        OutfitStore.sources.reset_motives({sim_age: clipboard_data_sources})
+        OutfitStore.outfits.update({sim_age: clipboard_data_outfits})
+        OutfitStore.sources.update({sim_age: clipboard_data_sources})
         log.debug(f"Saved outfit for age '{sim_age}' to clipboard '{clipboard_index}' with '{parts}'.")

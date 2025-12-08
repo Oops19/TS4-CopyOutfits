@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.17'
+        return '1.9.18'
 
 
 r'''
@@ -43,6 +43,8 @@ TODO
     Load and Save outfits
     Read config files / support user defined skins
 
+v1.9.18
+    Fixed a minor issue.
 v1.9.17
     Pie Menu for 'Small Business' - icons missing
 v1.9.16

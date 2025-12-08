@@ -63,7 +63,7 @@ class CopyOutfitsSim:
                 self.sim_name = 'Mannequin#Mannequin'
 
                 if f"{interaction_target}".startswith('object_Mannequin_Adult'):
-                    self.sim_id = CopyOutfitsMannequin.SIM_ID_MANNEQUIN_ADULT
+                    self.sim_id = CopyOutfitsMannequin.SIM_ID_MANNEQUIN_ADULT.value
                     self.sim_age = CopyOutfitsAge.TYAE
                     if f"{interaction_target}".startswith('object_Mannequin_AdultFemale'):
                         self.is_female = True
@@ -73,7 +73,7 @@ class CopyOutfitsSim:
                         log.warn(f"Can get gender for {interaction_target}")
 
                 elif f"{interaction_target}".startswith('object_Mannequin_Child'):
-                    self.sim_id = CopyOutfitsMannequin.SIM_ID_MANNEQUIN_CHILD
+                    self.sim_id = CopyOutfitsMannequin.SIM_ID_MANNEQUIN_CHILD.value
                     self.sim_age = CopyOutfitsAge.CHILD
                     if f"{interaction_target}".startswith('object_Mannequin_ChildFemale'):
                         self.is_female = True
