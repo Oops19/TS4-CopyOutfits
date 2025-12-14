@@ -28,23 +28,34 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.18'
+        return '1.9.21'
 
 
 r'''
 IDEAS for the far future
-    Add Pie Menu to paste with filter
+    Clone buffs and/or relationship bits
+
+    CO-5 Move 'Small Business' form 'Category' into 'X-Category'.
+    CO-6 Implement 'Copy Outfits' 'Add Outfits' > 'Picker', 'X-Picker'
+    CO-7 Save and Load outfits
+    CO-8 Support user defined skins for mannequins
+    CO-9 Split Sliders into FACE, BODY and SCULPT to clone individual modifiers
+        Limit to 'HEAD' and 'BODY', there are also FEET, HIPS, BODY, CHEST, NOSE, EARS, MOUTH, ...
+    CO-10 Implement 'Copy Outfits' > 'Clone' > 'CAS Parts' > 'Picker'
         Show a picker to select the outfit groups and then the BodyParts to delete one after the other
         Show a picker to define what to filter - replace the cheat command
-    Clone buffs and/or relationship bits
-    Split FACE and BODY modifiers/sliders
+    CO-11 Clone 'buffs'
+    CO-12 Clone 'relationship bits'
 
-TODO
-    Load and Save outfits
-    Read config files / support user defined skins
-
+v.1.9.21
+    CO-13 Fix File "copy_outfits\main.py", line 249, in clone_sim_data; 'NoneType' object has no attribute 'skin_tone'
+v1.9.20
+    CO-1 Update the documentation, replace X-Transfer with Clone
+    CO-2 Add recent screenshots to the documentation
+v1.9.19
+    CO-3 Fix exception for Cone > CAS Parts > Picker
 v1.9.18
-    Fixed a minor issue.
+    CO-4 Fix exception when cloning from mannequins
 v1.9.17
     Pie Menu for 'Small Business' - icons missing
 v1.9.16

@@ -28,12 +28,11 @@ It’s inspired by Outfit Tools – Copy Any Outfit v4 by scumbumbo, but rebuilt
 * Occult Sims are not explicitly supported
 * Mannequin outfit copying may still cause exceptions in rare cases
 
-
 ## Menu 'Copy Outfits'
 * The most simple option is to use 'Copy' to copy the current outfit to the internal clipboard #0 and 'Paste' to paste from #0 to the current outfit.
     * Appearance modifiers are not taken into account. If the sim wears no shoes due to an appearance modifier (Snowy Escape DLC) the shoes will still be copied - and of course vice versa. If the sim wears boots due to an appearance modifier the boots will not be copied.
 * The 'Copy/Paste ...' > '(X-)Picker ...' menus allow to select a specific outfit. It will be copied to/from clipboard 0. See `Menu Special-Picker` for details.
-* 'Transfer ...' allows to copy other things from clipboard 0 to the current outfit. See `Menu Transfer` for details.
+* 'Clone ...' allows to copy other things from clipboard 0 to the current outfit. See `Menu Clone` for details.
 
 The other menu options may be used rarely:
 * The 'Copy/Paste ...' > '(X-)Category ...' menus allow to copy/paste all outfits, up to five.
@@ -48,32 +47,8 @@ It allows to select individual special outfits. These include:
 * Special[0..1] (0=Special 1=Nude with Towel)
 * Career[0]
 * Batuu[0..4]
-             
-## Menu Transfer
-* 'Sim' includes everything (no sliders) which defines a sim. These are the head, teeth, hair, eye colors, and many skin details.
-* 'Cloth' pastes the hat, full body or upper and lower outfit, shoes, cummerbund, gloves, socks, tights. The 'Paste' commands from above pastes these items.
-* 'Body Paint' pastes all body paint. This includes tattoos, skin overlays, acne and nails.
-* 'Hand Accessories' pastes bracelets and rings and other accessories attached to writs or fingers.
-* 'Head Accessories' pastes ear rings, glasses and the necklace.
-* 'Head Paint' includes lipstick, eyebrows, shadow and liner, blush, mascara and face paint.
-* 'Head Piercings' includes brow, lip and nose piercings.
-* 'occult_scars' includes all occult scars and also the non-occult forearm scar.
-* 'Pet' includes the fur body, ears and tail (not tested).
-* 'Complete Outfit' (previously All) pastes everything (see above) to the selected sim. Sliders are not transferred but the sims will look very similar.
+* Small Business [0..5]  (2025-12: still in 'Picker')
 
-## Menu X-Transfer
-This is the sub menu which does not really has something to do with 'Copy Outfits'.
-* 'Age & Gender' includes age, gender, '¿extended_species?', walk styles, body frame, clothing preferences and whether the sim can give/receive pregnancy. Existing pregnancies will neither be canceled or transferred.
-* 'Genetics' is only '¿genetics?', whatever it is.
-* 'Physics & Genetics' includes '?genetics?', physic, sliders, voice, skin and if available also pelt and/or '¿base_traits?', whatever this is.
-* 'Traits' includes all traits.
-* 'All' includes 'Complete Outfit' and everything from above.
-* ~~'Sliders'~~ - not implemented as a standalone interaction, use 'All' or 'Physics & Genetics'
-* ~~'Walkstyles'~~ - not implemented as a standalone interaction, use 'All' or 'Age & Gender'
-* ~~'Relationships'~~ - not implemented
-* ~~'Only Face Sliders'~~ - not implemented
-* ~~'Only Body Sliders'~~ - not implemented
-* 'Skintones' - not implemented
 
 ## Menu More
 * 'Print Clipboard' prints the copied outfits including the source sim. Outfit IDs are logged to the log file where you can copy them and will not flood the notification area.
@@ -134,6 +109,7 @@ These can be used normally for sims, and if installed also for mannequins (usual
 
 ### 'Clone'
 The 'Clone' menu offers now a global 'Everything' option and two menus for 'Characteristics' and/or 'CAS Parts'.
+
 The CAS Parts are grouped into:
 * Garment: Hat FullBody UpperBody LowerBody Shoes Cummerbund Gloves Socks Tights AttachmentBack 
 * Head: Head Teeth Eyecolor EyecolorSecondary SkindetailNoseColor Hair HaircolorOverride FacialHair 
@@ -153,14 +129,15 @@ The CAS Parts are grouped into:
 * Pet: FurBody Ears Tail 
 
 The Characteristics are grouped into:
+* All
 * Age Gender
-* ~~Genetics~~
+* Genetics
 * Physics & Genetics
-* Sliders
-* Walkstyle
-* ~~Traits~~
-* ~~Skills~~
+* Skills
 * Skintone (the TS4 skin tone, see above)
+* Sliders
+* Traits
+* Walkstyle
 
 The Skin menu contains:
 * Same Skin - To apply the same skin again
@@ -203,6 +180,22 @@ This mod has been inspired by 'Copy Any Outfit' by scumbumbo. All code has been 
 ![Transfer 2](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_2.png)
 ![Transfer 3](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_3.png)
 ![Transfer 4](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Transfer_4.png)
+
+![Pie Menu Clone](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone.webp)
+![Pie Menu Clone CAS-Parts-1](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_CAS-Parts-1.webp)
+![Pie Menu Clone CAS-Parts-2](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_CAS-Parts-2.webp)
+![Pie Menu Clone CAS-Parts-3](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_CAS-Parts-3.webp)
+
+![Pie Menu Clone Characteristics](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_Characteristics.webp)
+
+![Pie Menu Clone Mannequin](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_Mannequin.webp)
+![Pie Menu Clone Mannequin Add Outfits](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_Mannequin_Add-Outfits.webp)
+![Pie Menu Clone Mannequin Add-Outfits Category](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_Mannequin_Add-Outfits_Category.webp)
+![Pie Menu Clone Mannequin Add-Outfits X-Category](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_Mannequin_Add-Outfits_X-Category.webp)
+![Pie Menu Clone Mannequin Remove](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_Mannequin_Remove.webp)
+![Pie Menu Clone Mannequin Rotate](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_Mannequin_Rotate.webp)
+![Pie Menu Clone Mannequin Skins](https://github.com/Oops19/TS4-CopyOutfits/blob/main/_TS4/mod_documentation/copy_outfits/Pie_Clone_Mannequin_Skins.webp)
+
 ---
 
 # 📝 Addendum

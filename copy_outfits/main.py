@@ -196,7 +196,11 @@ class Main:
             OutfitNotifications().show_notification(f"No outfit found in clipboard [{clipboard_index}].")
             return False
 
-        if group_id in [OutfitGroupId.EVERYTHING, OutfitGroupId.SIM_ALL, ]:
+        if group_id in {OutfitGroupId.PICKER, }:
+            log.info(f"Not implemented")
+            return
+
+        if group_id in {OutfitGroupId.EVERYTHING, OutfitGroupId.SIM_ALL, }:
             if group_id == OutfitGroupId.EVERYTHING:
                 self.clone_sim_data(zim)  # Clone also the sim data, genetics, traits, ...
             merged_parts = new_parts  # Replace everything
@@ -242,10 +246,11 @@ class Main:
 
         resend_attributes = False
         if group_id in [OutfitGroupId.EVERYTHING, OutfitGroupId.X_ALL, OutfitGroupId.X_SKIN_TONE, ]:
-            sim_info.skin_tone = src_sim_info.skin_tone
-            sim_info.skin_tone_val_shift = src_sim_info.skin_tone_val_shift
-            resend_attributes = True
-            log.debug(f"X_SKIN_TONE")
+            if getattr(sim_info, 'skin_tone', None) and getattr(src_sim_info, 'skin_tone', None):
+                sim_info.skin_tone = getattr(src_sim_info, 'skin_tone', None)
+                sim_info.skin_tone_val_shift = getattr(src_sim_info, 'skin_tone_val_shift', None)
+                resend_attributes = True
+                log.debug(f"X_SKIN_TONE")
 
         if src_sim_info is None:
             log.debug(f"Source mannequin can't distribute age/gender/extended_species, slider and/or physics/genetics data.")
