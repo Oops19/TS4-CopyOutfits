@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.21'
+        return '1.9.22'
 
 
 r'''
@@ -46,14 +46,17 @@ IDEAS for the far future
         Show a picker to define what to filter - replace the cheat command
     CO-11 Clone 'buffs'
     CO-12 Clone 'relationship bits'
+    CO-15 Mannequin / missing skins are applied to sims. (https://github.com/Oops19/TS4-CopyOutfits/issues/4)
 
+v1.9.22
+    CO-14 Fix 'Add Manequin' if no outfits are in buffer
 v.1.9.21
     CO-13 Fix File "copy_outfits\main.py", line 249, in clone_sim_data; 'NoneType' object has no attribute 'skin_tone'
 v1.9.20
     CO-1 Update the documentation, replace X-Transfer with Clone
     CO-2 Add recent screenshots to the documentation
 v1.9.19
-    CO-3 Fix exception for Cone > CAS Parts > Picker
+    CO-3 Fix exception for Clone > CAS Parts > Picker
 v1.9.18
     CO-4 Fix exception when cloning from mannequins
 v1.9.17
