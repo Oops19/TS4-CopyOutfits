@@ -4,10 +4,10 @@
 #
 
 
-from ts4lib.common_enums.enum_types.common_enum import CommonEnum
+from ts4lib.custom_enums.enum_types.custom_enum import CustomEnum
 
 
-class DefaultHead(CommonEnum):
-    YF_HEAD_DEFAULT = 0x0000000000001B41  # 6977
-    YM_HEAD_DEFAULT = 0x000000000000229C  # 8860
-    CU_HEAD_DEFAULT = 0x0000000000006CA8  # 27816
+class DefaultHead(CustomEnum):
+    YF_HEAD_DEFAULT: 'DefaultHead' = 0x0000000000001B41  # 6977
+    YM_HEAD_DEFAULT: 'DefaultHead' = 0x000000000000229C  # 8860
+    CU_HEAD_DEFAULT: 'DefaultHead' = 0x0000000000006CA8  # 27816

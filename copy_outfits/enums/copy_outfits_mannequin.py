@@ -4,11 +4,11 @@
 #
 
 
-from ts4lib.common_enums.enum_types.common_enum import CommonEnum
+from ts4lib.custom_enums.enum_types.custom_enum import CustomEnum
 
 
-class CopyOutfitsMannequin(CommonEnum):
-    SIM_ID_NONE = 0
-    SIM_ID_MANNEQUIN = -1
-    SIM_ID_MANNEQUIN_ADULT = -2
-    SIM_ID_MANNEQUIN_CHILD = -3
+class CopyOutfitsMannequin(CustomEnum):
+    SIM_ID_NONE: 'CopyOutfitsMannequin' = 0
+    SIM_ID_MANNEQUIN: 'CopyOutfitsMannequin' = -1
+    SIM_ID_MANNEQUIN_ADULT: 'CopyOutfitsMannequin' = -2
+    SIM_ID_MANNEQUIN_CHILD: 'CopyOutfitsMannequin' = -3

@@ -4,7 +4,6 @@
 #
 
 
-from copy_outfits.enums.outfit_category import OutfitCategory
 from copy_outfits.enums.pie_menu_action_id import PieMenuActionId
 from copy_outfits.modinfo import ModInfo
 from copy_outfits.struct.copy_outfits_sim import CopyOutfitsSim
@@ -12,6 +11,7 @@ from sims.outfits.outfit_utils import get_maximum_outfits_for_category
 from sims4communitylib.enums.tags_enum import CommonGameTag
 from sims4communitylib.utils.cas.common_outfit_utils import CommonOutfitUtils
 from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegistry
+from ts4lib.custom_enums.custom_outfit_category import CustomOutfitCategory
 
 log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), 'OutfitAdd')
 log.enable()
@@ -47,29 +47,29 @@ class OutfitAdd:
             except:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_BATHING, )
             '''
-            if outfit_category == OutfitCategory.EVERYDAY:
+            if outfit_category == CustomOutfitCategory.EVERYDAY:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_EVERYDAY, )
-            elif outfit_category == OutfitCategory.ATHLETIC:
+            elif outfit_category == CustomOutfitCategory.ATHLETIC:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_ATHLETIC, )
-            elif outfit_category == OutfitCategory.BATUU:
+            elif outfit_category == CustomOutfitCategory.BATUU:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_BATUU, )
-            elif outfit_category == OutfitCategory.CAREER:
+            elif outfit_category == CustomOutfitCategory.CAREER:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_CAREER, )
-            elif outfit_category == OutfitCategory.COLDWEATHER:
+            elif outfit_category == CustomOutfitCategory.COLDWEATHER:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_COLD_WEATHER, )
-            elif outfit_category == OutfitCategory.HOTWEATHER:
+            elif outfit_category == CustomOutfitCategory.HOTWEATHER:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_HOT_WEATHER, )
-            elif outfit_category == OutfitCategory.FORMAL:
+            elif outfit_category == CustomOutfitCategory.FORMAL:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_FORMAL, )
-            elif outfit_category == OutfitCategory.PARTY:
+            elif outfit_category == CustomOutfitCategory.PARTY:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_PARTY, )
-            elif outfit_category == OutfitCategory.SLEEP:
+            elif outfit_category == CustomOutfitCategory.SLEEP:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_SLEEP, )
-            elif outfit_category == OutfitCategory.SITUATION:
+            elif outfit_category == CustomOutfitCategory.SITUATION:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_SITUATION, )
-            elif outfit_category == OutfitCategory.SWIMWEAR:
+            elif outfit_category == CustomOutfitCategory.SWIMWEAR:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_SWIMWEAR, )
-            elif outfit_category == OutfitCategory.SMALL_BUSINESS:
+            elif outfit_category == CustomOutfitCategory.SMALL_BUSINESS:
                 tag_list = (CommonGameTag.UNIFORM_SMALL_BUSINESS_EMPLOYEE, )
             else:
                 tag_list = (CommonGameTag.OUTFIT_CATEGORY_BATHING, )

@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '1.9.22'
+        return '2.0.0'
 
 
 r'''
@@ -48,8 +48,10 @@ IDEAS for the far future
     CO-12 Clone 'relationship bits'
     CO-15 Mannequin / missing skins are applied to sims. (https://github.com/Oops19/TS4-CopyOutfits/issues/4)
 
+v2.0.0
+    CO-16 Fix compatibility with TS4Lib 1.0.0
 v1.9.22
-    CO-14 Fix 'Add Manequin' if no outfits are in buffer
+    CO-14 Fix 'Add Manequin' if no outfits are in buffer (do nothing in such cases)
 v.1.9.21
     CO-13 Fix File "copy_outfits\main.py", line 249, in clone_sim_data; 'NoneType' object has no attribute 'skin_tone'
 v1.9.20

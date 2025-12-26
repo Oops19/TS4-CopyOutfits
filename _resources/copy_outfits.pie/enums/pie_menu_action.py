@@ -4,10 +4,10 @@
 #
 
 
-from ts4lib.common_enums.enum_types.common_enum import CommonEnum
+from ts4lib.custom_enums.enum_types.custom_enum import CustomEnum
 
 
-class PieMenuAction(CommonEnum):
+class PieMenuAction(CustomEnum):
     NONE = 0
     COPY = 1  # DEFAULT, ALL_OUTFITS_FOR_CATEGORY, PICKER, X-PICKER
     PASTE = 2  # DEFAULT, ALL_OUTFITS_FOR_CATEGORY, PICKER, X-PICKER
@@ -17,7 +17,7 @@ class PieMenuAction(CommonEnum):
     PRINT = 32  # DEFAULT
     ADD = 64  # Add outfits
 
-    BODY_TYPE = 128  # TS4 CAS parts as defined in ts4lib.BodyType(CommonEnum) ea.outfits.BodyType(Enum)
+    BODY_TYPE = 128  # TS4 CAS parts as defined in ts4lib.BodyType(CustomEnum) ea.outfits.BodyType(Enum)
 
     SKIN = 256  # Apply next head/skin to mannequin
     MANNEQUIN = 512  # Add mannequin

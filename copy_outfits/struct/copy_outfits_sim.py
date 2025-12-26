@@ -9,7 +9,6 @@ from typing import Union
 
 from copy_outfits.enums.copy_outfits_age import CopyOutfitsAge
 from copy_outfits.enums.copy_outfits_mannequin import CopyOutfitsMannequin
-from copy_outfits.enums.outfit_category import OutfitCategory
 from copy_outfits.enums.outfit_group_id import OutfitGroupId
 from copy_outfits.enums.pie_menu_action import PieMenuAction
 from copy_outfits.enums.pie_menu_action_id import PieMenuActionId
@@ -23,6 +22,7 @@ from sims4communitylib.utils.sims.common_age_utils import CommonAgeUtils
 from sims4communitylib.utils.sims.common_gender_utils import CommonGenderUtils
 from sims4communitylib.utils.sims.common_sim_utils import CommonSimUtils
 from sims4communitylib.utils.sims.common_species_utils import CommonSpeciesUtils
+from ts4lib.custom_enums.custom_outfit_category import CustomOutfitCategory
 
 log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), 'CopyOutfitsSim')
 log.enable()
@@ -96,17 +96,17 @@ class CopyOutfitsSim:
                 log.warn(f"Error getting sim_id for interaction_target: '{type(interaction_target)}' = '{interaction_target}'")
 
         if self.sim_info:
-            if self.outfit_category == OutfitCategory.CURRENT_OUTFIT.value:
+            if self.outfit_category == CustomOutfitCategory.CURRENT_OUTFIT.value:
                 self.outfit_category = CommonOutfitUtils.get_current_outfit_category(self.sim_info)
                 if not isinstance(self.outfit_category, int):
                     try:
-                        self.outfit_category = OutfitCategory(self.outfit_category).value
+                        self.outfit_category = CustomOutfitCategory(self.outfit_category).value
                     except:
                         pass
             if self.outfit_index == -1:
                 self.outfit_index = CommonOutfitUtils.get_current_outfit_index(self.sim_info)
             try:
-                self.outfit_name = OutfitCategory(self.outfit_category).name
+                self.outfit_name = CustomOutfitCategory(self.outfit_category).name
             except:
                 pass
 

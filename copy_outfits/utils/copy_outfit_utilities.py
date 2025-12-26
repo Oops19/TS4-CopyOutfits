@@ -7,12 +7,12 @@
 from typing import Dict, Union
 
 from copy_outfits.modinfo import ModInfo
-from copy_outfits.enums.outfit_category import OutfitCategory
 from copy_outfits.persist.outfit_store import OutfitStore
 from copy_outfits.struct.copy_outfits_sim import CopyOutfitsSim
 from sims.outfits.outfit_enums import BodyType
 from sims4communitylib.enums.tags_enum import CommonGameTag
 from sims4communitylib.utils.cas.common_outfit_utils import CommonOutfitUtils
+from ts4lib.custom_enums.custom_outfit_category import CustomOutfitCategory
 from ts4lib.utils.singleton import Singleton
 
 from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegistry
@@ -32,7 +32,7 @@ class CopyOutfitUtilities(metaclass=Singleton):
         if not CommonOutfitUtils.has_outfit(zim.sim_info, (outfit_category, outfit_index)):
             # Create an outfit for the sim with not too much cas parts
             tag_list = (CommonGameTag.OUTFIT_CATEGORY_BATHING, )
-            CommonOutfitUtils.generate_outfit(zim.sim_info, (OutfitCategory.BATHING.value, 0), tag_list)
+            CommonOutfitUtils.generate_outfit(zim.sim_info, (CustomOutfitCategory.BATHING.value, 0), tag_list)
         return CommonOutfitUtils.get_outfit_parts(zim.sim_info, (outfit_category, outfit_index))
 
     @staticmethod

@@ -13,7 +13,6 @@ import routing
 import services
 import sims4
 
-from copy_outfits.enums.outfit_category import OutfitCategory
 from copy_outfits.modinfo import ModInfo
 from copy_outfits.enums.copy_outfits_age import CopyOutfitsAge
 from copy_outfits.enums.pie_menu_action_id import PieMenuActionId
@@ -32,6 +31,7 @@ from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegi
 from sims4communitylib.utils.sims.common_sim_utils import CommonSimUtils
 from ts4lib.classes.coordinates.std_euler_angle import StdEulerAngle
 from ts4lib.classes.coordinates.std_quaternion import StdQuaternion
+from ts4lib.custom_enums.custom_outfit_category import CustomOutfitCategory
 from ts4lib.utils.outfit_utilities import OutfitUtilities
 from ts4lib.utils.singleton import Singleton
 
@@ -182,8 +182,8 @@ class CopyOutfitsMannequin(metaclass=Singleton):
             mannequin_component = zim.mannequin_component = game_object.mannequin_component
             sim_info = zim.sim_info = getattr(zim.mannequin_component, '_sim_info_data', None)
 
-            # TODO (OutfitCategory.EVERYDAY.value, OutfitCategory.PARTY.value)== 5 = safe; (OutfitCategory.EVERYDAY.value, OutfitCategory.BATUU.value)  # 13 risky
-            outfit_category = zim.outfit_category = random.randint(OutfitCategory.EVERYDAY.value, OutfitCategory.BATUU.value)
+            # TODO (CustomOutfitCategory.EVERYDAY.value, CustomOutfitCategory.PARTY.value)== 5 = safe; (CustomOutfitCategory.EVERYDAY.value, CustomOutfitCategory.BATUU.value)  # 13 risky
+            outfit_category = zim.outfit_category = random.randint(CustomOutfitCategory.EVERYDAY.value, CustomOutfitCategory.BATUU.value)
             maximum_outfits = get_maximum_outfits_for_category(zim.outfit_category)
             outfit_index = zim.outfit_index = random.randint(0, maximum_outfits - 1)
 

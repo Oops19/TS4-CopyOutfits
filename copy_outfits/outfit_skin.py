@@ -5,19 +5,14 @@
 
 
 import random
-import sys
-import threading
-import traceback
 from typing import Dict, Set
 
-import services
 from copy_outfits.enums.copy_outfits_age import CopyOutfitsAge
 from copy_outfits.enums.default_head import DefaultHead
 from copy_outfits.enums.pie_menu_action_id import PieMenuActionId
 from copy_outfits.modinfo import ModInfo
 from copy_outfits.persist.skin_store import SkinStore
 from copy_outfits.struct.copy_outfits_sim import CopyOutfitsSim
-from objects import HiddenReasonFlag, ALL_HIDDEN_REASONS
 from sims.sim_info import SimInfo
 from sims4communitylib.services.commands.common_console_command import CommonConsoleCommand
 from sims4communitylib.services.commands.common_console_command_output import CommonConsoleCommandOutput
@@ -28,7 +23,7 @@ from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegi
 from sims4communitylib.utils.sims.common_age_utils import CommonAgeUtils
 from sims4communitylib.utils.sims.common_gender_utils import CommonGenderUtils
 from sims4communitylib.utils.sims.common_sim_utils import CommonSimUtils
-from ts4lib.common_enums.body_type import BodyType
+from ts4lib.custom_enums.custom_body_type import CustomBodyType
 from ts4lib.utils.singleton import Singleton
 
 log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), 'OutfitSkin')
@@ -188,13 +183,13 @@ class OutfitSkin(metaclass=Singleton):
             log.info(f"Age not supported.")
             return
         is_female = CommonGenderUtils.is_female(sim_info)
-        old_head_id = CommonCASUtils.get_cas_part_id_at_body_type(sim_info, BodyType.HEAD.value)
+        old_head_id = CommonCASUtils.get_cas_part_id_at_body_type(sim_info, CustomBodyType.HEAD.value)
         # True == CommonCASUtils.is_cas_part_loaded(old_head_id) as the part is 'in use'. A test makes no sense.
         head_ids = OutfitSkin().available_skins.get(sim_age).get(is_female)
         head_id = random.choice(head_ids)
 
         log.info(f"Fixing '{sim_info}'s head to {head_id} (from {old_head_id}).")
-        CommonCASUtils.attach_cas_part_to_sim(sim_info, head_id, BodyType.HEAD.value)
+        CommonCASUtils.attach_cas_part_to_sim(sim_info, head_id, CustomBodyType.HEAD.value)
 
     @staticmethod
     @CommonConsoleCommand(ModInfo.get_identity(), 'o19.co.fix', 'Fix the head of the active sim.')

@@ -5,13 +5,13 @@
 
 
 from copy_outfits.modinfo import ModInfo
-from copy_outfits.enums.outfit_category import OutfitCategory
 
 from copy_outfits.struct.copy_outfits_sim import CopyOutfitsSim
 from copy_outfits.utils.copy_outfit_utilities import CopyOutfitUtilities
 from copy_outfits.utils.outfit_modifiers import OutfitModifiers
 
 from sims.outfits.outfit_utils import get_maximum_outfits_for_category
+from ts4lib.custom_enums.custom_outfit_category import CustomOutfitCategory
 
 from ts4lib.utils.outfit_utilities import OutfitUtilities
 from ts4lib.utils.singleton import Singleton
@@ -50,7 +50,7 @@ class OutfitPaste(metaclass=Singleton):
         if outfit_category is None:
             outfit_category = zim.outfit_category
             try:
-                outfit_name = OutfitCategory(outfit_category).name
+                outfit_name = CustomOutfitCategory(outfit_category).name
             except:
                 outfit_name = 'Unknown'
         if outfit_index is None:
@@ -77,9 +77,9 @@ class OutfitPaste(metaclass=Singleton):
     # outfit_utils.py#def get_maximum_outfits_for_category(outfit_category):
     @staticmethod
     def _get_maximum_outfits_for_category(outfit_category):
-        if outfit_category in [OutfitCategory.BATHING, OutfitCategory.SITUATION, ]:
+        if outfit_category in [CustomOutfitCategory.BATHING, CustomOutfitCategory.SITUATION, ]:
             return 1
-        elif outfit_category in [OutfitCategory.SPECIAL, OutfitCategory.CAREER, ]:
+        elif outfit_category in [CustomOutfitCategory.SPECIAL, CustomOutfitCategory.CAREER, ]:
             return 3
         return 5
         # return get_maximum_outfits_for_category(outfit_category)

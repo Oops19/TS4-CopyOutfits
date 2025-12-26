@@ -4,10 +4,10 @@
 #
 
 
-from ts4lib.common_enums.enum_types.common_enum import CommonEnum
+from ts4lib.custom_enums.enum_types.custom_enum import CustomEnum
 
 
-class PhysicFilters(CommonEnum):
+class PhysicFilters(CustomEnum):
     NONE = 0
     # = 2 ** 0
     PHYSIQUE = 2 ** 1

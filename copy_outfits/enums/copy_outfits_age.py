@@ -4,18 +4,18 @@
 #
 
 
-from ts4lib.common_enums.enum_types.common_enum import CommonEnum
+from ts4lib.custom_enums.enum_types.custom_enum import CustomEnum
 
 
-class CopyOutfitsAge(CommonEnum):
-    UNKNOWN = 2 ** 0
-    TYAE = 2 ** 1  # Teen, Young Adult, Adult, Elder
-    CHILD = 2 ** 2
-    TODDLER = 2 ** 3
-    INFANT = 2 ** 4
-    BABY = 2 ** 5
-    PET = 2 ** 10
-    LARGE_DOG = 2 ** 11
-    HORSE = 2 ** 12
+class CopyOutfitsAge(CustomEnum):
+    UNKNOWN: 'CopyOutfitsAge' = 2 ** 0
+    TYAE: 'CopyOutfitsAge' = 2 ** 1  # Teen, Young Adult, Adult, Elder
+    CHILD: 'CopyOutfitsAge' = 2 ** 2
+    TODDLER: 'CopyOutfitsAge' = 2 ** 3
+    INFANT: 'CopyOutfitsAge' = 2 ** 4
+    BABY: 'CopyOutfitsAge' = 2 ** 5
+    PET: 'CopyOutfitsAge' = 2 ** 10
+    LARGE_DOG: 'CopyOutfitsAge' = 2 ** 11
+    HORSE: 'CopyOutfitsAge' = 2 ** 12
 
 

@@ -8,7 +8,6 @@ from typing import Tuple
 
 from objects.script_object import ScriptObject
 from sims4communitylib.services.interactions.interaction_registration_service import CommonInteractionRegistry, CommonInteractionType, CommonScriptObjectInteractionHandler
-from sims4communitylib.utils.common_type_utils import CommonTypeUtils
 
 
 @CommonInteractionRegistry.register_interaction_handler(CommonInteractionType.ON_TERRAIN_LOAD)

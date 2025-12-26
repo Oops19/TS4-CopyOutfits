@@ -6,7 +6,6 @@
 
 from typing import Union, Tuple
 
-from copy_outfits.enums.outfit_category import OutfitCategory
 from copy_outfits.enums.pie_menu_action import PieMenuAction
 from copy_outfits.struct.copy_outfits_sim import CopyOutfitsSim
 from copy_outfits.struct.internal_stbl import InternalSTBL
@@ -17,6 +16,7 @@ from sims4communitylib.utils.localization.common_localization_utils import Commo
 from sims4communitylib.utils.localization.common_localized_string_colors import CommonLocalizedStringColor
 
 from sims4communitylib.utils.common_log_registry import CommonLog, CommonLogRegistry
+from ts4lib.custom_enums.custom_outfit_category import CustomOutfitCategory
 
 log: CommonLog = CommonLogRegistry.get().register_log(ModInfo.get_identity(), 'BodyPartPicker')
 log.enable()
@@ -28,12 +28,12 @@ class BodyPartPicker:
     TODO Adjust so we can add 130 BodyTypes and their part descriptions
     Currently not used!
     '''
-    def open_body_part_picker(self, zim: CopyOutfitsSim, action: int, outfit_list: Union[None, Tuple[OutfitCategory, int]] = None, exclude_outfit_categories: Union[None, Tuple[OutfitCategory]] = None):
+    def open_body_part_picker(self, zim: CopyOutfitsSim, action: int, outfit_list: Union[None, Tuple[CustomOutfitCategory, int]] = None, exclude_outfit_categories: Union[None, Tuple[CustomOutfitCategory]] = None):
         sim_info = zim.sim_info
 
         log.debug(f"show_outfit_picker({action}, {outfit_list}, {exclude_outfit_categories})")
 
-        def _on_chosen(choice: Tuple[OutfitCategory, int], outcome: CommonChoiceOutcome):
+        def _on_chosen(choice: Tuple[CustomOutfitCategory, int], outcome: CommonChoiceOutcome):
             if outcome == CommonChoiceOutcome.CHOICE_MADE:
                 """ callback() """
                 # self.process_pick(zim, action, choice)

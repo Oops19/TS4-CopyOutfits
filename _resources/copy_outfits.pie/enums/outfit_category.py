@@ -4,10 +4,10 @@
 #
 
 
-from ts4lib.common_enums.enum_types.common_enum import CommonEnum
+from ts4lib.custom_enums.enum_types.custom_enum import CustomEnum
 
 
-class OutfitCategory(CommonEnum):
+class OutfitCategory(CustomEnum):
     CURRENT_OUTFIT = -1
     EVERYDAY = 0
     FORMAL = 1

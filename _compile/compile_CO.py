@@ -15,10 +15,12 @@ import re
 import ast
 import sys
 import shutil
+import zipfile
 from typing import Tuple, Dict, Any
 from datetime import date
 
 from Utilities.unpyc3_compiler import Unpyc3PythonCompiler
+
 
 additional_directories: Tuple = ()
 include_sources = False
@@ -27,18 +29,19 @@ add_readme = True
 file_appendix = ''
 auto_beta = True
 exclude_dependencies = ()
-try:
-    with open('compile.ini', 'rt') as fp:
-        cfg: Dict[str, Any] = ast.literal_eval(fp.read())
-        additional_directories = cfg.get('additional_directories', additional_directories)
-        include_sources = cfg.get('include_sources', include_sources)
-        exclude_folders = cfg.get('exclude_folders', exclude_folders)
-        add_readme = cfg.get('add_readme', add_readme)
-        file_appendix = cfg.get('file_appendix', file_appendix)
-        auto_beta = cfg.get('auto_beta', auto_beta)
-        exclude_dependencies = cfg.get('exclude_dependencies', exclude_dependencies)
-except:
-    pass
+exclude_mac_directories: Tuple = ()
+
+with open('compile.ini', 'rt') as fp:
+    cfg: Dict[str, Any] = ast.literal_eval(fp.read())
+    additional_directories = cfg.get('additional_directories', additional_directories)
+    include_sources = cfg.get('include_sources', include_sources)
+    exclude_folders = cfg.get('exclude_folders', exclude_folders)
+    add_readme = cfg.get('add_readme', add_readme)
+    file_appendix = cfg.get('file_appendix', file_appendix)
+    auto_beta = cfg.get('auto_beta', auto_beta)
+    exclude_dependencies = cfg.get('exclude_dependencies', exclude_dependencies)
+    exclude_mac_directories = cfg.get('exclude_mac_directories', exclude_mac_directories)
+
 
 beta_appendix = "-beta"  # or "-test-build"
 
@@ -110,7 +113,7 @@ with open(file_game_version, 'rb') as fp:
     _game_version = fp.read()
     game_version = _game_version[4:].rsplit(b'.', 1)[0].decode('ASCII')
 
-print(os.path.abspath(modinfo))
+print(f"ModInfo: {os.path.abspath(modinfo)}")
 modinfo_data = ''
 with open(modinfo, 'rt', encoding='UTF-8') as fp:
     modinfo_contents = fp.read()
@@ -217,8 +220,21 @@ print(f"Compiling '{mod_directory}' and {additional_directories} in '{ts4_direct
 Unpyc3PythonCompiler.compile_mod(
     names_of_modules_include=(mod_directory,) + additional_directories,
     folder_path_to_output_ts4script_to=ts4_directory,
-    output_ts4script_name=mod_directory
+    output_ts4script_name=f"{mod_directory}_win"
 )
+if exclude_mac_directories:
+    _directories = (mod_directory,) + additional_directories
+    _mac_directories = set()
+    for _d in _directories:
+        if _d not in exclude_mac_directories:
+            _mac_directories.add(_d)
+    mac_directories = tuple(_mac_directories)
+    Unpyc3PythonCompiler.compile_mod(
+        names_of_modules_include=mac_directories,
+        folder_path_to_output_ts4script_to=ts4_directory,
+        output_ts4script_name=f"{mod_directory}_mac"
+    )
+
 
 for exclude_folder in exclude_folders:
     try:
@@ -228,11 +244,41 @@ for exclude_folder in exclude_folders:
     except Exception as e:
         print(f"WARNING: Error {e} deleting the folder")
 
-shutil.make_archive(os.path.join(release_directory, f"{zip_file_name}"), 'zip', mod_base_directory)
+
+def make_zip_excluding(output_filename, source_dir, exclude_files):
+    with zipfile.ZipFile(output_filename, 'w', zipfile.ZIP_DEFLATED) as zf:
+        for root, dirs, files in os.walk(source_dir):
+            for file in files:
+                filepath = os.path.join(root, file)
+                filename = os.path.basename(filepath)
+                if filename in exclude_files:
+                    continue
+                relpath = os.path.relpath(filepath, source_dir)
+                if relpath in exclude_files:
+                    continue
+                zf.write(filepath, relpath)
+
+
+# shutil.make_archive(os.path.join(release_directory, f"{zip_file_name}"), 'zip', mod_base_directory)
+ts4script = os.path.join(ts4_directory, f"{mod_directory}.ts4script")
+ts4script_win = os.path.join(ts4_directory, f"{mod_directory}_win.ts4script")
+ts4script_mac = os.path.join(ts4_directory, f"{mod_directory}_mac.ts4script")
+
+if exclude_mac_directories:
+    os.link(ts4script_mac, ts4script)
+    make_zip_excluding(os.path.join(release_directory, f"{zip_file_name}_Mac.zip"), mod_base_directory, exclude_files={f"{mod_directory}_win.ts4script", f"{mod_directory}_mac.ts4script"})
+    os.unlink(ts4script)
+    print(f'Created {os.path.join(release_directory, f"{zip_file_name}_Mac.zip")}')
+
+os.link(ts4script_win, ts4script)
+make_zip_excluding(os.path.join(release_directory, f"{zip_file_name}.zip"), mod_base_directory, exclude_files={f"{mod_directory}_win.ts4script", f"{mod_directory}_mac.ts4script"})
 print(f'Created {os.path.join(release_directory, f"{zip_file_name}.zip")}')
+exit(100)
 
 
 r'''
+v2.0.26
+    Add 'exclude_mac_directories' to build for Mac without Windows specific folders
 v2.0.25
     Remove unused import
 v2.0.24
@@ -293,5 +339,3 @@ v2.0.3
 v2.0.2
     Add 'additional_directories = ('foo', )' to 'modinfo.py' to include also other directories ('foo' in this case).
 '''
-
-exit(100)

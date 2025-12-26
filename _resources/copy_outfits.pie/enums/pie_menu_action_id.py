@@ -4,10 +4,10 @@
 #
 
 
-from ts4lib.common_enums.enum_types.common_enum import CommonEnum
+from ts4lib.custom_enums.enum_types.custom_enum import CustomEnum
 
 
-class PieMenuActionId(CommonEnum):
+class PieMenuActionId(CustomEnum):
     """
     # None | All | Body Paint | Cloth | Hand Accessories | Head Accessories | Head Paint | Head Piercings | Occult Scars | Pet | Sim
     OutfitGroups.parts: List uses this order

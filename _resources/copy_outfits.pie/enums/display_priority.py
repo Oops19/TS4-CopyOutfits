@@ -4,10 +4,10 @@
 #
 
 
-from ts4lib.common_enums.enum_types.common_enum import CommonEnum
+from ts4lib.custom_enums.enum_types.custom_enum import CustomEnum
 
 
-class DisplayPriority(CommonEnum):
+class DisplayPriority(CustomEnum):
     HIGHEST = 10
     VERY_HIGH = 9
     HIGH = 8

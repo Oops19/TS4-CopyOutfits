@@ -5,7 +5,7 @@
 
 
 from random import randint
-from typing import Dict, List, Set
+from typing import Dict, List
 
 from copy_outfits.enums.copy_outfits_age import CopyOutfitsAge
 from copy_outfits.modinfo import ModInfo

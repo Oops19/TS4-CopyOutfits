@@ -4,10 +4,10 @@
 #
 
 
-from ts4lib.common_enums.enum_types.common_enum import CommonEnum
+from ts4lib.custom_enums.enum_types.custom_enum import CustomEnum
 
 
-class OutfitGroupId(CommonEnum):
+class OutfitGroupId(CustomEnum):
     EVERYTHING = 0  # ! All special sim data and body type groups
 
     # Sim characteristics / data, lowest is set to 0
