@@ -17,47 +17,6 @@ class RegisterCopyOutfitsMannequin(CommonAddInteractionsToAffordanceListsModific
     # noinspection PyMissingOrEmptyDocstring
     @property
     def interaction_ids(self) -> Tuple[CommonInt, ...]:
-        """ """
-        r'''
-        TODO Remove some interactions 
-        interactions: Tuple = (
-            0xEC810595D17D6FBF,  # 'Copy' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits_PMA_Copy_debug')
-            0x963363849E50ACAD,  # 'Paste' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits_PMA_Paste_debug')
-            0xB4BD9EC859F87DA7,  # 'Picker' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste_PMA_Picker_debug')
-            0xA0438F9BE5A2A614,  # 'Everything' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone_PMA_Everything_debug')
-            0x4CCDCD923E9DA9F8,  # 'All' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_All_debug')
-            0x9E44D5D52AEB749D,  # 'Head' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Head_debug')
-            0x1201B32E3A191D97,  # 'Garment' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Garment_debug')
-            0x6BCABFB72E68DF61,  # 'Piercings' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Piercings_debug')
-            0x076196EA2CE19846,  # 'Head Jewelry' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Head_Jewelry_debug')
-            0xAFB2CF759C5307D3,  # 'Hand Jewelry' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Hand_Jewelry_debug')
-            0x058901BBB11BD8EC,  # 'Head Paint' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Head_Paint_debug')
-            0xC7496B975856B51C,  # 'Skin' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Skin_debug')
-            0x63764BC0A7620AD0,  # 'Tattoo' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Tattoo_debug')
-            0xA2C4A317CB79598B,  # 'Nail Color' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Nail_Color_debug')
-            0xD186C3EC5001EF04,  # 'Occults' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Occults_debug')
-            0xC2D27A7416DD5CCF,  # 'Scars' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Scars_debug')
-            0xBB776F98C3D8E2AF,  # 'Other' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Other_debug')
-            0xB16B223619B7822F,  # 'Mole / Crease' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Mole____Crease_debug')
-            0xF7DC4D1F3FA35033,  # 'Marks' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Marks_debug')
-            0x98B635E72E0CE552,  # 'Pet' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Pet_debug')
-            0x98B1FD955FB783AA,  # 'Horse' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Horse_debug')
-            0x3DD45204918CAD41,  # 'Picker' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__CAS_Parts_PMA_Picker_debug')
-            0x4CB31771C54A3CD6,  # 'All' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__Characteristics_PMA_All_debug')
-            0x7D805E13757D4EE1,  # 'Age & Gender' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__Characteristics_PMA_Age_x26_Gender_debug')
-            0x841D5D5D78952AD1,  # 'Genetics' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__Characteristics_PMA_Genetics_debug')
-            0x70CC43F38C0C22F8,  # 'Physics & Genetics' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__Characteristics_PMA_Physics_x26_Genetics_debug')
-            0x800D569C583E7411,  # 'Sliders' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__Characteristics_PMA_Sliders_debug')
-            0xC91B2D4775F5D9E1,  # 'Walkstyle' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__Characteristics_PMA_Walkstyle_debug')
-            0xBF2D7E22B63835C6,  # 'Traits' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__Characteristics_PMA_Traits_debug')
-            0x5B781745009E62F7,  # 'Skills' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__Characteristics_PMA_Skills_debug')
-            0x92C181081028082A,  # 'Skintone' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Clone__Characteristics_PMA_Skintone_debug')
-            0x5FD20D917EB79F62,  # 'Same Skin' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Skins_PMA_Same_Skin_debug')
-            0xD72342585562D3CD,  # 'Next Skin' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Skins_PMA_Next_Skin_debug')
-            0xD063D08FDED9C539,  # 'Previous Skin' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Skins_PMA_Previous_Skin_debug')
-            0xD2F6972E9520F77F,  # 'Random Skin' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Skins_PMA_Random_Skin_debug')
-        )  # TODO remove some interactions
-        '''
         interactions: Tuple = (
             0xEC810595D17D6FBF,  # 'Copy' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits_PMA_Copy_debug')
             0x5020FF18FDB9BAC9,  # 'Picker' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy_PMA_Picker_debug')
@@ -70,6 +29,7 @@ class RegisterCopyOutfitsMannequin(CommonAddInteractionsToAffordanceListsModific
             0xA26243B934ABA1E8,  # 'Swimwear' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy__Category_PMA_Swimwear_debug')
             0x4285E2BDB177DBD6,  # 'Hotweather' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy__Category_PMA_Hotweather_debug')
             0x96EE25889AED629D,  # 'Coldweather' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy__Category_PMA_Coldweather_debug')
+            0xA5C5F7534A1EA693,  # 'Small Business' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy__Category_PMA_Small_Business_debug')
             0x4C50742DB10555A0,  # 'Bathing' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy__Xx2DCategory_PMA_Bathing_debug')
             0x65C307D86C4BEBC1,  # 'Career' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy__Xx2DCategory_PMA_Career_debug')
             0x4780D187691D2F25,  # 'Situation' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy__Xx2DCategory_PMA_Situation_debug')
@@ -91,6 +51,7 @@ class RegisterCopyOutfitsMannequin(CommonAddInteractionsToAffordanceListsModific
             0x379E5BA0737A1502,  # 'Swimwear' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste__Category_PMA_Swimwear_debug')
             0x95E30B80F1161FC4,  # 'Hotweather' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste__Category_PMA_Hotweather_debug')
             0xFE3B50A478096753,  # 'Coldweather' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste__Category_PMA_Coldweather_debug')
+            0x17C7A5D010AC54C9,  # 'Small Business' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste__Category_PMA_Small_Business_debug')
             0xBA2466DEED56CBCE,  # 'Bathing' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste__Xx2DCategory_PMA_Bathing_debug')
             0x579386424F75D94B,  # 'Career' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste__Xx2DCategory_PMA_Career_debug')
             0xFC1901CC0002F6AB,  # 'Situation' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste__Xx2DCategory_PMA_Situation_debug')
@@ -142,6 +103,7 @@ class RegisterCopyOutfitsMannequin(CommonAddInteractionsToAffordanceListsModific
             0x06C075ADACF829B3,  # 'Right' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Mannequin__Rotate_PMA_Right_debug')
             0xC11F89ED9D7FF93A,  # 'Destroy' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Mannequin__Remove_PMA_Destroy_debug')
             0x4B864F684F7FC787,  # 'Print Clipboard' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More_PMA_Print_Clipboard_debug')
+            0x9D595705F4525479,  # 'Fix Head' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More_PMA_Fix_Head_debug')
             0x5BA6F113C0F2661A,  # 'Clear All' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More_PMA_Clear_All_debug')
             0xA88C83FEBA17597D,  # 'Clipboard 0' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More__Clear_PMA_Clipboard_0_debug')
             0x71BE7E2EB047630C,  # 'Clipboard 1' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__More__Clear_PMA_Clipboard_1_debug')
@@ -158,15 +120,12 @@ class RegisterCopyOutfitsMannequin(CommonAddInteractionsToAffordanceListsModific
             0xB54C16F984C43719,  # 'Swimwear' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Category_PMA_Swimwear_debug')
             0x1CC166EFB9A71E2F,  # 'Hotweather' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Category_PMA_Hotweather_debug')
             0x20ABC6FE1E9E68A6,  # 'Coldweather' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Category_PMA_Coldweather_debug')
+            0x441A309CE4051C06,  # 'Small Business' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Category_PMA_Small_Business_debug')
             0x99A887A11A57BB0F,  # 'Bathing' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Xx2DCategory_PMA_Bathing_debug')
             0xA0DFE4F7E793BB28,  # 'Career' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Xx2DCategory_PMA_Career_debug')
             0x193C7DC81219FD5A,  # 'Situation' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Xx2DCategory_PMA_Situation_debug')
             0xD5329B0934E989D7,  # 'Special' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Xx2DCategory_PMA_Special_debug')
             0x1A54B1AF82F79ACD,  # 'Batuu' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Xx2DCategory_PMA_Batuu_debug')
-
-            0xA5C5F7534A1EA693,  # 'Small Business' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Copy__Category_PMA_Small_Business_debug')
-            0x17C7A5D010AC54C9,  # 'Small Business' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Paste__Category_PMA_Small_Business_debug')
-            0x441A309CE4051C06,  # 'Small Business' - fnv('o19_Copy_Outfits_PMC__Copy_Outfits__Add_Outfits__Category_PMA_Small_Business_debug')
         )
         return interactions
 

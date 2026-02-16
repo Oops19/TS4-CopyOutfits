@@ -28,7 +28,7 @@ class ModInfo(CommonModInfo):
 
     @property
     def _version(self) -> str:
-        return '2.0.0'
+        return '2.0.1'
 
 
 r'''
@@ -48,6 +48,8 @@ IDEAS for the far future
     CO-12 Clone 'relationship bits'
     CO-15 Mannequin / missing skins are applied to sims. (https://github.com/Oops19/TS4-CopyOutfits/issues/4)
 
+v2.0.1
+    CO-17 Update pie menu
 v2.0.0
     CO-16 Fix compatibility with TS4Lib 1.0.0
 v1.9.22

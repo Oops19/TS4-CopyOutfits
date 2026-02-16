@@ -1,5 +1,5 @@
-CopyOutfits v2.0.0 for The Sims 4 v1.120.117 and S4CL v3.17
-Created on 2025-12-24
-v2.0.0
-    CO-16 Fix compatibility with TS4Lib 0.4.0
+CopyOutfits v2.0.1 for The Sims 4 v1.121.342 and S4CL v3.19
+Created on 2026-02-05
+v2.0.1
+    CO-17 Update pie menu
 
