@@ -48,6 +48,8 @@ IDEAS for the far future
     CO-12 Clone 'relationship bits'
     CO-15 Mannequin / missing skins are applied to sims. (https://github.com/Oops19/TS4-CopyOutfits/issues/4)
 
+    Bug?: Fix Clone Skintone ... this seems to fail
+    
 v2.0.1
     CO-17 Update pie menu
 v2.0.0
